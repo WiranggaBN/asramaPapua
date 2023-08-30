@@ -140,7 +140,7 @@
 
 {{-- KPK Section --}}
 <section id="peta">
-  <div class="container">
+  <div class="container-fluid">
     <div class="row">
       <div class="col-12">
         <img src="/image/Peta.png" alt="" class="img-peta">
@@ -266,37 +266,6 @@
   </div>
 </section> -->
 {{-- Hubungi2 Section --}}
-
-{{-- Footer Section --}}
-<!-- <footer class="footer d-flex align-items-center position-relative">
-  <div class="container-fluid">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12 align-items-center">
-          <img src="logo.png" alt="" width="100" height="100" class="ogol">
-        </div>
-        <a href="#" class="ng text-center">Asrama Papua</a>
-        
-        <div class="papa col-md-3 mt-3 d-flex align-items-center justify-content-evenly">
-          <a href="https://www.instagram.com/gesbamalkot/" target="_blank"><i class="bi bi-instagram"></i></a>
-          <a href="https://www.youtube.com/channel/UCukPPZ6Gr-lpiwjrl-EJlWw" target="_blank"><i class="bi bi-youtube"></i></a>
-          <a href="https://www.facebook.com/people/GESBA-Malinau-Kota/100088256063650/?mibextid=ZbWKwL" target="_blank"><i class="bi bi-facebook"></i></a>
-          <a href="#hubungi" target="_blank"><i class="bi bi-envelope-fill"></i></a>
-        </div>
-        {{-- <div class="ala mt-5 col-md-5 d-flex">
-          <a href="#" class="alam ms-3">GESBA Malinau Kota Jl. Pasar Induk Gang Gesba RT.20, Kec. Malinau Kota, Kabupaten Malinau, Kalimantan Utara 77554</a>
-        </div> --}}
-      </div>
-      <hr class="grs">
-      <div class="row position-absolute copyright start-50 translate-middle">
-        <div class="cp col-12">
-          <p>Copyright by Aron All Right Reserved.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</footer> -->
-{{-- Footer Section --}}
 
 <footer class="footer-beranda d-flex align-items-center position-relative">
   <div class="container-fluid">

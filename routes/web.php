@@ -14,7 +14,7 @@ use App\Http\Controllers\LayoutController;
 use App\Http\Controllers\LayoutPenghuniController;
 use App\Http\Controllers\SejarahController;
 use App\Http\Controllers\TatatertibController;
-use App\Http\Controllers\BeritaController;
+use App\Http\Controllers\BritaController;
 use App\Http\Controllers\PengumumanController;
 use App\Http\Controllers\PetaController;
 use App\Http\Controllers\DatakamarController;
@@ -26,6 +26,10 @@ use App\Http\Controllers\DashboardBeritaController;
 use App\Http\Controllers\DashboardPengumumanController;
 use App\Http\Controllers\DashboardAbsensiController;
 use App\Http\Controllers\DashboardKamarController;
+use App\Http\Controllers\LoginPendaftaranController;
+use App\Http\Controllers\RegisterPendaftaranController;
+use App\Http\Controllers\CalonPendaftaranController;
+use App\Http\Controllers\OrangtuaPendaftaranController;
 use App\Models\Pengumuman;
 
 /*
@@ -57,15 +61,17 @@ Route::get('/capeg/peta', [PetaCapegController::class, 'index'])->name('peta');
 
 Route::get('/sejarah', [SejarahController::class, 'index'])->name('sejarah');
 Route::get('/tatatertib', [TatatertibController::class, 'index'])->name('tatatertib');
-Route::get('/berita', [BeritaController::class, 'index'])->name('berita');
+
 Route::get('/peta', [PetaController::class, 'index'])->name('peta');
 Route::get('/datakamar', [DatakamarController::class, 'index'])->name('datakamar');
 
 Route::get('/bernda', [LayoutPenghuniController::class, 'index'])->middleware('auth');
-Route::get('/beritas', [BeritaController::class, 'index']);
-Route::get('beritas/{berita:slug}', [BeritaController::class, 'show']);
-Route::get('/pengumumen', [PengumumanController::class, 'index']);
-Route::get('pengumumen/{pengumuman:slug}', [PengumumanController::class, 'show']);
+
+Route::get('/berita', [BritaController::class, 'index']);
+Route::get('berita/{brita:slug}', [BritaController::class, 'show']);
+
+// Route::get('/pengumuman', [PengumumanController::class, 'index']);
+// Route::get('/pengumuman/{slug}', [PengumumanController::class, 'show']);
 Route::get('/absensi', [AbsensiController::class, 'index'])->middleware('auth');;
 Route::post('/absensi', [AbsensiController::class, 'store'])->middleware('auth');;
 
@@ -83,8 +89,8 @@ Route::group(['middleware' => ['auth']], function(){
        Route::resource('/penghuni',DashboardPenghuniController::class);
        Route::resource('/calon',DashboardCapegController::class);
        Route::resource('/orangtua',DashboardOrangtuaController::class);
-       Route::resource('/berita',DashboardBeritaController::class);
-       Route::resource('/pengumuman',DashboardPengumumanController::class);
+    //    Route::resource('/berita',DashboardBeritaController::class);
+    //    Route::resource('/pengumuman',DashboardPengumumanController::class);
        Route::resource('/absensi',DashboardAbsensiController::class);
        Route::resource('/kamar',DashboardKamarController::class);
     });
@@ -108,3 +114,15 @@ Route::group(['middleware' => ['auth']], function(){
 
 //     $user->assignRole($role); 
 // });
+
+// Pendafaran
+Route::get('/login-pendaftaran', [LoginPendaftaranController::class, 'index'])->name('login-pendaftaran')->middleware('guest');
+Route::post('/login-pendaftaran', [LoginPendaftaranController::class, 'authenticate']);
+Route::post('/logout', [LoginPendaftaranController::class, 'logout']);
+
+Route::get('/register-pendaftaran', [RegisterPendaftaranController::class, 'index'])->middleware('guest');
+Route::post('/register-pendaftaran', [RegisterPendaftaranController::class, 'store']);
+
+Route::resource('/pendaftaran/calonpendaftaran', CalonPendaftaranController::class)-> middleware('auth');
+Route::resource('/pendaftaran/orangtuapendaftaran', OrangtuaPendaftaranController::class)-> middleware('auth');
+

@@ -23,16 +23,16 @@
         <div class="col-md-12">
         <div class="mt-4">
 
-          @if ($beritas->count())
+          @if ($brita->count())
           <div class="card mb-3">
-            {{-- <img src="https://source.unsplash.com/1200x300/?{{ $beritas[0]->title }}" class="card-img-top" alt="..."> --}}
-            {{-- <img src="https://source.unsplash.com/1200x300?spiritual" class="card-img-top" alt="{{ $beritas[0]->slug }}"> --}}
+            {{-- <img src="https://source.unsplash.com/1200x300/?{{ $brita[0]->title }}" class="card-img-top" alt="..."> --}}
+            {{-- <img src="https://source.unsplash.com/1200x300?spiritual" class="card-img-top" alt="{{ $brita[0]->slug }}"> --}}
             <div class="card-body text-center">
-              <h3 class="card-title"><a href="/beritas/{{ $beritas[0]->slug }}" class="text-decoration-none text-dark">{{ $beritas[0]->title }}</a></h3>
-              <p class="text-center"><small>{{ $beritas[0]->date }}</small></p>
-              <p class="card-text">{{ $beritas[0]->excerpt }}</p>
-              <p class="card-text"><small class="text-muted">Last updated {{ $beritas[0]->created_at->diffForHumans() }}</small></p>
-              <a href="/beritas/{{ $beritas[0]->slug }}" class="text-decoration-none btn text-light"> Baca Selengkapnya</a>
+              <h3 class="card-title"><a href="/brita/{{ $brita[0]->slug }}" class="text-decoration-none text-dark">{{ $brita[0]->title }}</a></h3>
+              <p class="text-center"><small>{{ $brita[0]->date }}</small></p>
+              <p class="card-text">{{ $brita[0]->excerpt }}</p>
+              <p class="card-text"><small class="text-muted">Last updated {{ $brita[0]->created_at->diffForHumans() }}</small></p>
+              <a href="/brita/{{ $brita[0]->slug }}" class="text-decoration-none btn text-light"> Baca Selengkapnya</a>
             </div>
           </div>  
           @else
@@ -42,15 +42,15 @@
           
           <div class="container">
             <div class="row">
-              @foreach ($beritas->skip(1) as $post)
+              @foreach ($brita->skip(1) as $post)
               <div class="col-md-4 mb-3">
                 <div class="card">
                   {{-- <img src="https://source.unsplash.com/300x200?{{ $post->excerpt }}" class="card-img-top" alt="{{ $post->slug }}"> --}}
                   <div class="card-body">
                     <h5 class="card-title">{{ $post->title }}</h5>
                     <p class="card-text">{{ $post->excerpt }}</p>
-                    <p class="card-text"><small class="text-muted">Last updated {{ $beritas[0]->created_at->diffForHumans() }}</small></p>
-                    <a href="/beritas/{{ $post->slug }}" class="btn text-light">Baca Selengkapnya</a>
+                    <p class="card-text"><small class="text-muted">Last updated {{ $brita[0]->created_at->diffForHumans() }}</small></p>
+                    <a href="/brita/{{ $post->slug }}" class="btn text-light">Baca Selengkapnya</a>
                   </div>
                 </div>
               </div>

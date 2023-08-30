@@ -40,16 +40,16 @@
 <body>
     {{-- Navbar --}}
     <nav class="navbar navbar-expand-lg navbar-dark position-fixed w-100">
-        <div class="container-fluid">
-          <a class="navbar-brand text-dark me-5 mx-5 mb-4 mt-4" href="/beranda">
+        <div class="container">
+          <a class="navbar-brand text-dark mb-4 mt-4" href="/beranda">
             <!-- <img src="../storage/logo.png" alt="Logo" width="100" height="100" class="d-inline-block align-text-center"> -->
-            <b>Asrama Papua</b>
+            <b class="logo-awal">Asrama Papua</b>
           </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mb-lg-0">                
+            <ul class="navbar-nav mx-auto">                
               <li class="nav-item">
                 <a class="text-dark nav-link {{ Request::is('/bernda') ? 'active' : '' }}" aria-current="page" href="/bernda">Beranda</a>
               </li>
@@ -64,7 +64,7 @@
                 </ul>
               </li>              
               <li class="nav-item dropdown">
-                <a class="text-dark nav-link dropdown-toggle {{ Request::is('posts*', 'pengumuman*') ? 'active' : '' }}" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <a class="text-dark nav-link dropdown-toggle {{ Request::is('berita*', 'pengumuman*') ? 'active' : '' }}" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Informasi
                 </a>
                 <ul class="dropdown-menu">
@@ -74,7 +74,7 @@
                 </ul>
               </li>
               <li class="nav-item dropdown">
-                <a class="text-dark nav-link dropdown-toggle {{ Request::is('doasemalaman*', 'jadwaldoasemalaman*', 'doadanpuasa*', 'jadwaldoadanpuasa*', 'pencariandana*', 'jadwalpencariandana*') ? 'active' : '' }}" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <a class="text-dark nav-link dropdown-toggle {{ Request::is('datakamar*', 'absensi*') ? 'active' : '' }}" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Asrama
                 </a>
                 <ul class="dropdown-menu">
@@ -110,11 +110,12 @@
               <li class="nav-item">
                 <a class="nav-link {{ Request::is('hubungikami') ? 'active' : '' }}" aria-current="page" href="/hubungikami">HUBUNGI KAMI</a>
               </li> -->
-              <li class="nav-item">
+            </ul>
+            <div>          
                 <a href="/logout" class="text-decoration-none">
                   <button class="btn-masuk text-light nav-link {{ Request::is('keluar') ? 'active' : '' }}" aria-current="page">Keluar</button>
-                </a>
-              </li> 
+                </a>              
+            </div> 
           </div>
         </div>
       </nav>

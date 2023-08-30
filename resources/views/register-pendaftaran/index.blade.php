@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Asrama Papua | Masuk </title>
+<title>Asrama Papua | Daftar </title>
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
 
@@ -22,11 +22,24 @@
 
 <div class="card">
     <div class="card-body login-card-body">
-        <p class="login-box-msg">Silahkan Masuk!</p>
-    <form action="{{ url('login/proses') }}" method="post">
+        <p class="login-box-msg">Silahkan Daftar!</p>
+    <form action="{{ url('/register-pendaftaran') }}" method="post">
     @csrf
-<div class="input-group mb-3">
-    <input type="text" class="form-control @error('username') is-invalid @enderror" placeholder="Nama Pengguna" name="username" autofocus value="{{ old('username') }}">
+    <div class="input-group mb-3">
+    <input type="text" class="form-control @error('name') is-invalid @enderror" placeholder="Nama" name="name" autofocus value="{{ old('name') }}">
+        <div class="input-group-append">
+        <div class="input-group-text">
+            <span class="fas fa-user"></span>    
+        </div>
+    </div>
+    @error('name')
+        <div class="invalid-feedback">
+            {{ $message }}
+        </div>
+    @enderror
+    </div>
+    <div class="input-group mb-3">
+    <input type="text" class="form-control @error('username') is-invalid @enderror" placeholder="Nama Pengguna" name="username" value="{{ old('username') }}">
         <div class="input-group-append">
         <div class="input-group-text">
             <span class="fas fa-user"></span>    
@@ -37,8 +50,19 @@
             {{ $message }}
         </div>
     @enderror
-</div>
-<div class="input-group mb-3">
+    </div>
+    <div class="input-group mb-3">
+    <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" id="email" placeholder="Email" required value="{{ old('email') }}">
+        <div class="input-group-text">
+            <span class="fas fa-envelope"></span>
+        </div>
+        @error('email')
+        <div class="invalid-feedback">
+            {{ $message }}
+        </div>
+        @enderror
+    </div>
+    <div class="input-group mb-3">
     <input type="password" class="form-control @error('password') is-invalid @enderror" placeholder="Sandi" name="password">
         <div class="input-group-append">
         <div class="input-group-text">
@@ -50,10 +74,24 @@
             {{ $message }}
         </div>
     @enderror 
-</div>
-<div class="row">
+    </div>
+    <div class="input-group mb-3">
+    <input type="password" name="password_confirmation" class="form-control @error('password_confirmation') is-invalid @enderror" id="password_confirmation" placeholder="Konfirmasi Sandi" required>
+    <div class="input-group-text">
+            <span class="fas fa-eye"></span>
+        </div>
+        @error('password_confirmation')
+        <div class="invalid-feedback">
+            {{ $message }}
+        </div>
+        @enderror   
+    </div>
+    <div class="row">
     <div class="col-12">
-        <button type="submit" class="btn btn-primary btn-block">Masuk</button>
+        <button type="submit" class="btn btn-primary btn-block">Daftar</button>
+    </div>
+    <div>
+        <small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sudah mendaftar?<a href="/login-pendaftaran" class="daftar"> Silahkan Masuk!</a></small>        
     </div>
 </div>
 </form>

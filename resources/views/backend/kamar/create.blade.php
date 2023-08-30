@@ -16,30 +16,64 @@
               <!-- form start -->
               <form>
                 <div class="card-body">
+                <div class="form-group">
+                    <label for="nomor_kamar">Nomor Kamar</label>
+                    <input type="nomor_kamar" class="form-control @error('nomor_kamar') is-invalid @enderror" id="nomor_kamar" placeholder="Masukkan Nomor Kamar" name="nomor_kamar" autofocus required value="{{ old('nomor_kamar') }} ">
+                    @error('nomor_kamar')
+                    <div class="invalid-feedback">  
+                        {{ $message }}
+                    </div>
+                    @enderror
+                </div>
+                <div class="form-group">
+                    <label for="nama_kamar">Nama Kamar</label>
+                    <input type="nama_kamar" class="form-control @error('nama_kamar') is-invalid @enderror" id="nama_kamar" placeholder="Masukkan Nama Kamar" name="nama_kamar" autofocus required value="{{ old('nama_kamar') }} ">
+                    @error('nama_kamar')
+                    <div class="invalid-feedback">  
+                        {{ $message }}
+                    </div>
+                    @enderror
+                </div>
+                <div class="form-group">
+                    <label for="kapasitas_kamar">Kapasitas Kamar</label>
+                    <input type="kapasitas_kamar" class="form-control @error('kapasitas_kamar') is-invalid @enderror" id="kapasitas_kamar" placeholder="Masukkan Kapasitas Kamar" name="kapasitas_kamar" autofocus required value="{{ old('kapasitas_kamar') }} ">
+                    @error('kapasitas_kamar')
+                    <div class="invalid-feedback">  
+                        {{ $message }}
+                    </div>
+                    @enderror
+                </div>
+                <div class="form-group">
+                    <label for="aset">Aset Kamar</label>
+                    <input type="aset" class="form-control @error('aset') is-invalid @enderror" id="aset" placeholder="Masukkan Aset Kamar" name="aset" autofocus required value="{{ old('aset') }} ">
+                    @error('aset')
+                    <div class="invalid-feedback">  
+                        {{ $message }}
+                    </div>
+                    @enderror
+                </div>
+                <div class="form-group">
+                    <label for="nama_penghuni">Nama Penghuni</label>
+                    <input type="nama_penghuni" class="form-control @error('nama_penghuni') is-invalid @enderror" id="nama_penghuni" placeholder="Masukkan Nama Penghuni" name="nama_penghuni" autofocus required value="{{ old('nama_penghuni') }} ">
+                    @error('nama_penghuni')
+                    <div class="invalid-feedback">  
+                        {{ $message }}
+                    </div>
+                    @enderror
+                </div>
                   <div class="form-group">
-                    <label for="exampleInputEmail1">Nomor Kamar</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Masukkan Nama">
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">Nama Kamar</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Masukkan Nama Kamar">
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleInputPassword1">Kapasitas Kamar</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Masukkan Kapasitas Kamar">
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleInputPassword1">Aset Kamar</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Masukkan Aset Kamar">
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleInputPassword1">Nama Penghuni</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Masukkan Nama Penghuni">
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleInputPassword1">Status Kamar</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Masukkan Status Kamar">
-                  </div>
+                    <label for="status_kamar">Status Kamar</label>
+                      <select name="status_kamar" class="form-control">
+                        <option value="">Pilih Status Kamar</option>                                    
+                        <option value="Penuh">Penuh</option>
+                        <option value="Belum Penuh">Belum Penuh</option>
+                      </select>
+                    @error('status_kamar')
+                    <div class="invalid-feedback">  
+                        {{ $message }}
+                    </div>
+                    @enderror
+                </div>
                   <!-- <div class="form-group">
                     <label for="exampleInputFile">File input</label>
                     <div class="input-group">

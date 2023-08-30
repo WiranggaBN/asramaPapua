@@ -105,8 +105,8 @@
 
                     <div class="col-12">
                       <label for="inputAddress" class="form-label">Keterangan</label>                      
-                      <textarea class="form-control @error('alasan') is-invalid @enderror" name="alasan" id="alasan" rows="3" required value="{{ old('alasan') }}"></textarea>
-                      @error('alasan')
+                      <textarea class="form-control @error('keterangan') is-invalid @enderror" name="keterangan" id="keterangan" rows="3" required value="{{ old('keterangan') }}"></textarea>
+                      @error('keterangan')
                           <div class="invalid-feedback">  
                             {{ $message }}
                           </div>

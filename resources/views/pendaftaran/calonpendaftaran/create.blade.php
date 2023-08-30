@@ -1,4 +1,4 @@
-@extends('backend.layouts.main')
+@extends('pendaftaran.layouts.mainpendaftaran')
 
 @section('isi') 
     <!-- Main content -->
@@ -10,11 +10,12 @@
             <!-- general form elements -->
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">Tambah Absensi</h3>
+                <h3 class="card-title">Tambah Calon Penghuni</h3>
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form>
+              <form method="post" action="/calon">
+                @csrf
                 <div class="card-body">
                 <div class="form-group">
                     <label for="name">Nama</label>
@@ -25,72 +26,54 @@
                     </div>
                     @enderror
                 </div>
-                <div class="form-group">
-                    <label for="nama_kamar">Nama Kamar</label>
-                    <select name="nama_kamar" class="form-control">
-                    <option value="">Pilih Nama Kamar</option>
-                      
-                    </select>
-                    @error('nama_kamar')
+                  <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" placeholder="Masukkan Email" name="email" required value="{{ old('email') }} ">
+                    @error('email')
                     <div class="invalid-feedback">  
                         {{ $message }}
                     </div>
                     @enderror
-                </div>
-                <div class="form-group">
-                    <label for="tanggal_keluar">Tanggal Keluar</label>
-                    <input type="datetime-local" class="form-control @error('tanggal_keluar') is-invalid @enderror" name="tanggal_keluar" id="tanggal_keluar" required>
-                    @error('tanggal_keluar')
+                  </div>
+                  <div class="form-group">
+                    <label for="nomor_telepon">Nomor Telepon</label>
+                    <input type="nomor_telepon" class="form-control @error('nomor_telepon') is-invalid @enderror" id="nomor_telepon" placeholder="Masukkan Nomor Telepon" name="nomor_telepon" required value="{{ old('nomor_telepon') }}" placeholder="Masukkan Nomor Telepon">
+                    @error('nomor_telepon')
+                    <div class="invalid-feedback">  
+                        {{ $message }}
+                    </div>
+                    @enderror
+                  </div>
+                  <div class="form-group">
+                    <label for="jenis_kelamin">Jenis Kelamin</label><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input class="form-check-input @error('jenis_kelamin') is-invalid @enderror" type="radio" name="jenis_kelamin" id="jenis_kelamin" value="Laki-Laki" required>
+                      <label class="form-check-label me-5 ms-1" for="Laki-Laki"> Laki-Laki</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                                          
+                      <input class="form-check-input @error('jenis_kelamin') is-invalid @enderror" type="radio" name="jenis_kelamin" id="jenis_kelamin" value="Perempuan" required>
+                      <label class="form-check-label ms-1" for="Perempuan"> Perempuan</label>   
+                      @error('jenis_kelamin')
+                        <div class="invalid-feedback">  
+                          {{ $message }}
+                        </div>
+                      @enderror 
+                  </div>
+                  <div class="form-group">
+                    <label for="alamat">Alamat</label>
+                    <textarea class="form-control @error('alamat') is-invalid @enderror" name="alamat" id="alamat" rows="3" required value="{{ old('alamat') }}" placeholder="Masukkan Alamat"></textarea>
+                      @error('alamat')
+                          <div class="invalid-feedback">  
+                            {{ $message }}
+                          </div>
+                      @enderror
+                  </div>
+                  <div class="form-group">
+                    <label for="tanggal_lahir">Tanggal Lahir</label>
+                    <input type="datetime-local" class="form-control @error('tanggal_lahir') is-invalid @enderror" name="tanggal_lahir" id="tanggal_lahir" required>
+                    @error('tanggal_lahir')
                       <div class="invalid-feedback">  
                         {{ $message }}
                       </div>
                     @enderror
                   </div>
-                  <div class="form-group">
-                    <label for="tanggal_masuk">Tanggal Masuk</label>
-                    <input type="datetime-local" class="form-control @error('tanggal_masuk') is-invalid @enderror" name="tanggal_masuk" id="tanggal_masuk" required>
-                    @error('tanggal_masuk')
-                      <div class="invalid-feedback">  
-                        {{ $message }}
-                      </div>
-                    @enderror
-                  </div>
-                  <div class="form-group">
-                    <label for="jam_keluar">Jam Keluar</label>
-                    <input type="jam_keluar" class="form-control @error('jam_keluar') is-invalid @enderror" id="jam_keluar" placeholder="Masukkan Jam Keluar" name="jam_keluar" autofocus required value="{{ old('jam_keluar') }} ">
-                    @error('jam_keluar')
-                    <div class="invalid-feedback">  
-                        {{ $message }}
-                    </div>
-                    @enderror
-                  </div>
-                  <div class="form-group">
-                    <label for="jam_masuk">Jam Masuk</label>
-                    <input type="jam_masuk" class="form-control @error('jam_masuk') is-invalid @enderror" id="jam_masuk" placeholder="Masukkan Jam Masuk" name="jam_masuk" autofocus required value="{{ old('jam_masuk') }} ">
-                    @error('jam_masuk')
-                    <div class="invalid-feedback">  
-                        {{ $message }}
-                    </div>
-                    @enderror
-                  </div>
-                  <div class="form-group">
-                    <label for="alasan">Alasan</label>
-                    <textarea class="form-control @error('alasan') is-invalid @enderror" name="alasan" id="alasan" rows="3" required value="{{ old('alasan') }}"></textarea>
-                    @error('alasan')
-                    <div class="invalid-feedback">  
-                        {{ $message }}
-                    </div>
-                    @enderror
-                </div>
-                <div class="form-group">
-                    <label for="keterangan">Keterangan</label>
-                    <textarea class="form-control @error('keterangan') is-invalid @enderror" name="keterangan" id="keterangan" rows="3" required value="{{ old('keterangan') }}"></textarea>
-                    @error('keterangan')
-                    <div class="invalid-feedback">  
-                        {{ $message }}
-                    </div>
-                    @enderror
-                </div>                                               
                   <!-- <div class="form-group">
                     <label for="exampleInputFile">File input</label>
                     <div class="input-group">

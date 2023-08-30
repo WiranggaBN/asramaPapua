@@ -2,26 +2,26 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Berita;
 use Illuminate\Http\Request;
+use App\Models\Brita;
 use Illuminate\Support\Facades\Auth;
 
-class BeritaController extends Controller
+class BritaController extends Controller
 {
     public function index() 
     {
-        return view('frontend.informasi.berita', [
+        return view('frontend.informasi.brita', [
             "title" => "Berita",
-            'berita' => Berita::all(),
+            "berita" => Brita::latest()->get(),
             'user' => Auth::user()
         ]);
     }
 
-    public function show(Berita $berita)
+    public function show(Brita $brita)
     {
-        return view('frontend.informasi.berita', [
+        return view('frontend.informasi.brita', [
             "title" => "Berita",
-            'brita' => $berita
+            "brita" => $brita
         ]);
     }
 }

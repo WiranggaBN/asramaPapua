@@ -16,24 +16,39 @@
               <!-- form start -->
               <form>
                 <div class="card-body">
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">Slug</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Masukkan Slug">
+                <div class="form-group">
+                    <label for="slug">Slug</label>
+                    <input type="slug" class="form-control @error('slug') is-invalid @enderror" id="slug" placeholder="Masukkan Slug" name="slug" autofocus required value="{{ old('slug') }} ">
+                    @error('slug')
+                    <div class="invalid-feedback">  
+                        {{ $message }}
+                    </div>
+                    @enderror
+                </div>
+                <div class="form-group">
+                    <label for="judul">Judul</label>
+                    <input type="judul" class="form-control @error('judul') is-invalid @enderror" id="judul" placeholder="Masukkan Judul" name="judul" required value="{{ old('judul') }} ">
+                    @error('judul')
+                    <div class="invalid-feedback">  
+                        {{ $message }}
+                    </div>
+                    @enderror
+                </div>
+                <div class="form-group">
+                    <label for="tanggal">Tanggal</label>
+                    <input type="datetime-local" class="form-control @error('tanggal') is-invalid @enderror" name="tanggal" id="tanggal" required>
+                    @error('tanggal')
+                      <div class="invalid-feedback">  
+                        {{ $message }}
+                      </div>
+                    @enderror
                   </div>
                   <div class="form-group">
-                    <label for="exampleInputEmail1">Judul</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Masukkan Judul">
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleInputPassword1">Tanggal</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Masukkan Tanggal">
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleInputFile">Gambar</label>
+                    <label for="gambar">Gambar</label>
                     <div class="input-group">
                       <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="exampleInputFile">
-                        <label class="custom-file-label" for="exampleInputFile">Pilih file</label>
+                        <input type="file" class="custom-file-input" id="gambar">
+                        <label class="custom-file-label" for="gambar">Pilih file</label>
                       </div>
                       <div class="input-group-append">
                         <span class="input-group-text">Upload</span>
@@ -41,12 +56,21 @@
                     </div>
                   </div>
                   <div class="form-group">
-                    <label for="exampleInputPassword1">Kutipan</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Masukkan Kutipan">
-                  </div>                  
+                    <label for="kutipan">Kutipan</label>
+                    <input type="kutipan" class="form-control @error('kutipan') is-invalid @enderror" id="kutipan" placeholder="Masukkan Kutipan" name="kutipan" required value="{{ old('kutipan') }} ">
+                    @error('kutipan')
+                    <div class="invalid-feedback">  
+                        {{ $message }}
+                    </div>
+                    @enderror
+                </div>                  
                   <div class="form-group">
-                    <label for="exampleInputPassword1">Isi</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Masukkan Isi">
+                    <label for="isi">Isi</label>                    
+                    @error('body')
+                      <p class="text-danger">{{ $message }}</p>
+                    @enderror
+                    <input id="isi" type="hidden" name="isi" value="{{ old('isi') }}">
+                    <trix-editor input="isi"></trix-editor>
                   </div>                  
                   <!-- <div class="form-group">
                     <label for="exampleInputFile">File input</label>

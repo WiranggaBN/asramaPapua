@@ -21,30 +21,8 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-        
-        <div class="mt-3">
-          <h3 class="text-dark text-decoration-none">
-            {{ $pengumuman->judul }}
-          </h3>
-          <p><small>{{ $pengumuman->date }}</small></p>
-          <p>Ayat Pokok : <b> {{ $pengumuman->main_verse }} </b></p>
-          <p>Pembicara : <b> {{ $pengumuman->speaker }} </b></p>
-          <hr>
-          {{-- <img src="https://source.unsplash.com/1200x300?{{ $pengumuman->excerpt }}" class="card-img-top mb-2" alt="{{ $pengumuman->slug }}"> --}}
-          
-          {!! $pengumuman->body !!}
-        </div>
-        
-        {{-- </div>
-        <div class="mt-5">
-          <h3 class="text-dark text-decoration-none">
-            {{ $materipengajaran->title }}
-          </h3>
-          <hr>
-          <img src="../kpk6.jpg" alt="" class="gambarsatu mt-2"><br>
-          <p class="mt-2 text-center">{{ $materipengajaran->title_image }}</p>
-          {!! $materipengajaran->body !!}
-        </div> --}}      
+                
+        </div> 
       </div>
     </div>
   </div>

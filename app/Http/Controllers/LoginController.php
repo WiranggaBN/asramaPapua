@@ -10,7 +10,7 @@ class LoginController extends Controller
     public function index() {
         if($user = Auth::user()) {
             if ($user->level == '1') {
-                return redirect()->intended('/penghuni/index');
+                return redirect()->intended('/penghuni');
             }elseif($user->level =='2'){
                 return redirect()->intended('bernda');
             }
@@ -37,7 +37,7 @@ class LoginController extends Controller
         $request->session()->regenerate();
         $user = Auth::user();
         if ($user->level == '1') {
-            return redirect()->intended('home');
+            return redirect()->intended('/penghuni');
         }elseif($user->level =='2'){
             return redirect()->intended('bernda');
         }

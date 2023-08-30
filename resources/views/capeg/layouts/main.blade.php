@@ -40,16 +40,16 @@
 <body>
     {{-- Navbar --}}
     <nav class="navbar navbar-expand-lg navbar-dark position-fixed w-100">
-        <div class="container-fluid">
-          <a class="navbar-brand text-dark me-5 mx-5 mb-4 mt-4" href="/">
+        <div class="container">
+          <a class="navbar-brand text-dark mb-4 mt-4" href="/">
             <!-- <img src="../storage/logo.png" alt="Logo" width="100" height="100" class="d-inline-block align-text-center"> -->
-            <b>Asrama Papua</b>
+            <b class="logo-awal">Asrama Papua</b>
           </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mb-lg-0">                
+            <ul class="navbar-nav mx-auto">                
               <li class="nav-item">
                 <a class="text-dark nav-link {{ Request::is('/') ? 'active' : '' }}" aria-current="page" href="/">Beranda</a>
               </li>
@@ -60,27 +60,29 @@
                 <ul class="dropdown-menu">
                   <li><a class="dropdown-item" href="/capeg/sejarah">Sejarah</a></li>
                   <li><a class="dropdown-item" href="/capeg/tatatertib">Tata Tertib</a></li>                  
-                  {{-- <li><hr class="dropdown-divider"></li> --}}
+                  <!-- <li><hr class="dropdown-divider"></li>  -->
                 </ul>
               </li>            
               <li class="nav-item dropdown">
-                <a class="text-dark nav-link dropdown-toggle {{ Request::is('posts*', 'materipengajaran*') ? 'active' : '' }}" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <a class="text-dark nav-link dropdown-toggle {{ Request::is('berita*', 'pengumuman*') ? 'active' : '' }}" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Informasi
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="/berita">Berita</a></li>  
-                  <li><a class="dropdown-item" href="/pengumuman">Pengumuman</a></li>
-                  <li><a class="dropdown-item" href="/peta">Peta Lokasi</a></li>                
+                  <li><a class="dropdown-item" href="capeg/berita">Berita</a></li>  
+                  <li><a class="dropdown-item" href="capeg/pengumuman">Pengumuman</a></li>
+                  <li><a class="dropdown-item" href="capeg/peta">Peta Lokasi</a></li>                
                 </ul>
               </li>       
               <li class="nav-item">
-                <a class="text-dark nav-link {{ Request::is('/') ? 'active' : '' }}" aria-current="page" href="/login">Pendaftaran</a>
-              </li>                  
-              <li class="nav-item">
+                <a class="text-dark nav-link {{ Request::is('/') ? 'active' : '' }}" aria-current="page" href="/login-pendaftaran">Pendaftaran</a>
+              </li>                               
+            </ul>
+
+            <div>              
                 <a href="/login" class="text-decoration-none">
                   <button class="btn-masuk text-light nav-link {{ Request::is('masuk') ? 'active' : '' }}" aria-current="page">Masuk</button>
-                </a>
-              </li> 
+                </a>              
+            </div>
           </div>
         </div>
       </nav>

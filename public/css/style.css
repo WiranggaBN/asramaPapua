@@ -28,6 +28,10 @@ body {
     background-color: rgb(255, 255, 255);
 }
 
+.logo-awal {
+    font-size: 25px;
+}
+
 * {
     z-index: 2;
 }
@@ -228,6 +232,10 @@ h2 {
 /* Peta */
 #peta {
     width: 100vh;
+}
+
+.img-peta {
+    width: 1325px;
 }
 /* Peta */
 
@@ -1447,6 +1455,7 @@ footer a {
     background-color: rgb(0, 0, 0);
     border: 1px solid rgb(0, 0, 0);
     width: 130px;
+    height: 40px;
     transition: all ease-in-out 0.3s;
 }
 
@@ -1454,6 +1463,7 @@ footer a {
     background-color: rgb(23, 22, 24);
     border: 1px solid rgb(23, 22, 24);
     width: 130px;
+    height: 40px;
     transition: all ease-in-out 0.3s;
 }
 /* Hubungi Kami Section */
