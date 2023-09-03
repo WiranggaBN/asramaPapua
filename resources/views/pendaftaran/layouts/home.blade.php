@@ -1,4 +1,4 @@
-@extends('pendaftaran.layouts.mainpendaftaran')
+@extends('pendaftaran.layouts.main')
 
 @section('judul')
     Penghuni Asrama

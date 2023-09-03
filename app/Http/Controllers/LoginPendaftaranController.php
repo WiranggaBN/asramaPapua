@@ -22,7 +22,7 @@ class LoginPendaftaranController extends Controller
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
  
-            return redirect()->intended('pendaftaran/calonpendaftaran');
+            return redirect()->intended('/dashboardpendaftaran');
         }
 
         return back()->with('loginError', 'Gagal Masuk');

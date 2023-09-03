@@ -49,11 +49,16 @@
                     </div>
                     <div class="col-6">
                       <label for="inputNama" class="form-label">Nama Kamar</label>
-                      <input type="text" name="nama_kamar" class="form-control @error('nama_kamar') is-invalid @enderror" id="nama_kamar" placeholder="" required value="{{ old('nama_kamar') }}">
-                      @error('nama_kamar')
-                          <div class="invalid-feedback">  
-                            {{ $message }}
-                          </div>
+                      <select name="kamar_id" class="form-control @error('kamar_id') is-invalid @enderror" value="{{ old('kamar_id') }}">                                        
+                      <option value="">Pilih Nama Kamar</option>                                        
+                      @foreach ($kamars as $kamar)
+                        <option value="{{ $kamar->id }}">{{ $kamar->namakamar }}</option>
+                      @endforeach                                         
+                      </select>
+                      @error('kamar_id')
+                      <div class="invalid-feedback">  
+                        {{ $message }}
+                      </div>
                       @enderror
                     </div>
                     <div class="col-6">
@@ -114,7 +119,7 @@
                     </div>
 
                     <div class="confirm-next mb-3" style="display :block;">
-                      <button class="btn btn-primary btn-block visible-sm visible-xs submit mb-4 mt-3"><i class="bi bi-send me-1"></i> SUBMIT</button>
+                      <button class="btn btn-primary btn-block visible-sm visible-xs submit mb-4 mt-3" type="submit"><i class="bi bi-send me-1"></i> SUBMIT</button>
                     </div>
                   </form>                    
                 </div>

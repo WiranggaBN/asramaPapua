@@ -21,9 +21,38 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">                  
-                    <p>
-                    Asrama Telkom University memiliki letak yang sangat strategis karena dekat dengan gedung kuliah umum (Gd. Tokong Nanas 10 lantai). Asrama ini menjadi salah satu sarana kampus yang dibangun untuk tempat tinggal Mahasiswa/i baru pada 1 tahun pertama masa perkuliahan di Telkom University sehingga para orang tua tidak perlu khawatir meninggalkan putra dan putri untuk melanjutkan studinya.
-                    </p>
+                
+                <table class="table table-striped table-sm">
+          <thead>
+            <tr class="text-center">              
+              <th scope="col">Nomor Kamar</th>
+              <th scope="col">Nama Kamar</th>
+              <th scope="col">Kapasitas Kamar</th>
+              <th scope="col">Aset Kamar</th>
+              <th scope="col">Nama Penghuni</th>
+              <th scope="col">Status Kamar</th>                            
+              
+            </tr>
+          </thead>
+          <tbody>
+          @foreach ($kamars as $kamar)
+            <tr class="text-center">
+              
+              <td>{{ $kamar->nomor_kamar }}</td>
+              <td>{{ $kamar->nama_kamar }}</td>
+              <td>{{ $kamar->kapasitas_kamar }} Orang</td>
+              <td>{{ $kamar->aset_kamar }}</td>
+              <td>{{ $kamar->penghuni->name}}</td>
+              <td>{{ $kamar->status_kamar }}</td>                                   
+              <td>               
+                  @csrf                  
+                </form>
+              </td>
+            </tr>
+            @endforeach
+          </tbody>
+        </table>
+            
                 </div>
             </div>
         </div>
@@ -57,4 +86,6 @@
   </footer>
 </section>
 {{-- Footer Section --}}
+
+
 @endsection

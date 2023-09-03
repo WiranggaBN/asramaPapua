@@ -37,6 +37,7 @@ class DashboardCapegController extends Controller
         $validatedData = $request->validate([
             'name' => 'required',
             'email' => 'required',
+            'username' => 'required',
             'nomor_telepon' => 'required',
             'jenis_kelamin' => 'required',
             'alamat' => 'required',
@@ -75,6 +76,7 @@ class DashboardCapegController extends Controller
     {
         $rules = [
             'name' => 'required',
+            'username' => 'required',
             'email' => 'required',
             'nomor_telepon' => 'required',
             'jenis_kelamin' => 'required',

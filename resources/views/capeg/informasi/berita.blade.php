@@ -26,16 +26,16 @@
           <h3 class="text-dark text-decoration-none">
             {{ $berita->judul }}
           </h3>
-          <p><small>{{ $berita->date }}</small></p>
-          <p>Ayat Pokok : <b> {{ $berita->main_verse }} </b></p>
-          <p>Pembicara : <b> {{ $berita->speaker }} </b></p>
+          <p><small>{{ $berita->tanggal }}</small></p>
+          <!-- <p>Ayat Pokok : <b> {{ $berita->judul }} </b></p>
+          <p>Pembicara : <b> {{ $berita->speaker }} </b></p> -->
           <hr>
-          {{-- <img src="https://source.unsplash.com/1200x300?{{ $berita->excerpt }}" class="card-img-top mb-2" alt="{{ $berita->slug }}"> --}}
+          <img src="https://source.unsplash.com/1200x300?{{ $berita->kutipan }}" class="card-img-top mb-2" alt="{{ $berita->slug }}"> 
           
-          {!! $berita->body !!}
+          {!! $berita->isi !!}
         </div>
         
-        {{-- </div>
+        <!-- </div>
         <div class="mt-5">
           <h3 class="text-dark text-decoration-none">
             {{ $materipengajaran->title }}
@@ -44,7 +44,7 @@
           <img src="../kpk6.jpg" alt="" class="gambarsatu mt-2"><br>
           <p class="mt-2 text-center">{{ $materipengajaran->title_image }}</p>
           {!! $materipengajaran->body !!}
-        </div> --}}      
+        </div>    -->
       </div>
     </div>
   </div>

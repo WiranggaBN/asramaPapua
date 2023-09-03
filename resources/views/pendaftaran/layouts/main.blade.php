@@ -70,7 +70,7 @@
       <!-- Sidebar Menu -->
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-            @include('pendaftaran.layouts.mainpendaftaran')              
+            @include('pendaftaran.layouts.menu')              
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

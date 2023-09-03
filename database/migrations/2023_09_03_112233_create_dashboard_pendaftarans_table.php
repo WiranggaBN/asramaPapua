@@ -11,15 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('britas', function (Blueprint $table) {
+        Schema::create('dashboard_pendaftarans', function (Blueprint $table) {
             $table->id();
-            $table->string('slug');
-            $table->string('judul');           
-            $table->string('gambar')->nullable();
-            $table->dateTime('tanggal');
-            $table->string('kutipan');
-            $table->text('isi');            
-            $table->timestamp('published_at')->nullable();
             $table->timestamps();
         });
     }
@@ -29,6 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('britas');
+        Schema::dropIfExists('dashboard_pendaftarans');
     }
 };

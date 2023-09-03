@@ -14,7 +14,8 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form>
+              <form method="post" action="/absensi">
+                @csrf
                 <div class="card-body">
                 <div class="form-group">
                     <label for="name">Nama</label>
@@ -26,12 +27,14 @@
                     @enderror
                 </div>
                 <div class="form-group">
-                    <label for="nama_kamar">Nama Kamar</label>
-                    <select name="nama_kamar" class="form-control">
-                    <option value="">Pilih Nama Kamar</option>
-                      
+                    <label for="kamar_id">Nama Kamar</label>
+                    <select name="kamar_id" class="form-control @error('kamar_id') is-invalid @enderror" value="{{ old('kamar_id') }}">                                        
+                     <option value="">Pilih Nama Kamar</option>                                        
+                      @foreach ($kamars as $kamar)
+                        <option value="{{ $kamar->id }}">{{ $kamar->namakamar }}</option>
+                      @endforeach                                         
                     </select>
-                    @error('nama_kamar')
+                    @error('kamar_id')
                     <div class="invalid-feedback">  
                         {{ $message }}
                     </div>
@@ -57,7 +60,7 @@
                   </div>
                   <div class="form-group">
                     <label for="jam_keluar">Jam Keluar</label>
-                    <input type="jam_keluar" class="form-control @error('jam_keluar') is-invalid @enderror" id="jam_keluar" placeholder="Masukkan Jam Keluar" name="jam_keluar" autofocus required value="{{ old('jam_keluar') }} ">
+                    <input type="jam_keluar" class="form-control @error('jam_keluar') is-invalid @enderror" id="jam_keluar" placeholder="Masukkan Jam Keluar" name="jam_keluar" required value="{{ old('jam_keluar') }} ">
                     @error('jam_keluar')
                     <div class="invalid-feedback">  
                         {{ $message }}
@@ -66,7 +69,7 @@
                   </div>
                   <div class="form-group">
                     <label for="jam_masuk">Jam Masuk</label>
-                    <input type="jam_masuk" class="form-control @error('jam_masuk') is-invalid @enderror" id="jam_masuk" placeholder="Masukkan Jam Masuk" name="jam_masuk" autofocus required value="{{ old('jam_masuk') }} ">
+                    <input type="jam_masuk" class="form-control @error('jam_masuk') is-invalid @enderror" id="jam_masuk" placeholder="Masukkan Jam Masuk" name="jam_masuk" required value="{{ old('jam_masuk') }} ">
                     @error('jam_masuk')
                     <div class="invalid-feedback">  
                         {{ $message }}

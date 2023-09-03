@@ -11,6 +11,17 @@
     <!-- Crisp Live Chat -->
     <script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="a0873d52-24f4-4f69-b838-69d8172bbfb1";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
 
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- DataTables -->
+    <link rel="stylesheet" href="../../plugins/datatables/dataTables.bootstrap4.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+    <!-- Google Font: Source Sans Pro -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
     {{-- Bootstrap CSS --}}   
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"> 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
@@ -27,7 +38,7 @@
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
-    
+
     {{-- My Style --}}
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="../css/style.css">
@@ -68,8 +79,8 @@
                   Informasi
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="/berita">Berita</a></li>  
-                  <li><a class="dropdown-item" href="/pengumuman">Pengumuman</a></li>
+                  <li><a class="dropdown-item" href="frontend/berita">Berita</a></li>  
+                  <li><a class="dropdown-item" href="frontend/pengumuman">Pengumuman</a></li>
                   <li><a class="dropdown-item" href="/peta">Peta Lokasi</a></li>                
                 </ul>
               </li>
@@ -79,7 +90,7 @@
                 </a>
                 <ul class="dropdown-menu">
                   <li><a class="dropdown-item" href="/datakamar">Data Kamar</a></li>
-                  <li><a class="dropdown-item" href="/absensi">Absensi</a></li>                 
+                  <li><a class="dropdown-item" href="frontend/absensi">Absensi</a></li>                 
                 </ul>
               </li>
               <!-- <li class="nav-item dropdown">

@@ -68,13 +68,13 @@
                   Informasi
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="capeg/berita">Berita</a></li>  
-                  <li><a class="dropdown-item" href="capeg/pengumuman">Pengumuman</a></li>
-                  <li><a class="dropdown-item" href="capeg/peta">Peta Lokasi</a></li>                
+                  <li><a class="dropdown-item" href="/capeg/berita">Berita</a></li>  
+                  <li><a class="dropdown-item" href="/capeg/pengumuman">Pengumuman</a></li>
+                  <li><a class="dropdown-item" href="/capeg/peta">Peta Lokasi</a></li>                
                 </ul>
               </li>       
               <li class="nav-item">
-                <a class="text-dark nav-link {{ Request::is('/') ? 'active' : '' }}" aria-current="page" href="/login-pendaftaran">Pendaftaran</a>
+                <a class="text-dark nav-link {{ Request::is('login-pendaftaran') ? 'active' : '' }}" aria-current="page" href="/login-pendaftaran">Pendaftaran</a>
               </li>                               
             </ul>
 

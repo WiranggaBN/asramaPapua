@@ -14,7 +14,8 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form>
+              <form method="post" action="/backend/pengumuman" enctype="multipart/form-data">
+                @csrf
                 <div class="card-body">
                 <div class="form-group">
                     <label for="slug">Slug</label>
@@ -47,7 +48,12 @@
                     <label for="gambar">Gambar</label>
                     <div class="input-group">
                       <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="gambar">
+                        <input type="file" class="custom-file-input @error('gambar') is-invalid @enderror" id="gambar" name="gambar">
+                        @error('gambar')
+                          <div class="invalid-feedback">  
+                            {{ $message }}
+                          </div>
+                        @enderror
                         <label class="custom-file-label" for="gambar">Pilih file</label>
                       </div>
                       <div class="input-group-append">
@@ -66,7 +72,7 @@
                 </div>                  
                   <div class="form-group">
                     <label for="isi">Isi</label>                    
-                    @error('body')
+                    @error('isi')
                       <p class="text-danger">{{ $message }}</p>
                     @enderror
                     <input id="isi" type="hidden" name="isi" value="{{ old('isi') }}">

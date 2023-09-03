@@ -1,4 +1,4 @@
-@extends('pendaftaran.layouts.mainpendaftaran')
+@extends('pendaftaran.layouts.main')
 
 @section('isi') 
     <!-- Main content -->
@@ -10,11 +10,11 @@
             <!-- general form elements -->
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">Tambah Data Orangtua</h3>
+                <h3 class="card-title">Data Orangtua</h3>
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form method="post" action="/orangtua">
+              <form method="post" action="/orangtuapendaftaran">
                 @csrf
                 <div class="card-body">
                   <div class="form-group">

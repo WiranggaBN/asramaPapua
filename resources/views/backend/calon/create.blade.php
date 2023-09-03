@@ -26,6 +26,15 @@
                     </div>
                     @enderror
                 </div>
+                <div class="form-group">
+                    <label for="username">Nama Pengguna</label>
+                    <input type="username" class="form-control @error('username') is-invalid @enderror" id="username" placeholder="Masukkan Nama Pengguna" name="username" autofocus required value="{{ old('username') }} ">
+                    @error('username')
+                    <div class="invalid-feedback">  
+                        {{ $message }}
+                    </div>
+                    @enderror
+                </div>
                   <div class="form-group">
                     <label for="email">Email</label>
                     <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" placeholder="Masukkan Email" name="email" required value="{{ old('email') }} ">

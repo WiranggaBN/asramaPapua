@@ -2,19 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Pengumuman;
+use App\Models\Brita;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class DashboardPengumumanController extends Controller
+class DashboardBritaController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('backend.pengumuman.index', [
-            'pengumuman' => Pengumuman::all(),
+        return view('backend.berita.index', [
+            'berita' => Brita::all(),
             'user' => Auth::user()
         ]);
     }
@@ -24,7 +24,7 @@ class DashboardPengumumanController extends Controller
      */
     public function create()
     {
-        return view('backend.pengumuman.create', [
+        return view('backend.berita.create', [
             'user' => Auth::user()
         ]);
     }
@@ -52,15 +52,15 @@ class DashboardPengumumanController extends Controller
 
         // $validatedData['excerpt'] = Str::limit(strip_tags($request->body), 200);
 
-        Pengumuman::create($validatedData);
+        Brita::create($validatedData);
 
-        return redirect('backend/pengumuman')->with('success', 'Berhasil Menambahkan Pengumuman!');
+        return redirect('backend/berita')->with('success', 'Berhasil Menambahkan Berita!');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Pengumuman $pengumuman)
+    public function show(Brita $brita)
     {
         //
     }
@@ -68,17 +68,17 @@ class DashboardPengumumanController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Pengumuman $pengumuman)
+    public function edit(Brita $brita)
     {
-        return view('backend.pengumuman.edit', [
-            'pengumuman' => $pengumuman
+        return view('backend.berita.edit', [
+            'brita' => $brita
         ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Pengumuman $pengumuman)
+    public function update(Request $request, Brita $brita)
     {
         $rules = [
             'slug' => 'required',
@@ -97,18 +97,18 @@ class DashboardPengumumanController extends Controller
 
         // $validatedData['excerpt'] = Str::limit(strip_tags($request->body), 200);
 
-        Pengumuman::where('id', $pengumuman->id)
+        Brita::where('id', $brita->id)
             ->update($validatedData);   
 
-        return redirect('/backend/pengumuman')->with('success', 'Berhasil Mengubah Pengumuman');
+        return redirect('/backend/berita')->with('success', 'Berhasil Mengubah Berita');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Pengumuman $pengumuman)
+    public function destroy(Brita $brita)
     {
-        Pengumuman::destroy($pengumuman->id);
-        return redirect('backend/pengumuman')->with('success', 'Berhasil Menghapus Pengumuman!');
+        Brita::destroy($brita->id);
+        return redirect('backend/berita')->with('success', 'Berhasil Menghapus Berita!');
     }
 }

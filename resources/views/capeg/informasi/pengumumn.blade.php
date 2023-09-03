@@ -23,34 +23,34 @@
         <div class="col-md-12">
         <div class="mt-4">
 
-          @if ($pengumumen->count())
+          @if ($pengumuman->count())
           <div class="card mb-3">
-            {{-- <img src="https://source.unsplash.com/1200x300/?{{ $pengumumen[0]->title }}" class="card-img-top" alt="..."> --}}
-            {{-- <img src="https://source.unsplash.com/1200x300?spiritual" class="card-img-top" alt="{{ $pengumumen[0]->slug }}"> --}}
+            {{-- <img src="https://source.unsplash.com/1200x300/?{{ $pengumuman[0]->title }}" class="card-img-top" alt="..."> --}}
+            {{-- <img src="https://source.unsplash.com/1200x300?spiritual" class="card-img-top" alt="{{ $pengumuman[0]->slug }}"> --}}
             <div class="card-body text-center">
-              <h3 class="card-title"><a href="/pengumumen/{{ $pengumumen[0]->slug }}" class="text-decoration-none text-dark">{{ $pengumumen[0]->title }}</a></h3>
-              <p class="text-center"><small>{{ $pengumumen[0]->date }}</small></p>
-              <p class="card-text">{{ $pengumumen[0]->excerpt }}</p>
-              <p class="card-text"><small class="text-muted">Last updated {{ $pengumumen[0]->created_at->diffForHumans() }}</small></p>
-              <a href="/pengumumen/{{ $pengumumen[0]->slug }}" class="text-decoration-none btn text-light"> Baca Selengkapnya</a>
+              <h3 class="card-title"><a href="/pengumuman/{{ $pengumuman[0]->slug }}" class="text-decoration-none text-dark">{{ $pengumuman[0]->title }}</a></h3>
+              <p class="text-center"><small>{{ $pengumuman[0]->date }}</small></p>
+              <p class="card-text">{{ $pengumuman[0]->excerpt }}</p>
+              <p class="card-text"><small class="text-muted">Last updated {{ $pengumuman[0]->created_at->diffForHumans() }}</small></p>
+              <a href="/pengumuman/{{ $pengumuman[0]->slug }}" class="text-decoration-none btn text-light"> Baca Selengkapnya</a>
             </div>
           </div>  
           @else
-          <p class="card-text fs-4">Belum ada Ringkasan Khotbah.</p>
+          <p class="card-text fs-4">Belum ada Pengumuman.</p>
           @endif
 
           
           <div class="container">
             <div class="row">
-              @foreach ($pengumumen->skip(1) as $post)
+              @foreach ($pengumuman->skip(1) as $post)
               <div class="col-md-4 mb-3">
                 <div class="card">
                   {{-- <img src="https://source.unsplash.com/300x200?{{ $post->excerpt }}" class="card-img-top" alt="{{ $post->slug }}"> --}}
                   <div class="card-body">
                     <h5 class="card-title">{{ $post->title }}</h5>
                     <p class="card-text">{{ $post->excerpt }}</p>
-                    <p class="card-text"><small class="text-muted">Last updated {{ $pengumumen[0]->created_at->diffForHumans() }}</small></p>
-                    <a href="/pengumumen/{{ $post->slug }}" class="btn text-light">Baca Selengkapnya</a>
+                    <p class="card-text"><small class="text-muted">Last updated {{ $pengumuman[0]->created_at->diffForHumans() }}</small></p>
+                    <a href="/pengumuman/{{ $post->slug }}" class="btn text-light">Baca Selengkapnya</a>
                   </div>
                 </div>
               </div>

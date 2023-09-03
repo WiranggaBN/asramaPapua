@@ -13,7 +13,7 @@
                 <img src="/image/Slider1.jpg" class="d-flex" alt="...">
               </div>
               <div class="carousel-item">
-                <img src="/image/Slider2.jpg" class="d-flex" alt="...">
+                <img src="/image/Slider4.jpg" class="d-flex" alt="...">
               </div>
               <div class="carousel-item">
                 <img src="/image/Slider3.jpg" class="d-flex" alt="...">
@@ -106,7 +106,7 @@
         <div class="card-berit">
           <div class="position-relative mx-auto">
             <a href="/doadanpuasa">
-            <img src="/image/1.jpg" alt=""
+            <img src="/image/2.jpg" alt=""
             class="position-absolute top-50 start-50 translate-middle">
             </a>
           </div>
@@ -121,7 +121,7 @@
         <div class="card-berit">
           <div class="position-relative mx-auto">
             <a href="/doadanpuasa">
-            <img src="/image/1.jpg" alt=""
+            <img src="/image/3.jpg" alt=""
             class="position-absolute top-50 start-50 translate-middle">
             </a>
           </div>

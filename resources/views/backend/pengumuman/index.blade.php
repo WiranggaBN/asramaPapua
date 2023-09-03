@@ -12,7 +12,7 @@
           </div>
         </div>
 
-        <a href="/pengumuman/create" class="btn btn-primary">Tambah Pengumuman</a>
+        <a href="/backend/pengumuman/create" class="btn btn-primary">Tambah Pengumuman</a>
         <table class="table table-striped table-sm">
           <thead>
             <tr>
@@ -27,7 +27,28 @@
             </tr>
           </thead>
           <tbody>
-            
+          @foreach ($pengumuman as $pengumumans)
+            <tr>
+              <td>{{ $loop->iteration }}</td>
+              <td>{{ $pengumumans->slug }}</td>
+              <td>{{ $pengumumans->judul }}</td>
+              <td>{{ dateID($pengumumans->tanggal) }}</td>          
+              <td>{{ $pengumumans->gambar }}</td>
+              <td>{{ $pengumumans->kutipan }}</td>
+              <td>{{ $pengumumans->isi }}</td>                            
+              <td>
+                <a href="/pengumuman/{{ $pengumumans->name }}" class="badge bg-info"><i class="fas fa-eye"></i></a>
+                <a href="" class="badge bg-warning"><i class="fas fa-edit"></i></i></a> 
+                <form action="/pengumuman/{{ $pengumumans->name }}" method="post" class="d-inline">
+                  @method('delete')
+                  @csrf
+                  <button class="badge bg-danger border-0" onclick="return confirm('Yakin Menghapus?')">
+                    <i class="fas fa-trash"></i>
+                  </button>
+                </form>
+              </td>
+            </tr>
+            @endforeach
           </tbody>
         </table>
       </div>

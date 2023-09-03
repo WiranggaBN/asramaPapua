@@ -7,7 +7,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12 text-center">
-                    <h4>Pengumuman</h4>
+                    <h4>pengumuman</h4>
                 </div>
             </div>
         </div>
@@ -16,35 +16,58 @@
 {{-- hero section --}}
 
 {{-- Content Section --}}
-<section id="content-sejarah" >
+<section id="content-berita" >
   <div class="container-fluid">
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-        
-        <div class="mt-3">
-          <h3 class="text-dark text-decoration-none">
-            {{ $pengumuman->judul }}
-          </h3>
-          <p><small>{{ $pengumuman->date }}</small></p>
-          <p>Ayat Pokok : <b> {{ $pengumuman->main_verse }} </b></p>
-          <p>Pembicara : <b> {{ $pengumuman->speaker }} </b></p>
-          <hr>
-          {{-- <img src="https://source.unsplash.com/1200x300?{{ $pengumuman->excerpt }}" class="card-img-top mb-2" alt="{{ $pengumuman->slug }}"> --}}
+        <div class="mt-4">
+
+          @if ($pengumuman->count())
+          <div class="card mb-3">
+            <div style="max-height: 350px; overflow:hidden;">
+            @if($pengumuman[0]->gambar)
+              <img src="{{ asset('storage/' . $pengumuman[0]->gambar) }}" class="card-img-top" alt="...">
+            @else
+              <img src="https://source.unsplash.com/1200x300/?{{ $pengumuman[0]->judul }}" class="card-img-top" alt="...">
+            @endif
+            </div>
+            
+            {{-- <img src="https://source.unsplash.com/1200x300?spiritual" class="card-img-top" alt="{{ $pengumuman[0]->slug }}"> --}}
+            <div class="card-body text-center">
+              <h3 class="card-title"><a href="/pengumuman/{{ $pengumuman[0]->slug }}" class="text-decoration-none text-dark">{{ $pengumuman[0]->judul }}</a></h3>
+              <p class="text-center"><small>{{ dateID($pengumuman[0]->tanggal) }}</small></p>
+              <p class="card-text">{{ $pengumuman[0]->kutipan }}</p>
+              <p class="card-text"><small class="text-muted">Last updated {{ $pengumuman[0]->created_at->diffForHumans() }}</small></p>
+              <a href="/brita/{{ $pengumuman[0]->slug }}" class="text-decoration-none btn text-light"> Baca Selengkapnya</a>
+            </div>
+          </div>  
+          @else
+          <p class="card-text fs-4">Belum ada pengumuman.</p>
+          @endif
+
           
-          {!! $pengumuman->body !!}
-        </div>
-        
-        {{-- </div>
-        <div class="mt-5">
-          <h3 class="text-dark text-decoration-none">
-            {{ $materipengajaran->title }}
-          </h3>
-          <hr>
-          <img src="../kpk6.jpg" alt="" class="gambarsatu mt-2"><br>
-          <p class="mt-2 text-center">{{ $materipengajaran->title_image }}</p>
-          {!! $materipengajaran->body !!}
-        </div> --}}      
+          <div class="container">
+            <div class="row">
+              @foreach ($pengumuman->skip(1) as $pengumuman)
+              <div class="col-md-4 mb-3">
+                <div class="card">
+                @if($pengumuman->gambar)
+                  <img src="{{ asset('storage/' . $pengumuman->gambar) }}" class="card-img-top" alt="...">
+                @else
+                  <img src="https://source.unsplash.com/1200x300/?{{ $pengumuman[0]->judul }}" class="card-img-top" alt="...">
+                @endif
+                  <div class="card-body">
+                    <h5 class="card-title">{{ $pengumuman->judul }}</h5>
+                    <p class="card-text">{{ $pengumuman->kutipan }}</p>
+                    <p class="card-text"><small class="text-muted">Last updated {{ $pengumuman->created_at->diffForHumans() }}</small></p>
+                    <a href="/brita/{{ $pengumuman->slug }}" class="btn text-light">Baca Selengkapnya</a>
+                  </div>
+                </div>
+              </div>
+              @endforeach
+            </div>
+          </div>
       </div>
     </div>
   </div>

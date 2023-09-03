@@ -10,7 +10,7 @@ class BritaController extends Controller
 {
     public function index() 
     {
-        return view('frontend.informasi.brita', [
+        return view('capeg.informasi.brita', [
             "title" => "Berita",
             "berita" => Brita::latest()->get(),
             'user' => Auth::user()
@@ -19,7 +19,7 @@ class BritaController extends Controller
 
     public function show(Brita $brita)
     {
-        return view('frontend.informasi.brita', [
+        return view('capeg.informasi.brita', [
             "title" => "Berita",
             "brita" => $brita
         ]);

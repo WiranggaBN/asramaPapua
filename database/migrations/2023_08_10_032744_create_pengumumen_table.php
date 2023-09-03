@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('slug');
             $table->string('judul');            
             $table->string('gambar');
+            $table->dateTime('tanggal');
             $table->string('kutipan');
             $table->text('isi');
             $table->timestamp('published_at')->nullable();

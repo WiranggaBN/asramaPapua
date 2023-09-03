@@ -2,21 +2,22 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Berita;
+use App\Models\DashboardPendaftaran;
 use Illuminate\Http\Request;
+use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 use Illuminate\Support\Facades\Auth;
 
-class DashboardBeritaController extends Controller
+class DashboardPendaftaranController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('backend.berita.index', [
-            'berita' => Berita::all(),
+        return view('pendaftaran.dashboardpendaftaran.index', [
+            'dashboardPendaftaran' => DashboardPendaftaran::all(),
             'user' => Auth::user()
-        ]);
+        ]); 
     }
 
     /**
@@ -24,9 +25,7 @@ class DashboardBeritaController extends Controller
      */
     public function create()
     {
-        return view('backend.berita.create', [
-            'user' => Auth::user()
-        ]);
+        //
     }
 
     /**
@@ -40,7 +39,7 @@ class DashboardBeritaController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Berita $berita)
+    public function show(DashboardPendaftaran $dashboardPendaftaran)
     {
         //
     }
@@ -48,7 +47,7 @@ class DashboardBeritaController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Berita $berita)
+    public function edit(DashboardPendaftaran $dashboardPendaftaran)
     {
         //
     }
@@ -56,7 +55,7 @@ class DashboardBeritaController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Berita $berita)
+    public function update(Request $request, DashboardPendaftaran $dashboardPendaftaran)
     {
         //
     }
@@ -64,7 +63,7 @@ class DashboardBeritaController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Berita $berita)
+    public function destroy(DashboardPendaftaran $dashboardPendaftaran)
     {
         //
     }

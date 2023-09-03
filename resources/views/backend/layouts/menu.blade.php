@@ -29,7 +29,7 @@
 </li>
 
 <li class="nav-item">
-    <a href="/berita" class="nav-link">
+    <a href="/backend/berita" class="nav-link">
         <i class="nav-icon fas fa-newspaper"></i>
             <p>
                 Berita
@@ -39,7 +39,7 @@
 </li>
 
 <li class="nav-item">
-    <a href="/pengumuman" class="nav-link">
+    <a href="/backend/pengumuman" class="nav-link">
         <i class="nav-icon fas fa-bullhorn"></i>
             <p>
                 Pengumuman

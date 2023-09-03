@@ -36,6 +36,7 @@ class CalonPendaftaranController extends Controller
     {
         $validatedData = $request->validate([
             'name' => 'required',
+            'username' => 'required',
             'email' => 'required',
             'nomor_telepon' => 'required',
             'jenis_kelamin' => 'required',
@@ -45,7 +46,7 @@ class CalonPendaftaranController extends Controller
 
         CalonPenghuni::create($validatedData);
 
-        return redirect('/calonpendaftaran')->with('success', 'Berhasil Menambahkan Calon Penghuni!');
+        return redirect('/calonpendaftaran')->with('success', 'Berhasil Menambahkan Data Diri!');
     }
 
     /**
@@ -75,6 +76,7 @@ class CalonPendaftaranController extends Controller
     {
         $rules = [
             'name' => 'required',
+            'username' => 'required',
             'email' => 'required',
             'nomor_telepon' => 'required',
             'jenis_kelamin' => 'required',
@@ -91,7 +93,7 @@ class CalonPendaftaranController extends Controller
         CalonPenghuni::where('id', $calonPenghuni->id)
             ->update($validatedData);   
 
-        return redirect('/calonpendaftaran')->with('success', 'Berhasil Mengubah Calon Penghuni!');
+        return redirect('/calonpendaftaran')->with('success', 'Berhasil Mengubah Data Diri!');
     }
 
     /**
@@ -100,6 +102,6 @@ class CalonPendaftaranController extends Controller
     public function destroy(CalonPenghuni $calonPenghuni)
     {
         CalonPenghuni::destroy($calonPenghuni->id);
-        return redirect('/calonpendaftaran')->with('success', 'Berhasil Menghapus Calon Penghuni!');
+        return redirect('/calonpendaftaran')->with('success', 'Berhasil Menghapus Data Diri!');
     }
 }

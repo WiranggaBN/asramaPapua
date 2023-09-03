@@ -612,6 +612,33 @@ h2 {
     text-align: justify;
 }
 
+/* Content Berita */
+#content-berita {
+    background-color: #E5E5E5;
+    height: auto;
+    padding-top: 20px;
+    margin-right: -116.7px;
+    color: #000;
+    margin-left: -150px;
+    /* padding: 148px 0px 0px 148px; */
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.button-berita {
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    background-color: rgb(74, 15, 110);
+    padding: 0;
+}
+
+#content-berita p {
+    color: #000;
+    text-align: justify;
+}
+
 /* Bottom Sejarah */
 #bottom-sejarah {
     background-image: url(../bg-pattern-bottom1.png);

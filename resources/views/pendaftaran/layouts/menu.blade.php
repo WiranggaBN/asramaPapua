@@ -1,15 +1,25 @@
 <li class="nav-item">
-    <a href="/calon" class="nav-link">
-        <i class="nav-icon fas fa-user-plus"></i>
+    <a href="/dashboardpendaftaran" class="nav-link">
+        <i class="nav-icon fas fa-home"></i>
             <p>
-                Calon Penghuni Asrama
+                Dashboard
             <!-- <span class="badge badge-info right">2</span> -->
         </p>
     </a>
 </li>
 
 <li class="nav-item">
-    <a href="/orangtua" class="nav-link">
+    <a href="/calonpendaftaran" class="nav-link">
+        <i class="nav-icon fas fa-user-plus"></i>
+            <p>
+                Data Diri
+            <!-- <span class="badge badge-info right">2</span> -->
+        </p>
+    </a>
+</li>
+
+<li class="nav-item">
+    <a href="/orangtuapendaftaran" class="nav-link">
         <i class="nav-icon fas fa-users"></i>
             <p>
                 Data Orang Tua

@@ -15,4 +15,14 @@ class Penghuni extends Model
     {
         return 'name';
     }
+
+    /**
+     * data_kamars
+     *
+     * @return void
+     */
+    public function kamars()
+    {
+        return $this->hasMany(DataKamar::class);
+    }
 }

@@ -32,7 +32,7 @@ class RegisterPendaftaranController extends Controller
         $validatedData['password'] = Hash::make($validatedData['password']);
 
         User::create($validatedData);
-        CalonPenghuni::create($validatedData);
+        // CalonPenghuni::create($validatedData);
 
         // $request->session()->flash('success', 'Berhasil mendaftar! Silahkan login');
 

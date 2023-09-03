@@ -4,15 +4,17 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Absensi;
+use App\Models\Kamar;
 use Illuminate\Support\Facades\Auth;
 
 class AbsensiController extends Controller
 {
     public function index()
     {
-        return view('frontend.asrama.absensi', [
+        $user = Auth::user();
+        $kamars = Kamar::latest()->get();    
+        return view('frontend.asrama.absensi', compact('kamars', 'user'), [
             "title" => "Absensi",
-            'user' => Auth::user()
         ]);
     }
 
@@ -21,14 +23,14 @@ class AbsensiController extends Controller
         // return request()->all();
     
         $validatedData = $request->validate([
-            'name' => 'required|max:255',
-            'nama_kamar' => 'required|max:255',
+            'name' => 'required',
+            'kamar_id' => 'required',
             'tanggal_keluar' => 'required',
             'tanggal_masuk' => 'required',
-            // 'jam_keluar' => 'required',
+            'jam_keluar' => 'required',
             'jam_masuk' => 'required',
-            'alasan' => 'required|min:3|max:255',
-            'keterangan' => 'required|min:3|max:255',            
+            'alasan' => 'required',
+            'keterangan' => 'required',
         ]);
 
         Absensi::create($validatedData);

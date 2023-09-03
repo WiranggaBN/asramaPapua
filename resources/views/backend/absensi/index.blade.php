@@ -38,7 +38,30 @@
             </tr>
           </thead>
           <tbody>
-            
+          @foreach ($absensi as $absensis)
+            <tr>
+              <td>{{ $loop->iteration }}</td>
+              <td>{{ $absensis->name }}</td>
+              <td>{{ $absensis->kamar->namakamar}}</td>
+              <td>{{ dateID($absensis->tanggal_keluar) }}</td>          
+              <td>{{ dateID($absensis->tanggal_masuk) }}</td>          
+              <td>{{ $absensis->jam_keluar }} WIB</td>
+              <td>{{ $absensis->jam_masuk }} WIB</td>
+              <td>{{ $absensis->alasan }}</td>                            
+              <td>{{ $absensis->keterangan }}</td>                            
+              <td>
+                <a href="/absensi/{{ $absensis->name }}" class="badge bg-info"><i class="fas fa-eye"></i></a>
+                <a href="" class="badge bg-warning"><i class="fas fa-edit"></i></i></a> 
+                <form action="/absensi/{{ $absensis->name }}" method="post" class="d-inline">
+                  @method('delete')
+                  @csrf
+                  <button class="badge bg-danger border-0" onclick="return confirm('Yakin Menghapus?')">
+                    <i class="fas fa-trash"></i>
+                  </button>
+                </form>
+              </td>
+            </tr>
+            @endforeach
           </tbody>
         </table>
       </div>

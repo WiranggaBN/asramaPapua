@@ -1,123 +1,68 @@
-@extends('pendaftaran.layouts.mainpendaftaran')
+@extends('backend.layouts.main')
 
-@section('isi') 
-    <!-- Main content -->
-    <section class="content">
-      <div class="container-fluid">
-        <div class="row">
-          <!-- left column -->
-          <div class="col-md-12">
-            <!-- general form elements -->
-            <div class="card card-primary">
-              <div class="card-header">
-                <h3 class="card-title">Tambah Calon Penghuni</h3>
-              </div>
-              <!-- /.card-header -->
-              <!-- form start -->
-              <form method="post" action="/calon">
-                @csrf
-                <div class="card-body">
-                <div class="form-group">
-                    <label for="name">Nama</label>
-                    <input type="name" class="form-control @error('name') is-invalid @enderror" id="name" placeholder="Masukkan Nama" name="name" autofocus required value="{{ old('name') }} ">
-                    @error('name')
-                    <div class="invalid-feedback">  
-                        {{ $message }}
-                    </div>
-                    @enderror
-                </div>
-                  <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" placeholder="Masukkan Email" name="email" required value="{{ old('email') }} ">
-                    @error('email')
-                    <div class="invalid-feedback">  
-                        {{ $message }}
-                    </div>
-                    @enderror
-                  </div>
-                  <div class="form-group">
-                    <label for="nomor_telepon">Nomor Telepon</label>
-                    <input type="nomor_telepon" class="form-control @error('nomor_telepon') is-invalid @enderror" id="nomor_telepon" placeholder="Masukkan Nomor Telepon" name="nomor_telepon" required value="{{ old('nomor_telepon') }}" placeholder="Masukkan Nomor Telepon">
-                    @error('nomor_telepon')
-                    <div class="invalid-feedback">  
-                        {{ $message }}
-                    </div>
-                    @enderror
-                  </div>
-                  <div class="form-group">
-                    <label for="jenis_kelamin">Jenis Kelamin</label><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <input class="form-check-input @error('jenis_kelamin') is-invalid @enderror" type="radio" name="jenis_kelamin" id="jenis_kelamin" value="Laki-Laki" required>
-                      <label class="form-check-label me-5 ms-1" for="Laki-Laki"> Laki-Laki</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                                          
-                      <input class="form-check-input @error('jenis_kelamin') is-invalid @enderror" type="radio" name="jenis_kelamin" id="jenis_kelamin" value="Perempuan" required>
-                      <label class="form-check-label ms-1" for="Perempuan"> Perempuan</label>   
-                      @error('jenis_kelamin')
-                        <div class="invalid-feedback">  
-                          {{ $message }}
-                        </div>
-                      @enderror 
-                  </div>
-                  <div class="form-group">
-                    <label for="alamat">Alamat</label>
-                    <textarea class="form-control @error('alamat') is-invalid @enderror" name="alamat" id="alamat" rows="3" required value="{{ old('alamat') }}" placeholder="Masukkan Alamat"></textarea>
-                      @error('alamat')
-                          <div class="invalid-feedback">  
-                            {{ $message }}
-                          </div>
-                      @enderror
-                  </div>
-                  <div class="form-group">
-                    <label for="tanggal_lahir">Tanggal Lahir</label>
-                    <input type="datetime-local" class="form-control @error('tanggal_lahir') is-invalid @enderror" name="tanggal_lahir" id="tanggal_lahir" required>
-                    @error('tanggal_lahir')
-                      <div class="invalid-feedback">  
-                        {{ $message }}
-                      </div>
-                    @enderror
-                  </div>
-                  <!-- <div class="form-group">
-                    <label for="exampleInputFile">File input</label>
-                    <div class="input-group">
-                      <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="exampleInputFile">
-                        <label class="custom-file-label" for="exampleInputFile">Choose file</label>
-                      </div>
-                      <div class="input-group-append">
-                        <span class="input-group-text">Upload</span>
-                      </div>
-                    </div>
-                  </div> -->
-                  <!-- <div class="form-check">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                  </div> -->
-                </div>
-                <!-- /.card-body -->
+@section('isi')
+<div class="col-12">
+      @if(session()->has('success'))
+      <div class="alert alert-success alert-dismissible fade show" role="alert">
+        {{ session('success') }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+      @endif
+</div>
 
-                <div class="card-footer">
-                  <button type="submit" class="btn btn-primary">Submit</button>
-                </div>
-              </form>
-            </div>
-            <!-- /.card -->
+<div class="card">
+        <div class="card-header">
+          <h3 class="card-title">Calon Penghuni Asrama</h3>
 
+          <div class="card-tools">
+            <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+              <i class="fas fa-minus"></i>
+            </button>            
+          </div>
+        </div>
 
-<!-- jQuery -->
-<script src="../../plugins/jquery/jquery.min.js"></script>
-<!-- Bootstrap 4 -->
-<script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-<!-- bs-custom-file-input -->
-<script src="../../plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
-<!-- AdminLTE App -->
-<script src="../../dist/js/adminlte.min.js"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="../../dist/js/demo.js"></script>
-<!-- Page specific script -->
-<script>
-$(function () {
-  bsCustomFileInput.init();
-});
-</script>
-</body>
-</html>
-
+        <a href="/calon/create" class="btn btn-primary">Tambah Calon Penghuni</a>
+        <table class="table table-striped table-sm">
+          <thead>
+            <tr>
+              <th scope="col">No.</th>
+              <th scope="col">Nama</th>
+              <th scope="col">Nama Pengguna</th>
+              <th scope="col">Email</th>
+              <th scope="col">Nomor Telepon</th>
+              <th scope="col">Jenis Kelamin</th>
+              <th scope="col">Alamat</th>
+              <th scope="col">Tanggal Lahir</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+          @foreach ($calonPenghuni as $calonPenghunis)
+            <tr>
+              <td>{{ $loop->iteration }}</td>
+              <td>{{ $calonPenghunis->name }}</td>
+              <td>{{ $calonPenghunis->username }}</td>
+              <td>{{ $calonPenghunis->email }}</td>
+              <td>{{ $calonPenghunis->nomor_telepon }}</td>
+              <td>{{ $calonPenghunis->jenis_kelamin }}</td>
+              <td>{{ $calonPenghunis->alamat }}</td>              
+              <td>{{ dateID($calonPenghunis->tanggal_lahir) }}</td>          
+              <td>
+                <a href="/calonPenghuni/{{ $calonPenghunis->name }}" class="badge bg-info"><i class="fas fa-eye"></i></a>
+                <a href="" class="badge bg-warning"><i class="fas fa-edit"></i></i></a> 
+                <form action="/calonPenghuni/{{ $calonPenghunis->name }}" method="post" class="d-inline">
+                  @method('delete')
+                  @csrf
+                  <button class="badge bg-danger border-0" onclick="return confirm('Yakin Menghapus?')">
+                    <i class="fas fa-trash"></i>
+                  </button>
+                </form>
+              </td>
+            </tr>
+            @endforeach
+          </tbody>
+        </table>
+      </div>
+</div>
 @endsection
+

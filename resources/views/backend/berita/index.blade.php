@@ -21,7 +21,7 @@
           </div>
         </div>
 
-        <a href="/berita/create" class="btn btn-primary">Tambah Berita</a>
+        <a href="/backend/berita/create" class="btn btn-primary">Tambah Berita</a>
         <table class="table table-striped table-sm">
           <thead>
             <tr>
@@ -36,7 +36,28 @@
             </tr>
           </thead>
           <tbody>
-            
+          @foreach ($berita as $beritas)
+            <tr>
+              <td>{{ $loop->iteration }}</td>
+              <td>{{ $beritas->slug }}</td>
+              <td>{{ $beritas->judul }}</td>
+              <td>{{ dateID($beritas->tanggal) }}</td>          
+              <td>{{ $beritas->gambar }}</td>
+              <td>{{ $beritas->kutipan }}</td>
+              <td>{{ $beritas->isi }}</td>                            
+              <td>
+                <a href="/berita/{{ $beritas->name }}" class="badge bg-info"><i class="fas fa-eye"></i></a>
+                <a href="" class="badge bg-warning"><i class="fas fa-edit"></i></i></a> 
+                <form action="/berita/{{ $beritas->name }}" method="post" class="d-inline">
+                  @method('delete')
+                  @csrf
+                  <button class="badge bg-danger border-0" onclick="return confirm('Yakin Menghapus?')">
+                    <i class="fas fa-trash"></i>
+                  </button>
+                </form>
+              </td>
+            </tr>
+            @endforeach
           </tbody>
         </table>
       </div>
