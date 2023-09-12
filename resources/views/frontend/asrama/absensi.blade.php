@@ -21,7 +21,7 @@
         <div class="container">
             <div class="row">
                 <div class="datadiri col-md-12 mt-4">
-                  <div class="col-4">
+                  <div class="col-12">
                     @if(session()->has('success'))
                     <div class="alert alert-success alert-dismissible fade show mt-3" role="alert">
                       {{ session('success') }}
@@ -36,7 +36,7 @@
                     </div>
                     @endif
                   </div>                  
-                  <form class="row g-3" method="post" action="/absensi">
+                  <form class="row g-3" method="post" action="/asrama/absensi">
                     @csrf
                     <div class="col-6">
                       <label for="inputNama" class="form-label">Nama Lengkap</label>
@@ -81,7 +81,7 @@
                     </div>
                     <div class="col-6">
                       <label for="inputNama" class="form-label">Jam Keluar</label>
-                      <input type="text" name="phone" class="form-control @error('jam_keluar') is-invalid @enderror" id="jam_keluar" placeholder="" required value="{{ old('jam_keluar') }}">
+                      <input type="text" name="jam_keluar" class="form-control @error('jam_keluar') is-invalid @enderror" id="jam_keluar" placeholder="" required value="{{ old('jam_keluar') }}">
                       @error('jam_keluar')
                           <div class="invalid-feedback">  
                             {{ $message }}

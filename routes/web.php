@@ -63,14 +63,14 @@ Route::get('/capeg/sejarah', [SejarahCapegController::class, 'index'])->name('se
 Route::get('/capeg/tatatertib', [TatatertibCapegController::class, 'index'])->name('tatatertib');
 Route::get('/capeg/peta', [PetaCapegController::class, 'index'])->name('peta');
 Route::get('/capeg/berita', [BritaController::class, 'index']);
-Route::get('/capeg/berita/{brita:slug}', [BritaController::class, 'show']);
+Route::get('/informasi/berita/{brita:slug}', [BritaController::class, 'show']);
 Route::get('/capeg/pengumuman', [PengumumanController::class, 'index']);
-Route::get('/capeg/pengumuman/{slug}', [PengumumanController::class, 'show']);
+Route::get('/informasi/pengumuman/{pengumuman:slug}', [PengumumanController::class, 'show']);
 
 Route::get('/frontend/berita', [BeritaController::class, 'index']);
-Route::get('/frontend/berita/{brita:slug}', [BeritaController::class, 'show']);
+Route::get('/informasi/berita/{brita:slug}', [BeritaController::class, 'show']);
 Route::get('/frontend/pengumuman', [PengumumnController::class, 'index']);
-Route::get('/frontend/pengumuman/{slug}', [PengumumnController::class, 'show']);
+Route::get('/informasi/pengumuman/{pengumuman:slug}', [PengumumnController::class, 'show']);
 
 
 Route::get('/sejarah', [SejarahController::class, 'index'])->name('sejarah');
@@ -87,8 +87,8 @@ Route::get('berita/{brita:slug}', [BritaController::class, 'show']);
 Route::get('/pengumuman', [PengumumanController::class, 'index']);
 Route::get('/pengumuman/{slug}', [PengumumanController::class, 'show']);
 
-Route::get('/frontend/absensi', [AbsensiController::class, 'index'])->middleware('auth');;
-Route::post('/frontend/absensi', [AbsensiController::class, 'store'])->middleware('auth');;
+Route::get('/asrama/absensi', [AbsensiController::class, 'index'])->middleware('auth');;
+Route::post('/asrama/absensi', [AbsensiController::class, 'store'])->middleware('auth');;
 
 // Route::get('login', [LoginController::class, 'index'])->name('login');
 
@@ -108,6 +108,7 @@ Route::group(['middleware' => ['auth']], function(){
        Route::resource('/backend/pengumuman',DashboardPengumumanController::class);
        Route::resource('/absensi',DashboardAbsensiController::class);
        Route::resource('/kamar',DashboardKamarController::class);
+    //    Route::get('/penghuni', [DashboardCapegController::class, 'deletedPenghuni']);
     });
 
     Route::group(['middleware' => ['cekUserLogin:2']], function(){

@@ -41,7 +41,7 @@
 
     {{-- My Style --}}
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="/../css/style.css">
     <link rel="stylesheet" href="css/masuk.css">
     <link rel="stylesheet" href="css/responsive.css">
     @stack('style')
@@ -79,8 +79,8 @@
                   Informasi
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="frontend/berita">Berita</a></li>  
-                  <li><a class="dropdown-item" href="frontend/pengumuman">Pengumuman</a></li>
+                  <li><a class="dropdown-item" href="/frontend/berita">Berita</a></li>  
+                  <li><a class="dropdown-item" href="/frontend/pengumuman">Pengumuman</a></li>
                   <li><a class="dropdown-item" href="/peta">Peta Lokasi</a></li>                
                 </ul>
               </li>
@@ -90,7 +90,7 @@
                 </a>
                 <ul class="dropdown-menu">
                   <li><a class="dropdown-item" href="/datakamar">Data Kamar</a></li>
-                  <li><a class="dropdown-item" href="frontend/absensi">Absensi</a></li>                 
+                  <li><a class="dropdown-item" href="/asrama/absensi">Absensi</a></li>                 
                 </ul>
               </li>
               <!-- <li class="nav-item dropdown">

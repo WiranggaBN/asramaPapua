@@ -33,6 +33,12 @@
               <th scope="col">Jenis Kelamin</th>
               <th scope="col">Alamat</th>
               <th scope="col">Tanggal Lahir</th>
+              <th scope="col">Nama Ayah</th>
+              <th scope="col">Nama Ibu</th>              
+              <th scope="col">Pekerjaan Ayah</th>
+              <th scope="col">Pekerjaan Ibu</th>              
+              <th scope="col">Tanggal Lahir Ayah</th>
+              <th scope="col">Tanggal Lahir Ibu</th>
               <th scope="col">Action</th>
             </tr>
           </thead>
@@ -46,15 +52,21 @@
               <td>{{ $calonPenghunis->nomor_telepon }}</td>
               <td>{{ $calonPenghunis->jenis_kelamin }}</td>
               <td>{{ $calonPenghunis->alamat }}</td>              
-              <td>{{ dateID($calonPenghunis->tanggal_lahir) }}</td>          
+              <td>{{ dateID($calonPenghunis->tanggal_lahir) }}</td>    
+              <td>{{ $calonPenghunis->nama_ayah }}</td>
+              <td>{{ $calonPenghunis->nama_ibu }}</td>                            
+              <td>{{ $calonPenghunis->pekerjaan_ayah }}</td>
+              <td>{{ $calonPenghunis->pekerjaan_ibu }}</td>              
+              <td>{{ dateID($calonPenghunis->tanggal_lahir_ayah) }}</td>          
+              <td>{{ dateID($calonPenghunis->tanggal_lahir_ibu) }}</td>           
               <td>
-                <a href="/calonPenghuni/{{ $calonPenghunis->name }}" class="badge bg-info"><i class="fas fa-eye"></i></a>
+                <!-- <a href="/calonPenghuni/{{ $calonPenghunis->name }}" class="badge bg-info"><i class="fas fa-eye"></i></a> -->
                 <a href="" class="badge bg-warning"><i class="fas fa-edit"></i></i></a> 
                 <form action="/calonPenghuni/{{ $calonPenghunis->name }}" method="post" class="d-inline">
-                  @method('delete')
+                  @method('deletedPenghuni')
                   @csrf
-                  <button class="badge bg-danger border-0" onclick="return confirm('Yakin Menghapus?')">
-                    <i class="fas fa-trash"></i>
+                  <button class="badge bg-success border-0" onclick="return confirm('Yakin Menghapus?')">
+                    <i class="fas fa-check"></i>
                   </button>
                 </form>
               </td>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\CalonPenghuni;
+use App\Models\Penghuni;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -41,7 +42,13 @@ class DashboardCapegController extends Controller
             'nomor_telepon' => 'required',
             'jenis_kelamin' => 'required',
             'alamat' => 'required',
-            'tanggal_lahir' => 'required'
+            'tanggal_lahir' => 'required',
+            'nama_ayah' => 'required',
+            'nama_ibu' => 'required',                        
+            'pekerjaan_ayah' => 'required',
+            'pekerjaan_ibu' => 'required',                        
+            'tanggal_lahir_ayah' => 'required',
+            'tanggal_lahir_ibu' => 'required'
         ]);
 
         CalonPenghuni::create($validatedData);
@@ -81,7 +88,13 @@ class DashboardCapegController extends Controller
             'nomor_telepon' => 'required',
             'jenis_kelamin' => 'required',
             'alamat' => 'required',
-            'tanggal_lahir' => 'required'
+            'tanggal_lahir' => 'required',
+            'nama_ayah' => 'required',
+            'nama_ibu' => 'required',                        
+            'pekerjaan_ayah' => 'required',
+            'pekerjaan_ibu' => 'required',                        
+            'tanggal_lahir_ayah' => 'required',
+            'tanggal_lahir_ibu' => 'required'
         ];
 
         // if($request->theme != $penghuni->theme) {
@@ -104,4 +117,13 @@ class DashboardCapegController extends Controller
         CalonPenghuni::destroy($calonPenghuni->id);
         return redirect('/calon')->with('success', 'Berhasil Menghapus Calon Penghuni!');
     }
+
+    // public function deletedPenghuni() 
+    // {
+    //     $deletedPenghuni = Penghuni::all()->latest()->when(request()->q, function($deletedPenghuni) {
+    //         $deletedPenghuni = $deletedPenghuni->where('name', 'like', '%'. request()->q . '%');
+    //     })->paginate(10);        
+        
+    //     return view('admin.penghuni.index', ['penghunis' => $deletedPenghuni]);        
+    // }
 }

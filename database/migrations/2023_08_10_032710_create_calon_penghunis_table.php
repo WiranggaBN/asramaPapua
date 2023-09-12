@@ -20,6 +20,12 @@ return new class extends Migration
             $table->string('jenis_kelamin')->nullable();
             $table->string('alamat')->nullable();
             $table->dateTime('tanggal_lahir')->nullable();
+            $table->string('nama_ayah');
+            $table->string('nama_ibu');                    
+            $table->string('pekerjaan_ayah');
+            $table->string('pekerjaan_ibu');            
+            $table->dateTime('tanggal_lahir_ayah');
+            $table->dateTime('tanggal_lahir_ibu');
             $table->timestamp('published_at')->nullable();
             $table->timestamps();
         });

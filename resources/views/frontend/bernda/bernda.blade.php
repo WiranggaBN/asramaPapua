@@ -44,31 +44,32 @@
   <div class="container">
     <div class="row">      
     </div>
-    <div class="row mt-5">
+    <div class="row mt-4">
+      <h2 class="text-dark text-center">Budaya Asrama Papua</h2>
       <div class="col-md-4 text-center">
         <div class="card-keep">          
           <a href="#" class="text-decoration-none">
-          <h3 class="mt-4">Telusuri</h3>
+          <h3 class="mt-4"><i class="icn fa fa-users"></i></h3>
           </a>
-          <p class="mt-3">Informasi Untuk Calon Penghuni Asrama</p>
+          <p class="mt-3">Berbaik sangka, senyum, bekerja sama, dan musyawarah.</p>
         </div>
       </div>
 
       <div class="col-md-4 text-center">
         <div class="card-keep">          
           <a href="#" class="text-decoration-none">
-          <h3 class="mt-4">Telusuri</h3>
+          <h3 class="mt-4"><i class="icn fa fa-tachometer"></i></h3>
           </a>
-          <p class="mt-3">Informasi Untuk Calon Penghuni Asrama</p>
+          <p class="mt-3">Disiplin waktu dan antri</p>
         </div>
       </div>
 
       <div class="col-md-4 text-center">
         <div class="card-keep">          
           <a href="#" class="text-decoration-none">
-          <h3 class="mt-4">Telusuri</h3>
+          <h3 class="mt-4"><i class="icn fa fa-recycle"></i></h3>
           </a>
-          <p class="mt-3">Informasi untuk calon penghuni asrama.</p>
+          <p class="mt-3">Memungut, memilah, dan memanfaatkan sampah.</p>
         </div>
       </div>
 
@@ -90,12 +91,12 @@
       <div class="col-md-4 text-center">
         <div class="card-berit">
           <div class="position-relative mx-auto">
-            <a href="/doadanpuasa">
+            <a href="#">
             <img src="/image/1.jpg" alt=""
             class="position-absolute top-50 start-50 translate-middle">
             </a>
           </div>
-          <a href="/doadanpuasa" class="text-decoration-none">
+          <a href="#" class="text-decoration-none">
           <h4 class="mt-4">Serah Terima Pemanfaatan, Rusun Siap Dihuni</h4>
           </a>
           <p class="mt-3">Sudah siap dihuni, fasilitas sudah lengkap...</p>
@@ -105,12 +106,12 @@
       <div class="col-md-4 text-center">
         <div class="card-berit">
           <div class="position-relative mx-auto">
-            <a href="/doadanpuasa">
+            <a href="#">
             <img src="/image/2.jpg" alt=""
             class="position-absolute top-50 start-50 translate-middle">
             </a>
           </div>
-          <a href="/doadanpuasa" class="text-decoration-none">
+          <a href="#" class="text-decoration-none">
           <h4 class="mt-4">Hasil Penetapan Calon Penghuni Asrama Papua Tahun 2023</h4>
           </a>
           <p class="mt-3">Bersama ini diumumkan hasil penetapan calon penghuni...</p>
@@ -120,12 +121,12 @@
       <div class="col-md-4 text-center">
         <div class="card-berit">
           <div class="position-relative mx-auto">
-            <a href="/doadanpuasa">
+            <a href="#">
             <img src="/image/3.jpg" alt=""
             class="position-absolute top-50 start-50 translate-middle">
             </a>
           </div>
-          <a href="/doadanpuasa" class="text-decoration-none">
+          <a href="#" class="text-decoration-none">
           <h4 class="mt-4">Disosialisasikan, Rusun Segera Dibangun</h4>
           </a>
           <p class="mt-3">Asrama Papua mendapatkan anggaran...</p>

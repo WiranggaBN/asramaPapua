@@ -39,7 +39,7 @@
               <p class="text-center"><small>{{ dateID($berita[0]->tanggal) }}</small></p>
               <p class="card-text">{{ $berita[0]->kutipan }}</p>
               <p class="card-text"><small class="text-muted">Last updated {{ $berita[0]->created_at->diffForHumans() }}</small></p>
-              <a href="/brita/{{ $berita[0]->slug }}" class="text-decoration-none btn text-light"> Baca Selengkapnya</a>
+              <a href="/informasi/berita/{{ $berita[0]->slug }}" class="text-decoration-none btn text-light"> Baca Selengkapnya</a>
             </div>
           </div>  
           @else

@@ -19,7 +19,7 @@ class PengumumanController extends Controller
 
     public function show(Pengumuman $pengumuman)
     {
-        return view('capeg.informasi.pengumuman', [
+        return view('capeg.informasi.pengumumn', [
             "title" => "Pengumuman",
             'pengumuman' => $pengumuman
         ]);

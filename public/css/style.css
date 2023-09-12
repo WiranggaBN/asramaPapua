@@ -79,7 +79,7 @@ body {
 
 #keep {
     background-color: #E5E5E5;
-    height: 290px;
+    height: 330px;
     margin-right: -116.7px;
     color: #fff;
     margin-left: -150px;
@@ -548,6 +548,11 @@ h2 {
 #sejarah h4 {
     color: #fff;
     padding: 150px 0px;
+}
+
+.gambar-sejarah {
+    width: 500px;
+    height: 330px;
 }
 
 /* Tata Tertib */

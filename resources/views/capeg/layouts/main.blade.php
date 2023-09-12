@@ -30,7 +30,7 @@
     
     {{-- My Style --}}
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="/../css/style.css">
     <link rel="stylesheet" href="css/masuk.css">
     <link rel="stylesheet" href="css/responsive.css">
     @stack('style')

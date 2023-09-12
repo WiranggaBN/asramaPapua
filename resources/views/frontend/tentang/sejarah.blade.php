@@ -23,10 +23,14 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">                  
-                    <p>
-                    Asrama papua yang berlokasi di jalan Tegal Wareng 3, Candi, Kecamatang Candisari, Kota Semarang Jawa Tengah ini sudah berdiri sekitar 60 tahun tepatnya pada tahun 1963. Saat ini asrama Papua dibina oleh seorang tokoh yang sangat berperan dalam membina mahasiswa Papua yang ada di Semarang bernama Sam Wakum. Sam Wakum adalah orang asli papua yang berdomisili di Semarang.  Sam Wakum sudah mengelola asrama Papua sejak tahun 90-an. Sam Wakum pun menjelaskan awal terbentuknya asrama Papua ini merupakan pemberian atau hadiah dari almarhum Presiden RI Soekarno waktu integrasi Irian Barat pada tahun 1963. 
+                    
+                    <p><img src="/image/sejarah.jpeg" class="gambar-sejarah me-3" align="left">
+                    Awal terbentuknya Asrama papua yang berlokasi di jalan Tegal Wareng 3, Candi, Kecamatan Candisari, Kota Semarang Jawa Tengah ini merupakan pemberian atau hadiah dari almarhum Presiden RI Soekarno waktu integrasi Irian Barat pada tahun 1963 yang artinya asrama Papua sudah berdiri sekitar 60 tahun. 
                     </p>
-                    <p>Asrama Papua yang bermukim di Semarang saling berkomitmen antara warga dan penghuni asrama Papua bahwa asrama Papua merupakan bagian integral dari bangsa dan negara yang menjadikan asrama Papua sebagai nilai historis yang menguatkan komitmen kebersamaan dan persaudaraan dalam Bhinneka Tunggal Ika.
+                    <p>Dalam perjalanannya, asrama Papua sudah sangat membantu mahasiswa yang berasal dari Papua yang berdomisili di Semarang untuk mendapatkan fasilitas untuk tinggal dalam masa perantauan. Saat ini asrama Papua dibina oleh seorang tokoh yang sangat berperan dalam membina mahasiswa Papua yang ada di Semarang bernama Sam Wakum. Sam Wakum adalah orang asli papua yang berdomisili di Semarang.  Sam Wakum sudah mengelola asrama Papua sejak tahun 90-an.
+                    </p>
+                    <p>
+                    Asrama Papua yang bermukim di Semarang saling berkomitmen antara warga dan penghuni asrama Papua bahwa asrama Papua merupakan bagian integral dari bangsa dan negara yang menjadikan asrama Papua sebagai nilai historis yang menguatkan komitmen kebersamaan dan persaudaraan dalam Bhinneka Tunggal Ika.
                     </p>
                 </div>
             </div>

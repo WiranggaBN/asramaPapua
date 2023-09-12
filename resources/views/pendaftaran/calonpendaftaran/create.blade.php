@@ -1,4 +1,4 @@
-@extends('backend.layouts.main')
+@extends('pendaftaran.layouts.main')
 
 @section('isi')
 <div class="col-12">
@@ -33,6 +33,12 @@
               <th scope="col">Jenis Kelamin</th>
               <th scope="col">Alamat</th>
               <th scope="col">Tanggal Lahir</th>
+              <th scope="col">Nama Ayah</th>
+              <th scope="col">Nama Ibu</th>              
+              <th scope="col">Pekerjaan Ayah</th>
+              <th scope="col">Pekerjaan Ibu</th>              
+              <th scope="col">Tanggal Lahir Ayah</th>
+              <th scope="col">Tanggal Lahir Ibu</th>
               <th scope="col">Action</th>
             </tr>
           </thead>
@@ -46,7 +52,13 @@
               <td>{{ $calonPenghunis->nomor_telepon }}</td>
               <td>{{ $calonPenghunis->jenis_kelamin }}</td>
               <td>{{ $calonPenghunis->alamat }}</td>              
-              <td>{{ dateID($calonPenghunis->tanggal_lahir) }}</td>          
+              <td>{{ dateID($calonPenghunis->tanggal_lahir) }}</td>     
+              <td>{{ $calonPenghunis->nama_ayah }}</td>
+              <td>{{ $calonPenghunis->nama_ibu }}</td>                            
+              <td>{{ $calonPenghunis->pekerjaan_ayah }}</td>
+              <td>{{ $calonPenghunis->pekerjaan_ibu }}</td>              
+              <td>{{ dateID($calonPenghunis->tanggal_lahir_ayah) }}</td>          
+              <td>{{ dateID($calonPenghunis->tanggal_lahir_ibu) }}</td>        
               <td>
                 <a href="/calonPenghuni/{{ $calonPenghunis->name }}" class="badge bg-info"><i class="fas fa-eye"></i></a>
                 <a href="" class="badge bg-warning"><i class="fas fa-edit"></i></i></a> 

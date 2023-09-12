@@ -27,7 +27,7 @@ class AbsensiController extends Controller
             'kamar_id' => 'required',
             'tanggal_keluar' => 'required',
             'tanggal_masuk' => 'required',
-            'jam_keluar' => 'required',
+            'jam_keluar' => '',
             'jam_masuk' => 'required',
             'alasan' => 'required',
             'keterangan' => 'required',
@@ -35,6 +35,6 @@ class AbsensiController extends Controller
 
         Absensi::create($validatedData);
 
-        return redirect('/absensi')->with('success', 'Berhasil!!');
+        return redirect('/asrama/absensi')->with('success', 'Berhasil!!');
     }
 }

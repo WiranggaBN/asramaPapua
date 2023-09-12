@@ -12,14 +12,14 @@ class BritaController extends Controller
     {
         return view('capeg.informasi.brita', [
             "title" => "Berita",
-            "berita" => Brita::latest()->get(),
+            "brita" => Brita::latest()->get(),
             'user' => Auth::user()
         ]);
     }
 
     public function show(Brita $brita)
     {
-        return view('capeg.informasi.brita', [
+        return view('capeg.informasi.berita', [
             "title" => "Berita",
             "brita" => $brita
         ]);

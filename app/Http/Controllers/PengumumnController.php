@@ -19,7 +19,7 @@ class PengumumnController extends Controller
 
     public function show(Pengumuman $pengumuman)
     {
-        return view('frontend.informasi.pengumuman', [
+        return view('frontend.informasi.pengumumn', [
             "title" => "Pengumuman",
             'pengumuman' => $pengumuman
         ]);

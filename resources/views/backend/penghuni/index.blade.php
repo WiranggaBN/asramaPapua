@@ -32,6 +32,12 @@
               <th scope="col">Jenis Kelamin</th>
               <th scope="col">Alamat</th>
               <th scope="col">Tanggal Lahir</th>
+              <th scope="col">Nama Ayah</th>
+              <th scope="col">Nama Ibu</th>              
+              <th scope="col">Pekerjaan Ayah</th>
+              <th scope="col">Pekerjaan Ibu</th>              
+              <th scope="col">Tanggal Lahir Ayah</th>
+              <th scope="col">Tanggal Lahir Ibu</th>
               <th scope="col">Action</th>
             </tr>
           </thead>
@@ -44,7 +50,13 @@
               <td>{{ $penghunis->nomor_telepon }}</td>
               <td>{{ $penghunis->jenis_kelamin }}</td>
               <td>{{ $penghunis->alamat }}</td>              
-              <td>{{ dateID($penghunis->tanggal_lahir) }}</td>          
+              <td>{{ dateID($penghunis->tanggal_lahir) }}</td>    
+              <td>{{ $penghunis->nama_ayah }}</td>
+              <td>{{ $penghunis->nama_ibu }}</td>                            
+              <td>{{ $penghunis->pekerjaan_ayah }}</td>
+              <td>{{ $penghunis->pekerjaan_ibu }}</td>              
+              <td>{{ dateID($penghunis->tanggal_lahir_ayah) }}</td>          
+              <td>{{ dateID($penghunis->tanggal_lahir_ibu) }}</td>           
               <td>
                 <a href="/penghuni/{{ $penghunis->name }}" class="badge bg-info"><i class="fas fa-eye"></i></a>
                 <a href="" class="badge bg-warning"><i class="fas fa-edit"></i></i></a> 

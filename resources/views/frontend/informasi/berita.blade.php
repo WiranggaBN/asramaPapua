@@ -16,7 +16,7 @@
 {{-- hero section --}}
 
 {{-- Content Section --}}
-<section id="content-sejarah" >
+<section id="content-berita" >
   <div class="container-fluid">
     <div class="container">
       <div class="row">
@@ -24,27 +24,15 @@
         
         <div class="mt-3">
           <h3 class="text-dark text-decoration-none">
-            {{ $berita->judul }}
+          {{ $brita->judul }}
           </h3>
-          <p><small>{{ $berita->date }}</small></p>
-          <p>Ayat Pokok : <b> {{ $berita->main_verse }} </b></p>
-          <p>Pembicara : <b> {{ $berita->speaker }} </b></p>
-          <hr>
-          {{-- <img src="https://source.unsplash.com/1200x300?{{ $berita->excerpt }}" class="card-img-top mb-2" alt="{{ $berita->slug }}"> --}}
+          <p><small>{{ dateID($brita->tanggal) }}</small></p>          
+          <img src="https://source.unsplash.com/1200x300?{{ $brita->kutipan }}" class="card-img-top mb-2" alt="{{ $brita->slug }}"> 
           
-          {!! $berita->body !!}
+          {!! $brita->isi !!}
         </div>
         
-        {{-- </div>
-        <div class="mt-5">
-          <h3 class="text-dark text-decoration-none">
-            {{ $materipengajaran->title }}
-          </h3>
-          <hr>
-          <img src="../kpk6.jpg" alt="" class="gambarsatu mt-2"><br>
-          <p class="mt-2 text-center">{{ $materipengajaran->title_image }}</p>
-          {!! $materipengajaran->body !!}
-        </div> --}}      
+        
       </div>
     </div>
   </div>

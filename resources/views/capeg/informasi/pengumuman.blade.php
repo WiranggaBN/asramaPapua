@@ -7,7 +7,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12 text-center">
-                    <h4>pengumuman</h4>
+                    <h4>Pengumuman</h4>
                 </div>
             </div>
         </div>
@@ -39,7 +39,7 @@
               <p class="text-center"><small>{{ dateID($pengumuman[0]->tanggal) }}</small></p>
               <p class="card-text">{{ $pengumuman[0]->kutipan }}</p>
               <p class="card-text"><small class="text-muted">Last updated {{ $pengumuman[0]->created_at->diffForHumans() }}</small></p>
-              <a href="/brita/{{ $pengumuman[0]->slug }}" class="text-decoration-none btn text-light"> Baca Selengkapnya</a>
+              <a href="/informasi/pengumuman/{{ $pengumuman[0]->slug }}" class="text-decoration-none btn text-light"> Baca Selengkapnya</a>
             </div>
           </div>  
           @else
