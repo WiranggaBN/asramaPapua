@@ -10,16 +10,17 @@
             <!-- general form elements -->
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">Tambah Data Kamar</h3>
+                <h3 class="card-title">Ubah Data Kamar</h3>
               </div>
               <!-- /.card-header -->
               <!-- form start -->
               <form method="post" action="/kamar">
+              @method('put')
                 @csrf
                 <div class="card-body">
                 <div class="form-group">
                     <label for="nomor_kamar">Nomor Kamar</label>
-                    <input type="nomor_kamar" class="form-control @error('nomor_kamar') is-invalid @enderror" id="nomor_kamar" placeholder="Masukkan Nomor Kamar" name="nomor_kamar" autofocus required value="{{ old('nomor_kamar') }} ">
+                    <input type="nomor_kamar" class="form-control @error('nomor_kamar') is-invalid @enderror" id="nomor_kamar" placeholder="Masukkan Nomor Kamar" name="nomor_kamar" autofocus required value="{{ old('nomor_kamar', $kamar->nomor_kamar) }}">
                     @error('nomor_kamar')
                     <div class="invalid-feedback">  
                         {{ $message }}

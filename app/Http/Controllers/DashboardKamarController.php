@@ -63,9 +63,9 @@ class DashboardKamarController extends Controller
      */
     public function edit(Kamar $kamar)
     {
-        return view('backend.kamar.edit', [
-            'kamar' => $kamar
-        ]);
+        $user = Auth::user();
+        $penghunis = Penghuni::latest()->get();    
+        return view('backend.kamar.edit', compact('penghunis', 'user'));
     }
 
     /**

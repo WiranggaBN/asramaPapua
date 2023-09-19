@@ -46,9 +46,9 @@
               <td>{{ $kamars->penghuni->name}}</td>
               <td>{{ $kamars->status_kamar }}</td>                                   
               <td>
-                <a href="/kamar/{{ $kamars->name }}" class="badge bg-info"><i class="fas fa-eye"></i></a>
-                <a href="" class="badge bg-warning"><i class="fas fa-edit"></i></i></a> 
-                <form action="/kamar/{{ $kamars->name }}" method="post" class="d-inline">
+                <a href="/kamar/{{ $kamars->namakamar }}" class="badge bg-info"><i class="fas fa-eye"></i></a>
+                <a href="/kamar/{{ $kamars->namakamar }}/edit" class="badge bg-warning"><i class="fas fa-edit"></i></i></a> 
+                <form action="/kamar/{{ $kamars->namakamar }}" method="post" class="d-inline">
                   @method('delete')
                   @csrf
                   <button class="badge bg-danger border-0" onclick="return confirm('Yakin Menghapus?')">
