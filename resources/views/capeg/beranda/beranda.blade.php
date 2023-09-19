@@ -71,7 +71,7 @@
     <div class="row">
       <div class="col-12">
         <h2>
-          Berita Terbaru
+          Galeri
         </h2>      
       </div>
 
@@ -83,10 +83,7 @@
             class="position-absolute top-50 start-50 translate-middle">
             </a>
           </div>
-          <a href="#" class="text-decoration-none">
-          <h4 class="mt-4">Serah Terima Pemanfaatan, Rusun Siap Dihuni</h4>
-          </a>
-          <p class="mt-3">Sudah siap dihuni, fasilitas sudah lengkap...</p>
+          
         </div>
       </div> 
       
@@ -98,10 +95,7 @@
             class="position-absolute top-50 start-50 translate-middle">
             </a>
           </div>
-          <a href="#" class="text-decoration-none">
-          <h4 class="mt-4">Hasil Penetapan Calon Penghuni Asrama Papua Tahun 2023</h4>
-          </a>
-          <p class="mt-3">Bersama ini diumumkan hasil penetapan calon penghuni...</p>
+          
         </div>
       </div> 
 
@@ -113,10 +107,7 @@
             class="position-absolute top-50 start-50 translate-middle">
             </a>
           </div>
-          <a href="#" class="text-decoration-none">
-          <h4 class="mt-4">Disosialisasikan, Rusun Segera Dibangun</h4>
-          </a>
-          <p class="mt-3">Asrama Papua mendapatkan anggaran...</p>
+          
         </div>
       </div> 
       

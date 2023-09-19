@@ -63,12 +63,18 @@ class DashboardKamarController extends Controller
      */
     public function edit(Kamar $kamar)
     {
+<<<<<<< HEAD
         $penghunis = Penghuni::latest()->get();    
         return view('backend.kamar.edit', [
             'kamar' => $kamar,            
             'user' => Auth::user(),
             'penghuni' => $penghunis
         ]);
+=======
+        $user = Auth::user();
+        $penghunis = Penghuni::latest()->get();    
+        return view('backend.kamar.edit', compact('penghunis', 'user'));
+>>>>>>> 978a5a64ce7a2e640dc2a21f0c88f2e96a34f987
     }
 
     /**

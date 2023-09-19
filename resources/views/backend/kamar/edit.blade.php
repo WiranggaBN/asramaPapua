@@ -14,6 +14,7 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
+<<<<<<< HEAD
               <form method="post" action="/kamar/{{ $kamar->namakamar }}" enctype="multipart/form-data">
             @method('put')
             @csrf
@@ -21,6 +22,15 @@
                 <div class="form-group">
                     <label for="nomor_kamar">Nomor Kamar</label>
                     <input type="nomor_kamar" class="form-control @error('nomor_kamar') is-invalid @enderror" id="nomor_kamar" placeholder="Masukkan Nomor Kamar" name="nomor_kamar" autofocus required value="{{ old('nomor_kamar', $kamar->nomor_kamar) }} ">
+=======
+              <form method="post" action="/kamar">
+              @method('put')
+                @csrf
+                <div class="card-body">
+                <div class="form-group">
+                    <label for="nomor_kamar">Nomor Kamar</label>
+                    <input type="nomor_kamar" class="form-control @error('nomor_kamar') is-invalid @enderror" id="nomor_kamar" placeholder="Masukkan Nomor Kamar" name="nomor_kamar" autofocus required value="{{ old('nomor_kamar', $kamar->nomor_kamar) }}">
+>>>>>>> 978a5a64ce7a2e640dc2a21f0c88f2e96a34f987
                     @error('nomor_kamar')
                     <div class="invalid-feedback">  
                         {{ $message }}
