@@ -42,7 +42,7 @@
             <tr>
               <td>{{ $loop->iteration }}</td>
               <td>{{ $absensis->name }}</td>
-              <td>{{ $absensis->kamar->namakamar}}</td>
+              <td>{{ $absensis->kamar->namakamar ?? ''}}</td>
               <td>{{ dateID($absensis->tanggal_keluar) }}</td>          
               <td>{{ dateID($absensis->tanggal_masuk) }}</td>          
               <td>{{ $absensis->jam_keluar }} WIB</td>
