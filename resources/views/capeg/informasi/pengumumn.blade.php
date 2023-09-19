@@ -26,25 +26,13 @@
           <h3 class="text-dark text-decoration-none">
             {{ $pengumuman->judul }}
           </h3>
-          <p><small>{{ dateID($pengumuman->tanggal) }}</small></p>
-          <!-- <p>Ayat Pokok : <b> {{ $pengumuman->judul }} </b></p>
-          <p>Pembicara : <b> {{ $pengumuman->speaker }} </b></p> -->
+          <p><small>{{ dateID($pengumuman->tanggal) }}</small></p>          
           <hr>
-          <img src="https://source.unsplash.com/1200x300?{{ $pengumuman->kutipan }}" class="card-img-top mb-2" alt="{{ $pengumuman->slug }}"> 
+          <img src="{{ asset('storage/' . $pengumuman->gambar) }}" class="card-img-top" alt="...">
           
           {!! $pengumuman->isi !!}
         </div>
-        
-        <!-- </div>
-        <div class="mt-5">
-          <h3 class="text-dark text-decoration-none">
-            {{ $pengumuman->title }}
-          </h3>
-          <hr>
-          <img src="../kpk6.jpg" alt="" class="gambarsatu mt-2"><br>
-          <p class="mt-2 text-center">{{ $pengumuman->title_image }}</p>
-          {!! $pengumuman->body !!}
-        </div>    -->
+                
       </div>
     </div>
   </div>

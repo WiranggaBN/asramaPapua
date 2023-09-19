@@ -13,7 +13,7 @@ class Kamar extends Model
 
     public function getRouteKeyName()
     {
-        return 'nama_kamar';
+        return 'namakamar';
     }
 
     /**

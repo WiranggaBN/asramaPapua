@@ -39,13 +39,12 @@
               <p class="text-center"><small>{{ dateID($pengumuman[0]->tanggal) }}</small></p>
               <p class="card-text">{{ $pengumuman[0]->kutipan }}</p>
               <p class="card-text"><small class="text-muted">Last updated {{ $pengumuman[0]->created_at->diffForHumans() }}</small></p>
-              <a href="/informasi/pengumuman/{{ $pengumuman[0]->slug }}" class="text-decoration-none btn text-light"> Baca Selengkapnya</a>
+              <a href="informasi/pengumuman/{{ $pengumuman[0]->slug }}" class="text-decoration-none btn text-light"> Baca Selengkapnya</a>
             </div>
           </div>  
           @else
           <p class="card-text fs-4">Belum ada pengumuman.</p>
           @endif
-
           
           <div class="container">
             <div class="row">
@@ -61,7 +60,7 @@
                     <h5 class="card-title">{{ $pengumuman->judul }}</h5>
                     <p class="card-text">{{ $pengumuman->kutipan }}</p>
                     <p class="card-text"><small class="text-muted">Last updated {{ $pengumuman->created_at->diffForHumans() }}</small></p>
-                    <a href="/brita/{{ $pengumuman->slug }}" class="btn text-light">Baca Selengkapnya</a>
+                    <a href="capeg/informasi/pengumuman/{{ $pengumuman->slug }}" class="btn text-light">Baca Selengkapnya</a>
                   </div>
                 </div>
               </div>

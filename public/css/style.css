@@ -100,7 +100,7 @@ h2 {
     width: 100%;
     height: 200px;
     border-radius: 5px;
-    background-color: #14213D;
+    background-color: #040d21;
     padding-top: 40px;
     box-shadow: 0 0 7px 3px rgba(0, 0, 0, 0.05);
 
@@ -235,7 +235,7 @@ h2 {
 }
 
 .img-peta {
-    width: 1325px;
+    width: 1230px;
 }
 /* Peta */
 
@@ -479,7 +479,7 @@ h2 {
 }
 
 .footer-beranda {
-    width: 1350px;
+    width: 1240px;
     height: 240px;
     background: #000000;
 }

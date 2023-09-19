@@ -65,7 +65,7 @@ Route::get('/capeg/peta', [PetaCapegController::class, 'index'])->name('peta');
 Route::get('/capeg/berita', [BritaController::class, 'index']);
 Route::get('/informasi/berita/{brita:slug}', [BritaController::class, 'show']);
 Route::get('/capeg/pengumuman', [PengumumanController::class, 'index']);
-Route::get('/informasi/pengumuman/{pengumuman:slug}', [PengumumanController::class, 'show']);
+Route::get('capeg/informasi/pengumuman/{pengumuman:slug}', [PengumumanController::class, 'show']);
 
 Route::get('/frontend/berita', [BeritaController::class, 'index']);
 Route::get('/informasi/berita/{brita:slug}', [BeritaController::class, 'show']);

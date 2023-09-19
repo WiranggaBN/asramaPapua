@@ -37,7 +37,7 @@
               <td>{{ $pengumumans->kutipan }}</td>
               <td>{{ $pengumumans->isi }}</td>                            
               <td>
-                <a href="/pengumuman/{{ $pengumumans->name }}" class="badge bg-info"><i class="fas fa-eye"></i></a>
+                
                 <a href="" class="badge bg-warning"><i class="fas fa-edit"></i></i></a> 
                 <form action="/pengumuman/{{ $pengumumans->name }}" method="post" class="d-inline">
                   @method('delete')

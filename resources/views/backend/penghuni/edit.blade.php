@@ -1,4 +1,4 @@
-@extends('pendaftaran.layouts.main')
+@extends('backend.layouts.main')
 
 @section('isi') 
     <!-- Main content -->
@@ -10,11 +10,12 @@
             <!-- general form elements -->
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">Data Diri</h3>
+                <h3 class="card-title">Ubah Penghuni</h3>
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form method="post" action="/calonpendaftaran">
+              <form method="post" action="#" enctype="multipart/form-data">
+                @method('put')
                 @csrf
                 <div class="card-body">
                 <div class="form-group">
@@ -25,16 +26,7 @@
                         {{ $message }}
                     </div>
                     @enderror
-                </div>
-                <div class="form-group">
-                    <label for="username">Nama Pengguna</label>
-                    <input type="username" class="form-control @error('username') is-invalid @enderror" id="username" placeholder="Masukkan Nama Pengguna" name="username" autofocus required value="{{ old('username') }} ">
-                    @error('username')
-                    <div class="invalid-feedback">  
-                        {{ $message }}
-                    </div>
-                    @enderror
-                </div>
+                  </div>
                   <div class="form-group">
                     <label for="email">Email</label>
                     <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" placeholder="Masukkan Email" name="email" required value="{{ old('email') }} ">
@@ -160,12 +152,12 @@
                         {{ $message }}
                       </div>
                     @enderror
-                  </div>                  
+                  </div>
                 </div>
                 <!-- /.card-body -->
 
                 <div class="card-footer">
-                  <a href="/calonpendaftaran/create"><button type="submit" class="btn btn-primary">Submit</button></a>
+                  <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
               </form>
             </div>

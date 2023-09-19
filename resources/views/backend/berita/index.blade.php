@@ -46,9 +46,9 @@
               <td>{{ $beritas->kutipan }}</td>
               <td>{{ $beritas->isi }}</td>                            
               <td>
-                <a href="/berita/{{ $beritas->name }}" class="badge bg-info"><i class="fas fa-eye"></i></a>
+                
                 <a href="" class="badge bg-warning"><i class="fas fa-edit"></i></i></a> 
-                <form action="/berita/{{ $beritas->name }}" method="post" class="d-inline">
+                <form action="/berita/{{ $beritas->judul }}" method="post" class="d-inline">
                   @method('delete')
                   @csrf
                   <button class="badge bg-danger border-0" onclick="return confirm('Yakin Menghapus?')">

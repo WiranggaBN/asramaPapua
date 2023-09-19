@@ -33,7 +33,7 @@
             @endif
             </div>
             
-            {{-- <img src="https://source.unsplash.com/1200x300?spiritual" class="card-img-top" alt="{{ $brita[0]->slug }}"> --}}
+            
             <div class="card-body text-center">
               <h3 class="card-title"><a href="/brita/{{ $brita[0]->slug }}" class="text-decoration-none text-dark">{{ $brita[0]->judul }}</a></h3>
               <p class="text-center"><small>{{ dateID($brita[0]->tanggal) }}</small></p>

@@ -58,8 +58,8 @@
               <td>{{ dateID($penghunis->tanggal_lahir_ayah) }}</td>          
               <td>{{ dateID($penghunis->tanggal_lahir_ibu) }}</td>           
               <td>
-                <a href="/penghuni/{{ $penghunis->name }}" class="badge bg-info"><i class="fas fa-eye"></i></a>
-                <a href="" class="badge bg-warning"><i class="fas fa-edit"></i></i></a> 
+                
+                <a href="/penghuni/{{ $penghunis->name }}/edit" class="badge bg-warning"><i class="fas fa-edit"></i></i></a> 
                 <form action="/penghuni/{{ $penghunis->name }}" method="post" class="d-inline">
                   @method('delete')
                   @csrf
