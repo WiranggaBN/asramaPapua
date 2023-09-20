@@ -41,7 +41,7 @@ class DashboardKamarController extends Controller
             'namakamar' => 'required',
             'kapasitas_kamar' => 'required',
             'aset_kamar' => 'required',
-            'penghuni' => 'required',
+            'penghuni_id' => 'required',
             'status_kamar' => 'required',
         ]);
 
