@@ -43,14 +43,10 @@
               <td>{{ $kamars->namakamar }}</td>
               <td>{{ $kamars->kapasitas_kamar }}</td>
               <td>{{ $kamars->aset_kamar }}</td>
-              <td>{{ $kamars->penghuni->name ?? ''}}</td>
+              <td>{{ $kamars->penghuni}}</td>
               <td>{{ $kamars->status_kamar }}</td>                                   
               <td>
-<<<<<<< HEAD
                 
-=======
-                <a href="/kamar/{{ $kamars->namakamar }}" class="badge bg-info"><i class="fas fa-eye"></i></a>
->>>>>>> 978a5a64ce7a2e640dc2a21f0c88f2e96a34f987
                 <a href="/kamar/{{ $kamars->namakamar }}/edit" class="badge bg-warning"><i class="fas fa-edit"></i></i></a> 
                 <form action="/kamar/{{ $kamars->namakamar }}" method="post" class="d-inline">
                   @method('delete')

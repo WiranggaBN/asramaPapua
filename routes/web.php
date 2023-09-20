@@ -31,6 +31,7 @@ use App\Http\Controllers\DashboardKamarController;
 use App\Http\Controllers\LoginPendaftaranController;
 use App\Http\Controllers\RegisterPendaftaranController;
 use App\Http\Controllers\CalonPendaftaranController;
+use App\Http\Controllers\CetakAbsensiController;
 use App\Http\Controllers\OrangtuaPendaftaranController;
 use App\Http\Controllers\DashboardPendaftaranController;
 use App\Models\Pengumuman;
@@ -108,12 +109,15 @@ Route::group(['middleware' => ['auth']], function(){
        Route::resource('/backend/pengumuman',DashboardPengumumanController::class);
        Route::resource('/absensi',DashboardAbsensiController::class);
        Route::resource('/kamar',DashboardKamarController::class);
+       Route::get('backend/absensi/cetak', [CetakAbsensiController::class, 'cetak']);
     //    Route::get('/penghuni', [DashboardCapegController::class, 'deletedPenghuni']);
     });
 
     Route::group(['middleware' => ['cekUserLogin:2']], function(){
         Route::resource('beranda',LayoutPenghuniController::class);
     });
+
+    
 });
 
 // Route::get('give-permission-to-role', function () {

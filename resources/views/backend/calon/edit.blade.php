@@ -46,6 +46,15 @@
                     @enderror
                   </div>
                   <div class="form-group">
+                    <label for="nik">NIK</label>
+                    <input type="text" class="form-control @error('nik') is-invalid @enderror" id="nik"  name="nik" required value="{{ old('nik') }}" placeholder="Masukkan NIK">
+                    @error('nik')
+                    <div class="invalid-feedback">  
+                        {{ $message }}
+                    </div>
+                    @enderror
+                  </div> 
+                  <div class="form-group">
                     <label for="jenis_kelamin">Jenis Kelamin</label><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <input class="form-check-input @error('jenis_kelamin') is-invalid @enderror" type="radio" name="jenis_kelamin" id="jenis_kelamin" value="Laki-Laki" required>
                       <label class="form-check-label me-5 ms-1" for="Laki-Laki"> Laki-Laki</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                                          
@@ -77,7 +86,7 @@
                   </div>
                   <div class="form-group">
                     <label for="nama_ayah">Nama Ayah</label>
-                    <input type="text" class="form-control @error('nama_ayah') is-invalid @enderror" id="nama_ayah" placeholder="Masukkan Nama Ayah" name="nama_ayah" autofocus required value="{{ old('nama_ayah') }} ">
+                    <input type="text" class="form-control @error('nama_ayah') is-invalid @enderror" id="nama_ayah" placeholder="Masukkan Nama Ayah" name="nama_ayah" required value="{{ old('nama_ayah') }} ">
                     @error('nama_ayah')
                     <div class="invalid-feedback">  
                         {{ $message }}
@@ -92,7 +101,16 @@
                         {{ $message }}
                     </div>
                     @enderror
-                  </div>                                  
+                  </div>     
+                  <div class="form-group">
+                    <label for="telpon_ortu">Telpon Orangtua</label>
+                    <input type="text" class="form-control @error('telpon_ortu') is-invalid @enderror" id="telpon_ortu"  name="telpon_ortu" required value="{{ old('telpon_ortu') }}" placeholder="Masukkan Telpon Orang Tua">
+                    @error('telpon_ortu')
+                    <div class="invalid-feedback">  
+                        {{ $message }}
+                    </div>
+                    @enderror
+                  </div>                                
                   <div class="form-group">
                     <label for="pekerjaan_ayah">Pekerjaan Ayah</label>                    
                     <select type="text" class="form-select @error('pekerjaan_ayah') is-invalid @enderror" name="pekerjaan_ayah" id="pekerjaan_ayah" aria-label="Default select example" required >
@@ -136,23 +154,14 @@
                     @enderror
                   </div>                  
                   <div class="form-group">
-                    <label for="tanggal_lahir_ayah">Tanggal Lahir Ayah</label>
-                    <input type="datetime-local" class="form-control @error('tanggal_lahir_ayah') is-invalid @enderror" name="tanggal_lahir_ayah" id="tanggal_lahir_ayah" required>
-                    @error('tanggal_lahir_ayah')
-                      <div class="invalid-feedback">  
+                    <label for="alamat_ortu">Alamat Orang Tua</label>
+                    <input type="text" class="form-control @error('alamat_ortu') is-invalid @enderror" id="alamat_ortu"  name="alamat_ortu" required value="{{ old('alamat_ortu') }}" placeholder="Masukkan Alamat Orang Tua">
+                    @error('alamat_ortu')
+                    <div class="invalid-feedback">  
                         {{ $message }}
-                      </div>
+                    </div>
                     @enderror
-                  </div>
-                  <div class="form-group">
-                    <label for="tanggal_lahir_ibu">Tanggal Lahir Ibu</label>
-                    <input type="datetime-local" class="form-control @error('tanggal_lahir_ibu') is-invalid @enderror" name="tanggal_lahir_ibu" id="tanggal_lahir_ibu" required>
-                    @error('tanggal_lahir_ibu')
-                      <div class="invalid-feedback">  
-                        {{ $message }}
-                      </div>
-                    @enderror
-                  </div>
+                  </div> 
                 </div>
                 <!-- /.card-body -->
 

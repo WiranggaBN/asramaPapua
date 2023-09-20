@@ -55,14 +55,9 @@
                     @enderror
                 </div>
                 <div class="form-group">
-                    <label for="penghuni_id">Nama Penghuni</label>
-                    <select name="penghuni_id" class="form-control @error('penghuni_id') is-invalid @enderror" value="{{ old('penghuni_id', $kamar->penghuni_id) }}">                                        
-                     <option value="">Pilih Penghuni</option>                                        
-                      @foreach ($penghuni as $penghunis)
-                        <option value="{{ $penghunis->id }}">{{ $penghunis->name }}</option>
-                      @endforeach
-                    </select>
-                    @error('penghuni_id')
+                    <label for="penghuni">Penghuni</label>
+                    <input type="penghuni" class="form-control @error('penghuni') is-invalid @enderror" id="penghuni" placeholder="Masukkan Aset Kamar" name="penghuni" required value="{{ old('penghuni', $kamar->penghuni) }} ">
+                    @error('penghuni')
                     <div class="invalid-feedback">  
                         {{ $message }}
                     </div>
@@ -72,15 +67,15 @@
                     <label for="status_kamar">Status Kamar</label>
                       <select name="status_kamar" class="form-control @error('status_kamar') is-invalid @enderror" value="{{ old('status_kamar', $kamar->nomor_kamar) }}">
                         <option value="">Pilih Status Kamar</option>                                    
-                        <option value="Penuh">Penuh</option>
-                        <option value="Belum Penuh">Belum Penuh</option>
+                        <option value="Penuh" {{($kamar->status_kamar === 'Penuh') ? 'Selected' : ''}}>Penuh</option>
+                        <option value="Belum Penuh" {{($kamar->status_kamar === 'Belum Penuh') ? 'Selected' : ''}}>Belum Penuh</option>
                       </select>
                     @error('status_kamar')
                     <div class="invalid-feedback">  
                         {{ $message }}
                     </div>
                     @enderror
-                </div>                  
+                </div>                                                                                   
                 </div>
                 <!-- /.card-body -->
 

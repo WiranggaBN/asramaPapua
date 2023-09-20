@@ -14,18 +14,18 @@ return new class extends Migration
         Schema::create('calon_penghunis', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('username');
             $table->string('email');
-            $table->string('nomor_telepon')->nullable();
-            $table->string('jenis_kelamin')->nullable();
-            $table->string('alamat')->nullable();
-            $table->dateTime('tanggal_lahir')->nullable();
+            $table->string('nomor_telepon');
+            $table->string('jenis_kelamin');
+            $table->string('alamat');
+            $table->dateTime('tanggal_lahir');
             $table->string('nama_ayah');
-            $table->string('nama_ibu');                    
+            $table->string('nama_ibu'); 
+            $table->string('nik');                        
+            $table->string('telpon_ortu');                        
             $table->string('pekerjaan_ayah');
-            $table->string('pekerjaan_ibu');            
-            $table->dateTime('tanggal_lahir_ayah');
-            $table->dateTime('tanggal_lahir_ibu');
+            $table->string('pekerjaan_ibu');       
+            $table->string('alamat_ortu');  
             $table->timestamp('published_at')->nullable();
             $table->timestamps();
         });

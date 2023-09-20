@@ -34,10 +34,11 @@
               <th scope="col">Tanggal Lahir</th>
               <th scope="col">Nama Ayah</th>
               <th scope="col">Nama Ibu</th>              
+              <th scope="col">NIK</th>              
+              <th scope="col">Telepon Orang tua</th>              
               <th scope="col">Pekerjaan Ayah</th>
-              <th scope="col">Pekerjaan Ibu</th>              
-              <th scope="col">Tanggal Lahir Ayah</th>
-              <th scope="col">Tanggal Lahir Ibu</th>
+              <th scope="col">Pekerjaan Ibu</th>                            
+              <th scope="col">Alamat Orang Tua</th>
               <th scope="col">Action</th>
             </tr>
           </thead>
@@ -53,20 +54,21 @@
               <td>{{ dateID($penghunis->tanggal_lahir) }}</td>    
               <td>{{ $penghunis->nama_ayah }}</td>
               <td>{{ $penghunis->nama_ibu }}</td>                            
+              <td>{{ $penghunis->nik }}</td>                            
+              <td>{{ $penghunis->telpon_ortu }}</td>                            
               <td>{{ $penghunis->pekerjaan_ayah }}</td>
               <td>{{ $penghunis->pekerjaan_ibu }}</td>              
-              <td>{{ dateID($penghunis->tanggal_lahir_ayah) }}</td>          
-              <td>{{ dateID($penghunis->tanggal_lahir_ibu) }}</td>           
+              <td>{{ $penghunis->alamat_ortu }}</td>              
               <td>
                 
                 <a href="/penghuni/{{ $penghunis->name }}/edit" class="badge bg-warning"><i class="fas fa-edit"></i></i></a> 
-                <form action="/penghuni/{{ $penghunis->name }}" method="post" class="d-inline">
+                <!-- <form action="/penghuni/{{ $penghunis->name }}" method="post" class="d-inline">
                   @method('delete')
                   @csrf
                   <button class="badge bg-danger border-0" onclick="return confirm('Yakin Menghapus?')">
                     <i class="fas fa-trash"></i>
                   </button>
-                </form>
+                </form> -->
               </td>
             </tr>
             @endforeach

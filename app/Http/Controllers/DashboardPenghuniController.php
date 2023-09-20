@@ -43,10 +43,11 @@ class DashboardPenghuniController extends Controller
             'tanggal_lahir' => 'required',
             'nama_ayah' => 'required',
             'nama_ibu' => 'required',                        
+            'nik' => 'required|min:16',
+            'telpon_ortu' => 'required',
             'pekerjaan_ayah' => 'required',
             'pekerjaan_ibu' => 'required',                        
-            'tanggal_lahir_ayah' => 'required',
-            'tanggal_lahir_ibu' => 'required'
+            'alamat_ortu' => 'required'
         ]);
 
         Penghuni::create($validatedData);
@@ -88,10 +89,11 @@ class DashboardPenghuniController extends Controller
             'tanggal_lahir' => 'required',
             'nama_ayah' => 'required',
             'nama_ibu' => 'required',                        
+            'nik' => 'required|min:16',
+            'telpon_ortu' => 'required',
             'pekerjaan_ayah' => 'required',
             'pekerjaan_ibu' => 'required',                        
-            'tanggal_lahir_ayah' => 'required',
-            'tanggal_lahir_ibu' => 'required'
+            'alamat_ortu' => 'required'
         ];
 
         // if($request->theme != $penghuni->theme) {

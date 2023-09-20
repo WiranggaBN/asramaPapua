@@ -54,14 +54,9 @@
                     @enderror
                 </div>
                 <div class="form-group">
-                    <label for="penghuni_id">Nama Penghuni</label>
-                    <select name="penghuni_id" class="form-control @error('penghuni_id') is-invalid @enderror" value="{{ old('penghuni_id') }}">                                        
-                     <option value="">Pilih Penghuni</option>                                        
-                      @foreach ($penghunis as $penghuni)
-                        <option value="{{ $penghuni->id }}">{{ $penghuni->name }}</option>
-                      @endforeach
-                    </select>
-                    @error('penghuni_id')
+                    <label for="penghuni">Penghuni</label>
+                    <input type="penghuni" class="form-control @error('penghuni') is-invalid @enderror" id="penghuni" placeholder="Masukkan Aset Kamar" name="penghuni" required value="{{ old('penghuni') }} ">
+                    @error('penghuni')
                     <div class="invalid-feedback">  
                         {{ $message }}
                     </div>

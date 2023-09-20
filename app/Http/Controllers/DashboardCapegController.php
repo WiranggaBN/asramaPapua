@@ -38,17 +38,17 @@ class DashboardCapegController extends Controller
         $validatedData = $request->validate([
             'name' => 'required',
             'email' => 'required',
-            'username' => 'required',
             'nomor_telepon' => 'required',
             'jenis_kelamin' => 'required',
             'alamat' => 'required',
             'tanggal_lahir' => 'required',
             'nama_ayah' => 'required',
             'nama_ibu' => 'required',                        
+            'nik' => 'required|min:16',
+            'telpon_ortu' => 'required',
             'pekerjaan_ayah' => 'required',
             'pekerjaan_ibu' => 'required',                        
-            'tanggal_lahir_ayah' => 'required',
-            'tanggal_lahir_ibu' => 'required'
+            'alamat_ortu' => 'required'
         ]);
 
         CalonPenghuni::create($validatedData);
@@ -83,7 +83,6 @@ class DashboardCapegController extends Controller
     {
         $rules = [
             'name' => 'required',
-            'username' => 'required',
             'email' => 'required',
             'nomor_telepon' => 'required',
             'jenis_kelamin' => 'required',
@@ -91,10 +90,11 @@ class DashboardCapegController extends Controller
             'tanggal_lahir' => 'required',
             'nama_ayah' => 'required',
             'nama_ibu' => 'required',                        
+            'nik' => 'required|min:16',
+            'telpon_ortu' => 'required',
             'pekerjaan_ayah' => 'required',
             'pekerjaan_ibu' => 'required',                        
-            'tanggal_lahir_ayah' => 'required',
-            'tanggal_lahir_ibu' => 'required'
+            'alamat_ortu' => 'required'
         ];
 
         // if($request->theme != $penghuni->theme) {

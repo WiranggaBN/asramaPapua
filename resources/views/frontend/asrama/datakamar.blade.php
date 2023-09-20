@@ -42,7 +42,7 @@
               <td>{{ $kamar->nama_kamar }}</td>
               <td>{{ $kamar->kapasitas_kamar }} Orang</td>
               <td>{{ $kamar->aset_kamar }}</td>
-              <td>{{ $kamar->penghuni->name}}</td>
+              <td>{{ $kamar->penghuni}}</td>
               <td>{{ $kamar->status_kamar }}</td>                                   
               <td>               
                   @csrf                  

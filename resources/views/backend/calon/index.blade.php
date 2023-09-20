@@ -25,9 +25,8 @@
         <table class="table table-striped table-sm">
           <thead>
             <tr>
-              <th scope="col">No.</th>
+            <th scope="col">No.</th>
               <th scope="col">Nama</th>
-              <th scope="col">Nama Pengguna</th>
               <th scope="col">Email</th>
               <th scope="col">Nomor Telepon</th>
               <th scope="col">Jenis Kelamin</th>
@@ -35,10 +34,11 @@
               <th scope="col">Tanggal Lahir</th>
               <th scope="col">Nama Ayah</th>
               <th scope="col">Nama Ibu</th>              
+              <th scope="col">NIK</th>              
+              <th scope="col">Telepon Orang tua</th>              
               <th scope="col">Pekerjaan Ayah</th>
-              <th scope="col">Pekerjaan Ibu</th>              
-              <th scope="col">Tanggal Lahir Ayah</th>
-              <th scope="col">Tanggal Lahir Ibu</th>
+              <th scope="col">Pekerjaan Ibu</th>                            
+              <th scope="col">Alamat Orang Tua</th>
               <th scope="col">Action</th>
             </tr>
           </thead>
@@ -54,21 +54,22 @@
               <td>{{ $calonPenghunis->alamat }}</td>              
               <td>{{ dateID($calonPenghunis->tanggal_lahir) }}</td>    
               <td>{{ $calonPenghunis->nama_ayah }}</td>
-              <td>{{ $calonPenghunis->nama_ibu }}</td>                            
+              <td>{{ $calonPenghunis->nama_ibu }}</td>      
+              <td>{{ $calonPenghunis->nik }}</td>                            
+              <td>{{ $calonPenghunis->telpon_ortu }}</td>                         
               <td>{{ $calonPenghunis->pekerjaan_ayah }}</td>
               <td>{{ $calonPenghunis->pekerjaan_ibu }}</td>              
-              <td>{{ dateID($calonPenghunis->tanggal_lahir_ayah) }}</td>          
-              <td>{{ dateID($calonPenghunis->tanggal_lahir_ibu) }}</td>           
+              <td>{{ $calonPenghunis->alamat_ortu }}</td>         
               <td>
                 
                 <a href="/calonPenghuni/{{ $calonPenghunis->name }}/edit" class="badge bg-warning"><i class="fas fa-edit"></i></i></a> 
-                <form action="/calonPenghuni/{{ $calonPenghunis->name }}" method="post" class="d-inline">
+                <!-- <form action="/calonPenghuni/{{ $calonPenghunis->name }}" method="post" class="d-inline">
                   @method('deletedPenghuni')
                   @csrf
                   <button class="badge bg-success border-0" onclick="return confirm('Yakin Menghapus?')">
                     <i class="fas fa-check"></i>
                   </button>
-                </form>
+                </form> -->
               </td>
             </tr>
             @endforeach

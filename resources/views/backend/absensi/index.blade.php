@@ -15,12 +15,10 @@
           <h3 class="card-title">Data Absensi</h3>
 
           <div class="card-tools">
-            <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
-              <i class="fas fa-minus"></i>
-            </button>            
+          <a href="backend/absensi/cetak" target="_blank" class="btn btn-primary text-light mb-3"><i class="bi bi-printer"></i> Cetak Absensi</a>         
           </div>
         </div>
-
+        
         <a href="/absensi/create" class="btn btn-primary">Tambah Absensi</a>
         <table class="table table-striped table-sm">
           <thead>
@@ -50,7 +48,7 @@
               <td>{{ $absensis->alasan }}</td>                            
               <td>{{ $absensis->keterangan }}</td>                            
               <td>
-                <a href="/absensi/{{ $absensis->name }}" class="badge bg-info"><i class="fas fa-eye"></i></a>
+                
                 <a href="" class="badge bg-warning"><i class="fas fa-edit"></i></i></a> 
                 <form action="/absensi/{{ $absensis->name }}" method="post" class="d-inline">
                   @method('delete')
