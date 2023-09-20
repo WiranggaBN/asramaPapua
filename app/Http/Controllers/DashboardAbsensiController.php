@@ -44,6 +44,7 @@ class DashboardAbsensiController extends Controller
             'jam_masuk' => 'required',
             'alasan' => 'required',
             'keterangan' => 'required',
+            'validasi' => 'required',
         ]);
 
         Absensi::create($validatedData);
@@ -64,8 +65,11 @@ class DashboardAbsensiController extends Controller
      */
     public function edit(Absensi $absensi)
     {
+        $kamars = Kamar::latest()->get();    
         return view('backend.absensi.edit', [
-            'absensi' => $absensi
+            'absensi' => $absensi,            
+            'user' => Auth::user(),
+            'kamars' => $kamars
         ]);
     }
 
@@ -76,13 +80,14 @@ class DashboardAbsensiController extends Controller
     {
         $rules = [
             'name' => 'required',
-            'kamar_id' => 'required',
+            
             'tanggal_keluar' => 'required',
             'tanggal_masuk' => 'required',
             'jam_keluar' => 'required',
             'jam_masuk' => 'required',
             'alasan' => 'required',
             'keterangan' => 'required',
+            'validasi' => 'required',
         ];
 
         // if($request->theme != $penghuni->theme) {

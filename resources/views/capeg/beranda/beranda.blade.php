@@ -32,7 +32,7 @@
     <div class="row mt-5">      
     </div>
     <div class="row mt-5">
-      <h2 class="text-dark text-center">Budaya Asrama Papua</h2>
+      <h2 class="text-dark text-center mt-4">Budaya Asrama Papua</h2>
       <div class="col-md-4 text-center">
         <div class="card-keep">          
           <a href="#" class="text-decoration-none">

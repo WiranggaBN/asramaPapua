@@ -39,7 +39,7 @@
             <tr class="text-center">
               
               <td>{{ $kamar->nomor_kamar }}</td>
-              <td>{{ $kamar->nama_kamar }}</td>
+              <td>{{ $kamar->namakamar }}</td>
               <td>{{ $kamar->kapasitas_kamar }} Orang</td>
               <td>{{ $kamar->aset_kamar }}</td>
               <td>{{ $kamar->penghuni}}</td>

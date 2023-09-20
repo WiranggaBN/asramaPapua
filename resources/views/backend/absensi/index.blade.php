@@ -32,6 +32,7 @@
               <th scope="col">Jam Masuk</th>              
               <th scope="col">Alasan</th>
               <th scope="col">Keterangan</th>              
+              <th scope="col">Validasi</th>              
               <th scope="col">Action</th>
             </tr>
           </thead>
@@ -46,10 +47,11 @@
               <td>{{ $absensis->jam_keluar }} WIB</td>
               <td>{{ $absensis->jam_masuk }} WIB</td>
               <td>{{ $absensis->alasan }}</td>                            
-              <td>{{ $absensis->keterangan }}</td>                            
+              <td>{{ $absensis->keterangan }}</td>   
+              <td>{{ $absensis->validasi }}</td>   
               <td>
                 
-                <a href="" class="badge bg-warning"><i class="fas fa-edit"></i></i></a> 
+                <a href="/absensi/{{ $absensis->name }}/edit" class="badge bg-warning"><i class="fas fa-edit"></i></i></a> 
                 <form action="/absensi/{{ $absensis->name }}" method="post" class="d-inline">
                   @method('delete')
                   @csrf

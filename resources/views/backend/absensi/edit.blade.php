@@ -10,57 +10,53 @@
             <!-- general form elements -->
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">Tambah Absensi</h3>
+                <h3 class="card-title">Ubah Absensi</h3>
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form method="post" action="/absensi">
-                @csrf
-                <div class="card-body">
+              <form method="post" action="/absensi/{{ $absensi->name }}" enctype="multipart/form-data">
+            @method('put')
+            @csrf
+            <div class="card-body">
                 <div class="form-group">
                     <label for="name">Nama</label>
-                    <input type="name" class="form-control @error('name') is-invalid @enderror" id="name" placeholder="Masukkan Nama" name="name" autofocus required value="{{ old('name') }} ">
+                    <input type="name" class="form-control @error('name') is-invalid @enderror" id="name" placeholder="Masukkan Nama" name="name" autofocus required value="{{ old('name', $absensi->name) }} ">
                     @error('name')
                     <div class="invalid-feedback">  
                         {{ $message }}
                     </div>
                     @enderror
                 </div>
-                <div class="form-group">
+                <!-- <div class="form-group">
                     <label for="kamar_id">Nama Kamar</label>
-                    <select name="kamar_id" class="form-control @error('kamar_id') is-invalid @enderror" value="{{ old('kamar_id') }}">                                        
-                     <option value="">Pilih Nama Kamar</option>                                        
-                      @foreach ($kamars as $kamar)
-                        <option value="{{ $kamar->id }}">{{ $kamar->namakamar }}</option>
-                      @endforeach                                         
-                    </select>
+                    <input type="kamar_id" class="form-control @error('kamar_id') is-invalid @enderror" id="kamar_id" placeholder="Masukkan Nama Kamar" name="kamar_id" required value="{{ old('kamar_id', $absensi->kamar->namakamar) }} ">
                     @error('kamar_id')
                     <div class="invalid-feedback">  
                         {{ $message }}
                     </div>
                     @enderror
-                </div>
+                </div>                 -->
                 <div class="form-group">
                     <label for="tanggal_keluar">Tanggal Keluar</label>
-                    <input type="datetime-local" class="form-control @error('tanggal_keluar') is-invalid @enderror" name="tanggal_keluar" id="tanggal_keluar" required>
+                    <input type="tanggal_keluar" class="form-control @error('tanggal_keluar') is-invalid @enderror" id="tanggal_keluar" placeholder="Masukkan Tanggal Keluar" name="tanggal_keluar" required value="{{ old('tanggal_keluar', $absensi->tanggal_keluar) }} ">
                     @error('tanggal_keluar')
-                      <div class="invalid-feedback">  
+                    <div class="invalid-feedback">  
                         {{ $message }}
-                      </div>
+                    </div>
                     @enderror
                   </div>
                   <div class="form-group">
                     <label for="tanggal_masuk">Tanggal Masuk</label>
-                    <input type="datetime-local" class="form-control @error('tanggal_masuk') is-invalid @enderror" name="tanggal_masuk" id="tanggal_masuk" required>
+                    <input type="tanggal_masuk" class="form-control @error('tanggal_masuk') is-invalid @enderror" id="tanggal_masuk" placeholder="Masukkan Tanggal Masuk" name="tanggal_masuk" required value="{{ old('tanggal_masuk', $absensi->tanggal_masuk) }} ">
                     @error('tanggal_masuk')
-                      <div class="invalid-feedback">  
+                    <div class="invalid-feedback">  
                         {{ $message }}
-                      </div>
+                    </div>
                     @enderror
                   </div>
                   <div class="form-group">
                     <label for="jam_keluar">Jam Keluar</label>
-                    <input type="jam_keluar" class="form-control @error('jam_keluar') is-invalid @enderror" id="jam_keluar" placeholder="Masukkan Jam Keluar" name="jam_keluar" required value="{{ old('jam_keluar') }} ">
+                    <input type="jam_keluar" class="form-control @error('jam_keluar') is-invalid @enderror" id="jam_keluar" placeholder="Masukkan Jam Keluar" name="jam_keluar" required value="{{ old('jam_keluar', $absensi->jam_keluar) }} ">
                     @error('jam_keluar')
                     <div class="invalid-feedback">  
                         {{ $message }}
@@ -69,7 +65,7 @@
                   </div>
                   <div class="form-group">
                     <label for="jam_masuk">Jam Masuk</label>
-                    <input type="jam_masuk" class="form-control @error('jam_masuk') is-invalid @enderror" id="jam_masuk" placeholder="Masukkan Jam Masuk" name="jam_masuk" required value="{{ old('jam_masuk') }} ">
+                    <input type="jam_masuk" class="form-control @error('jam_masuk') is-invalid @enderror" id="jam_masuk" placeholder="Masukkan Jam Masuk" name="jam_masuk" required value="{{ old('jam_masuk', $absensi->jam_masuk) }} ">
                     @error('jam_masuk')
                     <div class="invalid-feedback">  
                         {{ $message }}
@@ -78,22 +74,22 @@
                   </div>
                   <div class="form-group">
                     <label for="alasan">Alasan</label>
-                    <textarea class="form-control @error('alasan') is-invalid @enderror" name="alasan" id="alasan" rows="3" required value="{{ old('alasan') }}"></textarea>
+                    <input type="alasan" class="form-control @error('alasan') is-invalid @enderror" id="alasan" placeholder="Masukkan Jam Keluar" name="alasan" required value="{{ old('alasan', $absensi->alasan) }} ">
                     @error('alasan')
                     <div class="invalid-feedback">  
                         {{ $message }}
                     </div>
                     @enderror
-                </div>
+                  </div>
                 <div class="form-group">
                     <label for="keterangan">Keterangan</label>
-                    <textarea class="form-control @error('keterangan') is-invalid @enderror" name="keterangan" id="keterangan" rows="3" required value="{{ old('keterangan') }}"></textarea>
+                    <input type="keterangan" class="form-control @error('keterangan') is-invalid @enderror" id="keterangan" placeholder="Masukkan Jam Keluar" name="keterangan" required value="{{ old('keterangan', $absensi->keterangan) }} ">
                     @error('keterangan')
                     <div class="invalid-feedback">  
                         {{ $message }}
                     </div>
                     @enderror
-                </div>     
+                  </div>    
                 <div class="form-group">
                     <label for="validasi">Validasi</label>
                       <select name="validasi" class="form-control @error('validasi') is-invalid @enderror" value="{{ old('validasi') }}">
@@ -106,23 +102,8 @@
                         {{ $message }}
                     </div>
                     @enderror
-                </div>                                             
-                  <!-- <div class="form-group">
-                    <label for="exampleInputFile">File input</label>
-                    <div class="input-group">
-                      <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="exampleInputFile">
-                        <label class="custom-file-label" for="exampleInputFile">Choose file</label>
-                      </div>
-                      <div class="input-group-append">
-                        <span class="input-group-text">Upload</span>
-                      </div>
-                    </div>
-                  </div> -->
-                  <!-- <div class="form-check">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                  </div> -->
+                </div>   
+                </div>                                                                                   
                 </div>
                 <!-- /.card-body -->
 

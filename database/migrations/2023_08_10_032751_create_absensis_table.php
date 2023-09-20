@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('jam_masuk');
             $table->string('alasan');
             $table->string('keterangan');
+            $table->string('validasi')->nullable();
             $table->timestamp('published_at')->nullable();
             $table->timestamps();
         });
