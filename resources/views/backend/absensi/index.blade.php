@@ -52,13 +52,13 @@
               <td>
                 
                 <a href="/absensi/{{ $absensis->name }}/edit" class="badge bg-warning"><i class="fas fa-edit"></i></i></a> 
-                <form action="/absensi/{{ $absensis->name }}" method="post" class="d-inline">
+                <!-- <form action="/absensi/{{ $absensis->name }}" method="post" class="d-inline">
                   @method('delete')
                   @csrf
                   <button class="badge bg-danger border-0" onclick="return confirm('Yakin Menghapus?')">
                     <i class="fas fa-trash"></i>
                   </button>
-                </form>
+                </form> -->
               </td>
             </tr>
             @endforeach

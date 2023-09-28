@@ -70,9 +70,12 @@ class DashboardPenghuniController extends Controller
      */
     public function edit(Penghuni $penghuni)
     {
-        $user = Auth::user();
-        $penghunis = Penghuni::latest()->get();    
-        return view('backend.penghuni.edit', compact('penghunis', 'user'));
+        // $penghuni = Penghuni::latest()->get();    
+        return view('backend.penghuni.edit', [
+            'penghuni' => $penghuni,            
+            'user' => Auth::user(),
+            // 'penghuni' => $penghunis
+        ]);
     }
 
     /**

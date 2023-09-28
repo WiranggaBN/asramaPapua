@@ -13,6 +13,6 @@ class Berita extends Model
 
     public function getRouteKeyName()
     {
-        return 'judul';
+        return 'slug';
     }
 }

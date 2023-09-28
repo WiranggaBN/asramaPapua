@@ -71,7 +71,8 @@ class DashboardBritaController extends Controller
     public function edit(Brita $brita)
     {
         return view('backend.berita.edit', [
-            'brita' => $brita
+            'brita' => $brita,         
+            'user' => Auth::user(),            
         ]);
     }
 

@@ -71,7 +71,8 @@ class DashboardPengumumanController extends Controller
     public function edit(Pengumuman $pengumuman)
     {
         return view('backend.pengumuman.edit', [
-            'pengumuman' => $pengumuman
+            'pengumuman' => $pengumuman,         
+            'user' => Auth::user(),            
         ]);
     }
 

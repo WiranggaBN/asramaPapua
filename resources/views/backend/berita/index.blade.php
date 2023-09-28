@@ -47,8 +47,8 @@
               <td>{{ $beritas->isi }}</td>                            
               <td>
                 
-                <a href="" class="badge bg-warning"><i class="fas fa-edit"></i></i></a> 
-                <form action="/berita/{{ $beritas->judul }}" method="post" class="d-inline">
+                <a href="/backend/berita/{{ $beritas->slug }}/edit" class="badge bg-warning"><i class="fas fa-edit"></i></i></a> 
+                <form action="/berita/{{ $beritas->slug }}" method="post" class="d-inline">
                   @method('delete')
                   @csrf
                   <button class="badge bg-danger border-0" onclick="return confirm('Yakin Menghapus?')">

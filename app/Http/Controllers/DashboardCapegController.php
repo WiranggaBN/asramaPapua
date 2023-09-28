@@ -70,9 +70,10 @@ class DashboardCapegController extends Controller
      * Show the form for editing the specified resource.
      */
     public function edit(CalonPenghuni $calonPenghuni)
-    {
+    {        
         return view('backend.calon.edit', [
-            'calonPenghuni' => $calonPenghuni
+            'calonPenghuni' => $calonPenghuni,         
+            'user' => Auth::user(),            
         ]);
     }
 

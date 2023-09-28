@@ -62,7 +62,7 @@
               <td>{{ $calonPenghunis->alamat_ortu }}</td>         
               <td>
                 
-                <a href="/calonPenghuni/{{ $calonPenghunis->name }}/edit" class="badge bg-warning"><i class="fas fa-edit"></i></i></a> 
+                <a href="/calon/{{ $calonPenghunis->name }}/edit" class="badge bg-warning"><i class="fas fa-edit"></i></i></a> 
                 <!-- <form action="/calonPenghuni/{{ $calonPenghunis->name }}" method="post" class="d-inline">
                   @method('deletedPenghuni')
                   @csrf

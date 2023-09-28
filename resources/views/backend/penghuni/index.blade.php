@@ -61,7 +61,7 @@
               <td>{{ $penghunis->alamat_ortu }}</td>              
               <td>
                 
-                <a href="/penghuni/{{ $penghunis->name }}/edit" class="badge bg-warning"><i class="fas fa-edit"></i></i></a> 
+                <a href="/penghuni/{{ $penghunis->name }}/edit" class="badge bg-warning"><i class="fas fa-edit"></i></i></a>
                 <!-- <form action="/penghuni/{{ $penghunis->name }}" method="post" class="d-inline">
                   @method('delete')
                   @csrf
