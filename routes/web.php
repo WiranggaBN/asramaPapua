@@ -110,6 +110,7 @@ Route::group(['middleware' => ['auth']], function(){
        Route::resource('/absensi',DashboardAbsensiController::class);
        Route::resource('/kamar',DashboardKamarController::class);
        Route::get('backend/absensi/cetak', [CetakAbsensiController::class, 'cetak']);
+       Route::get('/cetakTanggal', [DashboardAbsensiController::class, 'cetakTanggal']);
     //    Route::get('/penghuni', [DashboardCapegController::class, 'deletedPenghuni']);
     });
 

@@ -15,12 +15,12 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->unsignedBigInteger('kamar_id')->nullable();  
-            $table->dateTime('tanggal_keluar');
-            $table->dateTime('tanggal_masuk');
-            $table->string('jam_keluar');
-            $table->string('jam_masuk');
-            $table->string('alasan');
-            $table->string('keterangan');
+            $table->dateTime('tanggal_keluar')->nullable();
+            $table->dateTime('tanggal_masuk')->nullable();
+            $table->string('jam_keluar')->nullable();
+            $table->string('jam_masuk')->nullable();
+            $table->string('alasan')->nullable();
+            $table->string('keterangan')->nullable();
             $table->string('validasi')->nullable();
             $table->timestamp('published_at')->nullable();
             $table->timestamps();

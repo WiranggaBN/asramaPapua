@@ -14,13 +14,9 @@
         <div class="card-header">
           <h3 class="card-title">Data Absensi</h3>
 
-          <div class="card-tools ms-1" >
-          <a href="backend/absensi/cetakTanggal" target="_blank" class="btn btn-primary text-light mb-3"><i class="bi bi-printer"></i> Cetak Absensi Perbulan</a>         
-          </div>
-          <div class="card-tools mx-1">
+          <div class="card-tools">
           <a href="backend/absensi/cetak" target="_blank" class="btn btn-primary text-light mb-3"><i class="bi bi-printer"></i> Cetak Absensi</a>         
           </div>
-          
         </div>
         
         <a href="/absensi/create" class="btn btn-primary">Tambah Absensi</a>

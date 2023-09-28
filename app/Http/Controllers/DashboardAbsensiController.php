@@ -110,4 +110,8 @@ class DashboardAbsensiController extends Controller
         Absensi::destroy($absensi->id);
         return redirect('/absensi')->with('success', 'Berhasil Menghapus Absensi!');
     }
+
+    public function cetakTanggal() {
+        return view('bakcend.absensi.cetakTanggal');
+    }
 }

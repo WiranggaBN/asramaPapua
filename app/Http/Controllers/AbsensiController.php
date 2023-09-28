@@ -26,11 +26,11 @@ class AbsensiController extends Controller
             'name' => 'required',
             'kamar_id' => 'required',
             'tanggal_keluar' => 'required',
-            'tanggal_masuk' => 'required',
+            
             'jam_keluar' => '',
-            'jam_masuk' => 'required',
+            
             'alasan' => 'required',
-            'keterangan' => 'required',
+            
         ]);
 
         Absensi::create($validatedData);

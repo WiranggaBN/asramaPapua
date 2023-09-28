@@ -62,7 +62,7 @@
                       @enderror
                     </div>
                     <div class="col-6">
-                      <label for="join" class="form-label">Tanggal Keluar</label>
+                      <label for="join" class="form-label">Tanggal</label>
                           <input type="datetime-local" class="form-control @error('tanggal_keluar') is-invalid @enderror" name="tanggal_keluar" id="tanggal_keluar" required>
                           @error('tanggal_keluar')
                           <div class="invalid-feedback">  
@@ -70,7 +70,7 @@
                           </div>
                           @enderror
                     </div>
-                    <div class="col-6">
+                    <!-- <div class="col-6">
                       <label for="join" class="form-label">Tanggal Masuk</label>
                           <input type="datetime-local" class="form-control @error('tanggal_masuk') is-invalid @enderror" name="tanggal_masuk" id="tanggal_masuk" required>
                           @error('tanggal_masuk')
@@ -78,9 +78,9 @@
                             {{ $message }}
                           </div>
                           @enderror
-                    </div>
+                    </div> -->
                     <div class="col-6">
-                      <label for="inputNama" class="form-label">Jam Keluar</label>
+                      <label for="inputNama" class="form-label">Jam</label>
                       <input type="text" name="jam_keluar" class="form-control @error('jam_keluar') is-invalid @enderror" id="jam_keluar" placeholder="" required value="{{ old('jam_keluar') }}">
                       @error('jam_keluar')
                           <div class="invalid-feedback">  
@@ -88,7 +88,7 @@
                           </div>
                       @enderror
                     </div>
-                    <div class="col-6">
+                    <!-- <div class="col-6">
                       <label for="inputNama" class="form-label">Jam Masuk</label>
                       <input type="text" name="jam_masuk" class="form-control @error('jam_masuk') is-invalid @enderror" id="jam_masuk" placeholder="" required value="{{ old('jam_masuk') }}">
                       @error('jam_masuk')
@@ -96,7 +96,7 @@
                             {{ $message }}
                           </div>
                       @enderror
-                    </div>                                                         
+                    </div>                                                          -->
                                                           
                     <div class="col-12">
                       <label for="inputAddress" class="form-label">Alasan</label>                      
@@ -108,7 +108,7 @@
                       @enderror
                     </div>
 
-                    <div class="col-12">
+                    <!-- <div class="col-12">
                       <label for="inputAddress" class="form-label">Keterangan</label>                      
                       <textarea class="form-control @error('keterangan') is-invalid @enderror" name="keterangan" id="keterangan" rows="3" required value="{{ old('keterangan') }}"></textarea>
                       @error('keterangan')
@@ -116,7 +116,7 @@
                             {{ $message }}
                           </div>
                       @enderror
-                    </div>
+                    </div> -->
 
                     <div class="confirm-next mb-3" style="display :block;">
                       <button class="btn btn-primary btn-block visible-sm visible-xs submit mb-4 mt-3" type="submit"><i class="bi bi-send me-1"></i> SUBMIT</button>
