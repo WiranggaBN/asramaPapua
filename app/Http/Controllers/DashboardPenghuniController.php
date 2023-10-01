@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Penghuni;
+use App\Models\User;
+use App\Models\Kamar;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -15,6 +17,7 @@ class DashboardPenghuniController extends Controller
     {
         return view('backend.penghuni.index', [
             'penghuni' => Penghuni::all(),
+            'kamars' => Kamar::all(),
             'user' => Auth::user()
         ]);        
     }
@@ -25,7 +28,8 @@ class DashboardPenghuniController extends Controller
     public function create()
     {
         return view('backend.penghuni.create', [
-            'user' => Auth::user()
+            'user' => Auth::user(),
+            'kamars' => Kamar::all(),
         ]);
     }
 
@@ -36,6 +40,10 @@ class DashboardPenghuniController extends Controller
     {
         $validatedData = $request->validate([
             'name' => 'required',
+            'username' => 'required',
+            'password' => '',
+            'level' => '',
+            'kamar_id' => 'required',
             'email' => 'required',
             'nomor_telepon' => 'required|min:12|max:14',
             'jenis_kelamin' => 'required',
@@ -51,6 +59,7 @@ class DashboardPenghuniController extends Controller
         ]);
 
         Penghuni::create($validatedData);
+        User::create($validatedData);
 
         return redirect('/penghuni')->with('success', 'Berhasil Menambahkan Penghuni!');
     }
@@ -72,7 +81,8 @@ class DashboardPenghuniController extends Controller
     {
         // $penghuni = Penghuni::latest()->get();    
         return view('backend.penghuni.edit', [
-            'penghuni' => $penghuni,            
+            'penghuni' => $penghuni,    
+            'kamars' => Kamar::all(),        
             'user' => Auth::user(),
             // 'penghuni' => $penghunis
         ]);
@@ -85,6 +95,10 @@ class DashboardPenghuniController extends Controller
     {
         $rules = [
             'name' => 'required',
+            'username' => 'required',
+            'password' => '',
+            'level' => '',
+            'kamar_id' => 'required',
             'email' => 'required',
             'nomor_telepon' => 'required|min:12|max:14',
             'jenis_kelamin' => 'required',
@@ -107,6 +121,8 @@ class DashboardPenghuniController extends Controller
 
         Penghuni::where('id', $penghuni->id)
             ->update($validatedData);   
+        // User::where('id', $penghuni->id)
+        //     ->update($validatedData);   
 
         return redirect('/penghuni')->with('success', 'Berhasil Mengubah Penghuni!');
     }

@@ -17,7 +17,9 @@ return new class extends Migration
             $table->string('namakamar');
             $table->string('kapasitas_kamar');
             $table->string('aset_kamar');
-            $table->string('penghuni')->nullable();              
+            $table->string('penghunisatu')->nullable();     
+            $table->string('penghunidua')->nullable();
+            $table->string('penghunitiga')->nullable();              
             $table->string('status_kamar');            
             $table->timestamp('published_at')->nullable();
             $table->timestamps();

@@ -17,12 +17,12 @@ class Penghuni extends Model
     }
 
     /**
-     * data_kamars
+     * kamar
      *
      * @return void
      */
-    public function kamars()
+    public function kamar()
     {
-        return $this->hasMany(DataKamar::class);
+        return $this->belongsTo(Kamar::class);
     }
 }

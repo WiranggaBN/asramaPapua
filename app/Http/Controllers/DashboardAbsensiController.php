@@ -13,11 +13,14 @@ class DashboardAbsensiController extends Controller
      * Display a listing of the resource.
      */
     public function index()
-    {
-        return view('backend.absensi.index', [
-            'absensi' => Absensi::all(),
-            'user' => Auth::user()
-        ]);
+    {                
+        $user = Auth::user();
+
+        $absensi = Absensi::latest()->when(request()->q, function($absensi) {
+            $absensi = $absensi->where('tanggal_keluar', 'like', '%'. request()->q . '%');
+        })->paginate(10);
+
+        return view('backend.absensi.index', compact('absensi', 'user'));
     }
 
     /**
@@ -79,13 +82,11 @@ class DashboardAbsensiController extends Controller
     public function update(Request $request, Absensi $absensi)
     {
         $rules = [
-            'name' => 'required',
             
-            'tanggal_keluar' => 'required',
             'tanggal_masuk' => 'required',
-            'jam_keluar' => 'required',
+            
             'jam_masuk' => 'required',
-            'alasan' => 'required',
+            
             'keterangan' => 'required',
             'validasi' => 'required',
         ];
@@ -109,9 +110,5 @@ class DashboardAbsensiController extends Controller
     {
         Absensi::destroy($absensi->id);
         return redirect('/absensi')->with('success', 'Berhasil Menghapus Absensi!');
-    }
-
-    public function cetakTanggal() {
-        return view('bakcend.absensi.cetakTanggal');
     }
 }

@@ -18,7 +18,7 @@
             @method('put')
             @csrf
             <div class="card-body">
-                <div class="form-group">
+                <!-- <div class="form-group">
                     <label for="name">Nama</label>
                     <input type="name" class="form-control @error('name') is-invalid @enderror" id="name" placeholder="Masukkan Nama" name="name" autofocus required value="{{ old('name', $absensi->name) }} ">
                     @error('name')
@@ -27,15 +27,15 @@
                     </div>
                     @enderror
                 </div>
-                <!-- <div class="form-group">
+                <div class="form-group">
                     <label for="kamar_id">Nama Kamar</label>
-                    <input type="kamar_id" class="form-control @error('kamar_id') is-invalid @enderror" id="kamar_id" placeholder="Masukkan Nama Kamar" name="kamar_id" required value="{{ old('kamar_id', $absensi->kamar->namakamar) }} ">
+                    <input type="kamar_id" class="form-control @error('kamar_id') is-invalid @enderror" id="kamar_id" placeholder="Masukkan Nama Kamar" name="kamar_id" required value="{{ old('kamar_id', $absensi->kamar_id) }} ">
                     @error('kamar_id')
                     <div class="invalid-feedback">  
                         {{ $message }}
                     </div>
                     @enderror
-                </div>                 -->
+                </div>                
                 <div class="form-group">
                     <label for="tanggal_keluar">Tanggal Keluar</label>
                     <input type="tanggal_keluar" class="form-control @error('tanggal_keluar') is-invalid @enderror" id="tanggal_keluar" placeholder="Masukkan Tanggal Keluar" name="tanggal_keluar" required value="{{ old('tanggal_keluar', $absensi->tanggal_keluar) }} ">
@@ -44,17 +44,17 @@
                         {{ $message }}
                     </div>
                     @enderror
-                  </div>
+                  </div> -->
                   <div class="form-group">
-                    <label for="tanggal_masuk">Tanggal Masuk</label>
-                    <input type="tanggal_masuk" class="form-control @error('tanggal_masuk') is-invalid @enderror" id="tanggal_masuk" placeholder="Masukkan Tanggal Masuk" name="tanggal_masuk" required value="{{ old('tanggal_masuk', $absensi->tanggal_masuk) }} ">
+                    <label for="tanggal_masuk">Tanggal Datang</label>
+                    <input type="datetime-local" class="form-control @error('tanggal_masuk') is-invalid @enderror" name="tanggal_masuk" id="tanggal_masuk" required>
                     @error('tanggal_masuk')
-                    <div class="invalid-feedback">  
+                      <div class="invalid-feedback">  
                         {{ $message }}
-                    </div>
+                      </div>
                     @enderror
                   </div>
-                  <div class="form-group">
+                  <!-- <div class="form-group">
                     <label for="jam_keluar">Jam Keluar</label>
                     <input type="jam_keluar" class="form-control @error('jam_keluar') is-invalid @enderror" id="jam_keluar" placeholder="Masukkan Jam Keluar" name="jam_keluar" required value="{{ old('jam_keluar', $absensi->jam_keluar) }} ">
                     @error('jam_keluar')
@@ -62,9 +62,9 @@
                         {{ $message }}
                     </div>
                     @enderror
-                  </div>
+                  </div> -->
                   <div class="form-group">
-                    <label for="jam_masuk">Jam Masuk</label>
+                    <label for="jam_masuk">Jam Datang</label>
                     <input type="jam_masuk" class="form-control @error('jam_masuk') is-invalid @enderror" id="jam_masuk" placeholder="Masukkan Jam Masuk" name="jam_masuk" required value="{{ old('jam_masuk', $absensi->jam_masuk) }} ">
                     @error('jam_masuk')
                     <div class="invalid-feedback">  
@@ -72,7 +72,7 @@
                     </div>
                     @enderror
                   </div>
-                  <div class="form-group">
+                  <!-- <div class="form-group">
                     <label for="alasan">Alasan</label>
                     <input type="alasan" class="form-control @error('alasan') is-invalid @enderror" id="alasan" placeholder="Masukkan Jam Keluar" name="alasan" required value="{{ old('alasan', $absensi->alasan) }} ">
                     @error('alasan')
@@ -80,7 +80,7 @@
                         {{ $message }}
                     </div>
                     @enderror
-                  </div>
+                  </div> -->
                 <div class="form-group">
                     <label for="keterangan">Keterangan</label>
                     <input type="keterangan" class="form-control @error('keterangan') is-invalid @enderror" id="keterangan" placeholder="Masukkan Jam Keluar" name="keterangan" required value="{{ old('keterangan', $absensi->keterangan) }} ">

@@ -14,11 +14,19 @@
         <div class="card-header">
           <h3 class="card-title">Data Absensi</h3>
 
-          <div class="card-tools ms-1" >
-          <a href="backend/absensi/cetakTanggal" target="_blank" class="btn btn-primary text-light mb-3"><i class="bi bi-printer"></i> Cetak Absensi Perbulan</a>         
-          </div>
           <div class="card-tools mx-1">
           <a href="backend/absensi/cetak" target="_blank" class="btn btn-primary text-light mb-3"><i class="bi bi-printer"></i> Cetak Absensi</a>         
+          </div>
+          
+          <!-- <div class="card-tools ms-1" >
+          <a href="backend/absensi/cetakTanggal" target="_blank" class="btn btn-primary text-light mb-3"><i class="bi bi-printer"></i> Cetak Absensi Perbulan</a>         
+          </div> -->
+
+          <div class="card-tools mx-1">
+          <form action="/absensi/index" method="GET">          
+          <input type="text" class="form-control" name="q"
+            placeholder="Cari berdasarkan bulan">                      
+          </form>
           </div>
           
         </div>
@@ -30,11 +38,11 @@
               <th scope="col">No.</th>
               <th scope="col">Nama</th>
               <th scope="col">Nama Kamar</th>
-              <th scope="col">Tanggal Keluar</th>
-              <th scope="col">Tanggal Masuk</th>
-              <th scope="col">Jam Keluar</th>
-              <th scope="col">Jam Masuk</th>              
+              <th scope="col">Tanggal Ijin</th>              
+              <th scope="col">Jam Ijin</th>
               <th scope="col">Alasan</th>
+              <th scope="col">Tanggal Datang</th>
+              <th scope="col">Jam Datang</th>                            
               <th scope="col">Keterangan</th>              
               <th scope="col">Validasi</th>              
               <th scope="col">Action</th>
@@ -45,12 +53,12 @@
             <tr>
               <td>{{ $loop->iteration }}</td>
               <td>{{ $absensis->name }}</td>
-              <td>{{ $absensis->kamar->namakamar ?? ''}}</td>
-              <td>{{ dateID($absensis->tanggal_keluar) }}</td>          
-              <td>{{ dateID($absensis->tanggal_masuk) }}</td>          
+              <td>{{ $absensis->kamar_id}}</td>
+              <td>{{ dateID($absensis->tanggal_keluar) }}</td>                              
               <td>{{ $absensis->jam_keluar }} WIB</td>
-              <td>{{ $absensis->jam_masuk }} WIB</td>
-              <td>{{ $absensis->alasan }}</td>                            
+              <td>{{ $absensis->alasan }}</td>    
+              <td>{{ dateID($absensis->tanggal_masuk) }}</td>    
+              <td>{{ $absensis->jam_masuk }} WIB</td>                                      
               <td>{{ $absensis->keterangan }}</td>   
               <td>{{ $absensis->validasi }}</td>   
               <td>

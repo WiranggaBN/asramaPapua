@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('calon_penghunis', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('username');
             $table->string('email');
             $table->string('nomor_telepon');
             $table->string('jenis_kelamin');

@@ -26,7 +26,7 @@
                     <div class="alert alert-success alert-dismissible fade show mt-3" role="alert">
                       {{ session('success') }}
                       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                    </div>
+                    </div>{{ $user->username }}
                     @endif
           
                     @if(session()->has('loginError'))
@@ -40,7 +40,7 @@
                     @csrf
                     <div class="col-6">
                       <label for="inputNama" class="form-label">Nama Lengkap</label>
-                      <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" id="name" placeholder="" required autofocus value="{{ old('name') }}">
+                      <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" id="name" placeholder="{{ $user->name }}" required value="{{ old('name', $user->name) }}">
                       @error('name')
                           <div class="invalid-feedback">  
                             {{ $message }}
@@ -49,18 +49,27 @@
                     </div>
                     <div class="col-6">
                       <label for="inputNama" class="form-label">Nama Kamar</label>
+                      <input type="text" name="kamar_id" class="form-control @error('kamar_id') is-invalid @enderror" id="kamar_id" placeholder="{{ $user->kamar->namakamar }}" required value="{{ old('kamar_id', $user->kamar->namakamar) }}">
+                      @error('kamar_id')
+                          <div class="invalid-feedback">  
+                            {{ $message }}
+                          </div>
+                      @enderror
+                    </div>
+                    <!-- <div class="col-6">
+                      <label for="kamar_id">Nama Kamar</label>
                       <select name="kamar_id" class="form-control @error('kamar_id') is-invalid @enderror" value="{{ old('kamar_id') }}">                                        
                       <option value="">Pilih Nama Kamar</option>                                        
-                      @foreach ($kamars as $kamar)
-                        <option value="{{ $kamar->id }}">{{ $kamar->namakamar }}</option>
-                      @endforeach                                         
+                        @foreach ($kamars as $kamar)
+                          <option value="{{ $kamar->id }}">{{ $kamar->namakamar }}</option>
+                        @endforeach                                         
                       </select>
                       @error('kamar_id')
                       <div class="invalid-feedback">  
-                        {{ $message }}
+                          {{ $message }}
                       </div>
                       @enderror
-                    </div>
+                    </div>    -->
                     <div class="col-6">
                       <label for="join" class="form-label">Tanggal</label>
                           <input type="datetime-local" class="form-control @error('tanggal_keluar') is-invalid @enderror" name="tanggal_keluar" id="tanggal_keluar" required>

@@ -28,6 +28,42 @@
                     @enderror
                   </div>
                   <div class="form-group">
+                    <label for="username">Nama Pengguna</label>
+                    <input type="username" class="form-control @error('username') is-invalid @enderror" id="username" placeholder="Masukkan Nama Pengguna" name="username" required value="{{ old('username', $penghuni->username) }} ">
+                    @error('username')
+                    <div class="invalid-feedback">  
+                        {{ $message }}
+                    </div>
+                    @enderror
+                  </div>
+                  <div class="form-group">
+                    <label for="kamar_id">Nama Kamar</label>
+                    <input type="kamar_id" class="form-control @error('kamar_id') is-invalid @enderror" id="kamar_id" placeholder="Masukkan Nama Kamar" name="kamar_id" required value="{{ old('kamar_id', $penghuni->kamar->namakamar) }} ">
+                    @error('kamar_id')
+                    <div class="invalid-feedback">  
+                        {{ $message }}
+                    </div>
+                    @enderror
+                </div>       
+                  <div class="form-group">
+                    <label for="password">Sandi</label>
+                    <input type="password" class="form-control @error('password') is-invalid @enderror" id="password" placeholder="Masukkan Sandi" name="password" required value="{{ old('password', $penghuni->password) }} ">
+                    @error('password')
+                    <div class="invalid-feedback">  
+                        {{ $message }}
+                    </div>
+                    @enderror
+                  </div>
+                  <div class="form-group">
+                    <label for="level">Level</label>
+                    <input type="level" class="form-control @error('level') is-invalid @enderror" id="level" placeholder="Masukkan Sandi" name="level" required value="{{ old('level', $penghuni->level) }} ">
+                    @error('level')
+                    <div class="invalid-feedback">  
+                        {{ $message }}
+                    </div>
+                    @enderror
+                  </div>
+                  <div class="form-group">
                     <label for="email">Email</label>
                     <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" placeholder="Masukkan Email" name="email" required value="{{ old('email', $penghuni->email) }} ">
                     @error('email')

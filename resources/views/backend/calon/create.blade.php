@@ -129,7 +129,7 @@
                       <option value="Tentara">Tentara</option>
                       <option value="Polisi">Polisi</option>
                       <option value="Dokter">Dokter</option>
-                      <option value="Buruh<">Buruh</option>
+                      <option value="Buruh">Buruh</option>
                       <option value="Petani">Petani</option>
                       <option value="Nelayan">Nelayan</option>
                       <option value="Pilot">Pilot</option>
@@ -150,7 +150,7 @@
                       <option value="Tentara">Tentara</option>
                       <option value="Polisi">Polisi</option>
                       <option value="Dokter">Dokter</option>
-                      <option value="Buruh<">Buruh</option>
+                      <option value="Buruh">Buruh</option>
                       <option value="Petani">Petani</option>
                       <option value="Nelayan">Nelayan</option>
                       <option value="Pilot">Pilot</option>

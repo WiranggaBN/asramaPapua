@@ -27,6 +27,8 @@
             <tr>
               <th scope="col">No.</th>
               <th scope="col">Nama</th>
+              <th scope="col">Nama Pengguna</th>
+              <th scope="col">Nama Kamar</th>
               <th scope="col">Email</th>
               <th scope="col">Nomor Telepon</th>
               <th scope="col">Jenis Kelamin</th>
@@ -47,6 +49,8 @@
             <tr>
               <td>{{ $loop->iteration }}</td>
               <td>{{ $penghunis->name }}</td>
+              <td>{{ $penghunis->username }}</td>
+              <td>{{ $penghunis->kamar->namakamar ?? '' }}</td>
               <td>{{ $penghunis->email }}</td>
               <td>{{ $penghunis->nomor_telepon }}</td>
               <td>{{ $penghunis->jenis_kelamin }}</td>

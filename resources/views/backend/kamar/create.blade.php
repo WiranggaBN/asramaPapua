@@ -37,13 +37,18 @@
                 </div>
                 <div class="form-group">
                     <label for="kapasitas_kamar">Kapasitas Kamar</label>
-                    <input type="kapasitas_kamar" class="form-control @error('kapasitas_kamar') is-invalid @enderror" id="kapasitas_kamar" placeholder="Masukkan Kapasitas Kamar" name="kapasitas_kamar" required value="{{ old('kapasitas_kamar') }} ">
+                      <select name="kapasitas_kamar" class="form-control @error('kapasitas_kamar') is-invalid @enderror" value="{{ old('kapasitas_kamar') }}">
+                        <option value="">Pilih Kapasitas Kamar</option>                                    
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                      </select>
                     @error('kapasitas_kamar')
                     <div class="invalid-feedback">  
                         {{ $message }}
                     </div>
                     @enderror
-                </div>
+                </div> 
                 <div class="form-group">
                     <label for="aset_kamar">Aset Kamar</label>
                     <input type="aset_kamar" class="form-control @error('aset_kamar') is-invalid @enderror" id="aset_kamar" placeholder="Masukkan Aset Kamar" name="aset_kamar" required value="{{ old('aset_kamar') }} ">
@@ -54,13 +59,46 @@
                     @enderror
                 </div>
                 <div class="form-group">
-                    <label for="penghuni">Penghuni</label>
-                    <input type="penghuni" class="form-control @error('penghuni') is-invalid @enderror" id="penghuni" placeholder="Masukkan Aset Kamar" name="penghuni" required value="{{ old('penghuni') }} ">
-                    @error('penghuni')
-                    <div class="invalid-feedback">  
+                      <label for="inputNama" class="form-label">Penghuni Satu</label>
+                      <select name="penghunisatu" class="form-control @error('penghunisatu') is-invalid @enderror" value="{{ old('penghunisatu') }}">                                        
+                      <option value="">Pilih Penghuni</option>                                        
+                      @foreach ($penghunis as $penghuni)
+                        <option value="{{ $penghuni->name }}">{{ $penghuni->name }}</option>
+                      @endforeach                                         
+                      </select>
+                      @error('penghunisatu')
+                      <div class="invalid-feedback">  
                         {{ $message }}
-                    </div>
-                    @enderror
+                      </div>
+                      @enderror
+                </div>
+                <div class="form-group">
+                      <label for="inputNama" class="form-label">Penghuni Dua</label>
+                      <select name="penghunidua" class="form-control @error('penghunidua') is-invalid @enderror" value="{{ old('penghunidua') }}">                                        
+                      <option value="">Pilih Penghuni</option>                                        
+                      @foreach ($penghunis as $penghuni)
+                        <option value="{{ $penghuni->name }}">{{ $penghuni->name }}</option>
+                      @endforeach                                         
+                      </select>
+                      @error('penghunidua')
+                      <div class="invalid-feedback">  
+                        {{ $message }}
+                      </div>
+                      @enderror
+                </div>
+                <div class="form-group">
+                      <label for="inputNama" class="form-label">Penghuni Tiga</label>
+                      <select name="penghunitiga" class="form-control @error('penghunitiga') is-invalid @enderror" value="{{ old('penghunitiga') }}">                                        
+                      <option value="">Pilih Penghuni</option>                                        
+                      @foreach ($penghunis as $penghuni)
+                        <option value="{{ $penghuni->name }}">{{ $penghuni->name }}</option>
+                      @endforeach                                         
+                      </select>
+                      @error('penghunitiga')
+                      <div class="invalid-feedback">  
+                        {{ $message }}
+                      </div>
+                      @enderror
                 </div>
                 <div class="form-group">
                     <label for="status_kamar">Status Kamar</label>

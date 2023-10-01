@@ -27,6 +27,47 @@
                     @enderror
                   </div>
                   <div class="form-group">
+                    <label for="username">Nama Pengguna</label>
+                    <input type="username" class="form-control @error('username') is-invalid @enderror" id="username" placeholder="Masukkan Nama Pengguna" name="username" required value="{{ old('username') }} ">
+                    @error('username')
+                    <div class="invalid-feedback">  
+                        {{ $message }}
+                    </div>
+                    @enderror
+                  </div>
+                  <div class="form-group">
+                    <label for="kamar_id">Nama Kamar</label>
+                    <select name="kamar_id" class="form-control @error('kamar_id') is-invalid @enderror" value="{{ old('kamar_id') }}">                                        
+                     <option value="">Pilih Nama Kamar</option>                                        
+                      @foreach ($kamars as $kamar)
+                        <option value="{{ $kamar->id }}">{{ $kamar->namakamar }}</option>
+                      @endforeach                                         
+                    </select>
+                    @error('kamar_id')
+                    <div class="invalid-feedback">  
+                        {{ $message }}
+                    </div>
+                    @enderror
+                </div>
+                  <div class="form-group">
+                    <label for="password">Sandi</label>
+                    <input type="password" class="form-control @error('password') is-invalid @enderror" id="password" placeholder="Masukkan Sandi" name="password" autofocus required value="{{ old('password') }} ">
+                    @error('password')
+                    <div class="invalid-feedback">  
+                        {{ $message }}
+                    </div>
+                    @enderror
+                  </div>
+                  <div class="form-group">
+                    <label for="level">Level</label>
+                    <input type="level" class="form-control @error('level') is-invalid @enderror" id="level" placeholder="Masukkan Level" name="level" required value="{{ old('level') }} ">
+                    @error('level')
+                    <div class="invalid-feedback">  
+                        {{ $message }}
+                    </div>
+                    @enderror
+                  </div>                  
+                  <div class="form-group">
                     <label for="email">Email</label>
                     <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" placeholder="Masukkan Email" name="email" required value="{{ old('email') }} ">
                     @error('email')

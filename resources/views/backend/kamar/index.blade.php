@@ -30,7 +30,9 @@
               <th scope="col">Nama Kamar</th>
               <th scope="col">Kapasitas Kamar</th>
               <th scope="col">Aset Kamar</th>
-              <th scope="col">Nama Penghuni</th>
+              <th scope="col">Penghuni Satu</th>
+              <th scope="col">Penghuni Dua</th>
+              <th scope="col">Penghuni Tiga</th>
               <th scope="col">Status Kamar</th>                            
               <th scope="col">Action</th>
             </tr>
@@ -43,7 +45,9 @@
               <td>{{ $kamars->namakamar }}</td>
               <td>{{ $kamars->kapasitas_kamar }}</td>
               <td>{{ $kamars->aset_kamar }}</td>
-              <td>{{ $kamars->penghuni}}</td>
+              <td>{{ $kamars->penghunisatu }}</td>
+              <td>{{ $kamars->penghunidua }}</td>
+              <td>{{ $kamars->penghunitiga }}</td>
               <td>{{ $kamars->status_kamar }}</td>                                   
               <td>
                 

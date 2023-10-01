@@ -20,8 +20,17 @@
                 <div class="card-body">
                 <div class="form-group">
                     <label for="name">Nama</label>
-                    <input type="name" class="form-control @error('name') is-invalid @enderror" id="name" placeholder="Masukkan Nama" name="name" autofocus required value="{{ old('name', $calonPenghuni->name) }}">
+                    <input type="name" class="form-control @error('name') is-invalid @enderror" id="name" placeholder="Masukkan Nama" name="name" autofocus required value="{{ old('name', $calonPenghuni->name) }} ">
                     @error('name')
+                    <div class="invalid-feedback">  
+                        {{ $message }}
+                    </div>
+                    @enderror
+                  </div>
+                  <div class="form-group">
+                    <label for="username">Nama Pengguna</label>
+                    <input type="username" class="form-control @error('username') is-invalid @enderror" id="username" placeholder="Masukkan Nama" name="username" required value="{{ old('username', $calonPenghuni->username) }} ">
+                    @error('username')
                     <div class="invalid-feedback">  
                         {{ $message }}
                     </div>

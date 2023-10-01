@@ -37,14 +37,19 @@
                     @enderror
                 </div>
                 <div class="form-group">
-                    <label for="kapasitas_kamar">Kapasitas Kamar</label>
-                    <input type="kapasitas_kamar" class="form-control @error('kapasitas_kamar') is-invalid @enderror" id="kapasitas_kamar" placeholder="Masukkan Kapasitas Kamar" name="kapasitas_kamar" required value="{{ old('kapasitas_kamar', $kamar->kapasitas_kamar) }} ">
-                    @error('kapasitas_kamar')
+                    <label for="kapasitas">Kapasitas Kamar</label>
+                      <select name="kapasitas" class="form-control @error('kapasitas') is-invalid @enderror" value="{{ old('kapasitas', $kamar->kapasitas) }}">
+                        <option value="">Pilih Status Kamar</option>                                    
+                        <option value="1" {{($kamar->kapasitas === '1') ? 'Selected' : ''}}>1</option>
+                        <option value="2" {{($kamar->kapasitas === '2') ? 'Selected' : ''}}>2</option>
+                        <option value="3" {{($kamar->kapasitas === '3') ? 'Selected' : ''}}>3</option>
+                      </select>
+                    @error('kapasitas')
                     <div class="invalid-feedback">  
                         {{ $message }}
                     </div>
                     @enderror
-                </div>
+                </div>   
                 <div class="form-group">
                     <label for="aset_kamar">Aset Kamar</label>
                     <input type="aset_kamar" class="form-control @error('aset_kamar') is-invalid @enderror" id="aset_kamar" placeholder="Masukkan Aset Kamar" name="aset_kamar" required value="{{ old('aset_kamar', $kamar->aset_kamar) }} ">
@@ -55,9 +60,27 @@
                     @enderror
                 </div>
                 <div class="form-group">
-                    <label for="penghuni">Penghuni</label>
-                    <input type="penghuni" class="form-control @error('penghuni') is-invalid @enderror" id="penghuni" placeholder="Masukkan Aset Kamar" name="penghuni" required value="{{ old('penghuni', $kamar->penghuni) }} ">
-                    @error('penghuni')
+                    <label for="penghunisatu">Penghuni Satu</label>
+                    <input type="penghunisatu" class="form-control @error('penghunisatu') is-invalid @enderror" id="penghunisatu" placeholder="Masukkan Aset Kamar" name="penghunisatu" required value="{{ old('penghunisatu', $kamar->penghunisatu) }} ">
+                    @error('penghunisatu')
+                    <div class="invalid-feedback">  
+                        {{ $message }}
+                    </div>
+                    @enderror
+                </div>
+                <div class="form-group">
+                    <label for="penghunidua">Penghuni Dua</label>
+                    <input type="penghunidua" class="form-control @error('penghunidua') is-invalid @enderror" id="penghunidua" placeholder="Masukkan Aset Kamar" name="penghunidua" required value="{{ old('penghunidua', $kamar->penghunidua) }} ">
+                    @error('penghunidua')
+                    <div class="invalid-feedback">  
+                        {{ $message }}
+                    </div>
+                    @enderror
+                </div>
+                <div class="form-group">
+                    <label for="penghunitiga">Penghuni Tiga</label>
+                    <input type="penghunitiga" class="form-control @error('penghunitiga') is-invalid @enderror" id="penghunitiga" placeholder="Masukkan Aset Kamar" name="penghunitiga" required value="{{ old('penghunitiga', $kamar->penghunitiga) }} ">
+                    @error('penghunitiga')
                     <div class="invalid-feedback">  
                         {{ $message }}
                     </div>

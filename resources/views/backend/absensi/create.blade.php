@@ -27,6 +27,15 @@
                     @enderror
                 </div>
                 <div class="form-group">
+                      <label for="inputNama" class="form-label">Nama Kamar</label>
+                      <input type="text" name="kamar_id" class="form-control @error('kamar_id') is-invalid @enderror" id="kamar_id" placeholder="Masukkan Nama Kamar" required value="{{ old('kamar_id') }}">
+                      @error('kamar_id')
+                          <div class="invalid-feedback">  
+                            {{ $message }}
+                          </div>
+                      @enderror
+                </div>
+                <!-- <div class="form-group">
                     <label for="kamar_id">Nama Kamar</label>
                     <select name="kamar_id" class="form-control @error('kamar_id') is-invalid @enderror" value="{{ old('kamar_id') }}">                                        
                      <option value="">Pilih Nama Kamar</option>                                        
@@ -39,7 +48,7 @@
                         {{ $message }}
                     </div>
                     @enderror
-                </div>
+                </div> -->
                 <div class="form-group">
                     <label for="tanggal_keluar">Tanggal Keluar</label>
                     <input type="datetime-local" class="form-control @error('tanggal_keluar') is-invalid @enderror" name="tanggal_keluar" id="tanggal_keluar" required>

@@ -35,4 +35,14 @@ class Kamar extends Model
     {
         return $this->hasMany(Absensi::class);
     }
+
+    /**
+     * absensis
+     *
+     * @return void
+     */
+    public function users()
+    {
+        return $this->hasMany(User::class);
+    }
 }
