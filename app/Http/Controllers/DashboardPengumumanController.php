@@ -70,6 +70,7 @@ class DashboardPengumumanController extends Controller
      */
     public function edit(Pengumuman $pengumuman)
     {
+        $penghunis = Penghuni::latest()->get();    
         return view('backend.pengumuman.edit', [
             'pengumuman' => $pengumuman,         
             'user' => Auth::user(),            

@@ -30,9 +30,7 @@
               <th scope="col">Nama Kamar</th>
               <th scope="col">Kapasitas Kamar</th>
               <th scope="col">Aset Kamar</th>
-              <th scope="col">Penghuni Satu</th>
-              <th scope="col">Penghuni Dua</th>
-              <th scope="col">Penghuni Tiga</th>
+              <th scope="col">Penghuni</th>              
               <th scope="col">Status Kamar</th>                            
               <th scope="col">Action</th>
             </tr>
@@ -45,20 +43,18 @@
               <td>{{ $kamars->namakamar }}</td>
               <td>{{ $kamars->kapasitas_kamar }}</td>
               <td>{{ $kamars->aset_kamar }}</td>
-              <td>{{ $kamars->penghunisatu }}</td>
-              <td>{{ $kamars->penghunidua }}</td>
-              <td>{{ $kamars->penghunitiga }}</td>
+              <td>{{ $kamars->penghuni }}</td>              
               <td>{{ $kamars->status_kamar }}</td>                                   
               <td>
                 
                 <a href="/kamar/{{ $kamars->namakamar }}/edit" class="badge bg-warning"><i class="fas fa-edit"></i></i></a> 
-                <form action="/kamar/{{ $kamars->namakamar }}" method="post" class="d-inline">
+                <!-- <form action="/kamar/{{ $kamars->namakamar }}" method="post" class="d-inline">
                   @method('delete')
                   @csrf
                   <button class="badge bg-danger border-0" onclick="return confirm('Yakin Menghapus?')">
                     <i class="fas fa-trash"></i>
                   </button>
-                </form>
+                </form> -->
               </td>
             </tr>
             @endforeach

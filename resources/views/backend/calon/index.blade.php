@@ -10,7 +10,7 @@
       @endif
 </div>
 
-<div class="card">
+<div>
         <div class="card-header">
           <h3 class="card-title">Calon Penghuni Asrama</h3>
 
@@ -26,9 +26,9 @@
           <thead>
             <tr>
             <th scope="col">No.</th>
-              <th scope="col">Nama</th>
-              <th scope="col">Nama Pengguna</th>
-              <th scope="col">Email</th>
+              <th scope="col" style="text-align: center;width: 0%">Nama</th>
+              <th scope="col" style="text-align: center;width: 0%">Nama Pengguna</th>
+              <th scope="col" style="text-align: center;width: 0%">Email</th>
               <th scope="col">Nomor Telepon</th>
               <th scope="col">Jenis Kelamin</th>
               <th scope="col">Alamat</th>
@@ -63,7 +63,7 @@
               <td>{{ $calonPenghunis->alamat_ortu }}</td>         
               <td>
                 
-                <a href="/calon/{{ $calonPenghunis->name }}/edit" class="badge bg-warning"><i class="fas fa-edit"></i></i></a> 
+                <!-- <a href="/calon/{{ $calonPenghunis->name }}/edit" class="badge bg-warning"><i class="fas fa-edit"></i></i></a>  -->
                 <!-- <form action="/calonPenghuni/{{ $calonPenghunis->name }}" method="post" class="d-inline">
                   @method('deletedPenghuni')
                   @csrf

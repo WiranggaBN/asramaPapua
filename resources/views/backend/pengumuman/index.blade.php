@@ -1,7 +1,7 @@
 @extends('backend.layouts.main')
 
 @section('isi')
-<div class="card">
+<div>
         <div class="card-header">
           <h3 class="card-title">Data Pengumuman</h3>
 

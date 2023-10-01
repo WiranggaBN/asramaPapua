@@ -10,7 +10,7 @@
       @endif
 </div>
 
-<div class="card">
+<div>
         <div class="card-header">
           <h3 class="card-title">Data Berita</h3>
 

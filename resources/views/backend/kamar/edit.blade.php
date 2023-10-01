@@ -37,14 +37,14 @@
                     @enderror
                 </div>
                 <div class="form-group">
-                    <label for="kapasitas">Kapasitas Kamar</label>
-                      <select name="kapasitas" class="form-control @error('kapasitas') is-invalid @enderror" value="{{ old('kapasitas', $kamar->kapasitas) }}">
-                        <option value="">Pilih Status Kamar</option>                                    
-                        <option value="1" {{($kamar->kapasitas === '1') ? 'Selected' : ''}}>1</option>
-                        <option value="2" {{($kamar->kapasitas === '2') ? 'Selected' : ''}}>2</option>
-                        <option value="3" {{($kamar->kapasitas === '3') ? 'Selected' : ''}}>3</option>
+                    <label for="kapasitas_kamar">kapasitas_kamar Kamar</label>
+                      <select name="kapasitas_kamar" class="form-control @error('kapasitas_kamar') is-invalid @enderror" value="{{ old('kapasitas_kamar', $kamar->kapasitas_kamar) }}">
+                        <option value="">Pilih kapasitas_kamar Kamar</option>                                    
+                        <option value="1" {{($kamar->kapasitas_kamar === '1') ? 'Selected' : ''}}>1</option>
+                        <option value="2" {{($kamar->kapasitas_kamar === '2') ? 'Selected' : ''}}>2</option>
+                        <option value="3" {{($kamar->kapasitas_kamar === '3') ? 'Selected' : ''}}>3</option>
                       </select>
-                    @error('kapasitas')
+                    @error('kapasitas_kamar')
                     <div class="invalid-feedback">  
                         {{ $message }}
                     </div>
@@ -60,32 +60,14 @@
                     @enderror
                 </div>
                 <div class="form-group">
-                    <label for="penghunisatu">Penghuni Satu</label>
-                    <input type="penghunisatu" class="form-control @error('penghunisatu') is-invalid @enderror" id="penghunisatu" placeholder="Masukkan Aset Kamar" name="penghunisatu" required value="{{ old('penghunisatu', $kamar->penghunisatu) }} ">
-                    @error('penghunisatu')
+                    <label for="penghuni">Penghuni</label>
+                    <input type="penghuni" class="form-control @error('penghuni') is-invalid @enderror" id="penghuni" placeholder="Masukkan Penghuni" name="penghuni" required value="{{ old('penghuni', $kamar->penghuni) }} ">
+                    @error('penghuni')
                     <div class="invalid-feedback">  
                         {{ $message }}
                     </div>
                     @enderror
-                </div>
-                <div class="form-group">
-                    <label for="penghunidua">Penghuni Dua</label>
-                    <input type="penghunidua" class="form-control @error('penghunidua') is-invalid @enderror" id="penghunidua" placeholder="Masukkan Aset Kamar" name="penghunidua" required value="{{ old('penghunidua', $kamar->penghunidua) }} ">
-                    @error('penghunidua')
-                    <div class="invalid-feedback">  
-                        {{ $message }}
-                    </div>
-                    @enderror
-                </div>
-                <div class="form-group">
-                    <label for="penghunitiga">Penghuni Tiga</label>
-                    <input type="penghunitiga" class="form-control @error('penghunitiga') is-invalid @enderror" id="penghunitiga" placeholder="Masukkan Aset Kamar" name="penghunitiga" required value="{{ old('penghunitiga', $kamar->penghunitiga) }} ">
-                    @error('penghunitiga')
-                    <div class="invalid-feedback">  
-                        {{ $message }}
-                    </div>
-                    @enderror
-                </div>
+                </div>              
                   <div class="form-group">
                     <label for="status_kamar">Status Kamar</label>
                       <select name="status_kamar" class="form-control @error('status_kamar') is-invalid @enderror" value="{{ old('status_kamar', $kamar->nomor_kamar) }}">

@@ -98,7 +98,7 @@ class DashboardPenghuniController extends Controller
             'username' => 'required',
             'password' => '',
             'level' => '',
-            'kamar_id' => 'required',
+            
             'email' => 'required',
             'nomor_telepon' => 'required|min:12|max:14',
             'jenis_kelamin' => 'required',

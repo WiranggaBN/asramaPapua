@@ -36,15 +36,7 @@
                     </div>
                     @enderror
                   </div>
-                  <div class="form-group">
-                    <label for="kamar_id">Nama Kamar</label>
-                    <input type="kamar_id" class="form-control @error('kamar_id') is-invalid @enderror" id="kamar_id" placeholder="Masukkan Nama Kamar" name="kamar_id" required value="{{ old('kamar_id', $penghuni->kamar->namakamar) }} ">
-                    @error('kamar_id')
-                    <div class="invalid-feedback">  
-                        {{ $message }}
-                    </div>
-                    @enderror
-                </div>       
+                  
                   <div class="form-group">
                     <label for="password">Sandi</label>
                     <input type="password" class="form-control @error('password') is-invalid @enderror" id="password" placeholder="Masukkan Sandi" name="password" required value="{{ old('password', $penghuni->password) }} ">
