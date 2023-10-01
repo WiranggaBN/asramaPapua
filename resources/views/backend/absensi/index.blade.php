@@ -23,10 +23,9 @@
           </div> -->
 
           <div class="card-tools mx-1">
-          <form action="/absensi/index" method="GET">          
-          <input type="text" class="form-control" name="q"
-            placeholder="Cari berdasarkan bulan">                      
-          </form>
+            <form action="absensi" method="GET">          
+              <input type="text" class="form-control" name="q" placeholder="Cari berdasarkan bulan atau tanggal">                      
+            </form>
           </div>
           
         </div>
